@@ -1,0 +1,1186 @@
+<div id="html" style="font-family: monospace"></div>
+<script>
+/* DAY 2 - 1. HALF
+var puzzle = [
+    "1640 590 93 958 73 1263 1405 1363 737 712 1501 390 68 1554 959 79",
+    "4209 128 131 2379 2568 2784 2133 145 3618 1274 3875 158 1506 3455 1621 3799",
+    "206 1951 2502 2697 2997 74 76 78 1534 81 2775 2059 3026 77 2600 3067",
+    "373 1661 94 102 2219 1967 1856 417 1594 75 100 2251 2200 1825 1291 1021",
+    "57 72 51 1101 1303 60 1227 421 970 1058 138 333 1320 1302 402 1210",
+    "4833 5427 179 3934 4533 5124 4832 2088 94 200 199 1114 4151 1795 208 3036",
+    "759 876 110 79 1656 1691 185 544 616 312 757 1712 92 97 1513 1683",
+    "1250 1186 284 107 1190 1233 573 1181 1041 655 132 547 395 146 119 515",
+    "505 1726 79 180 86 1941 1597 1785 1608 1692 968 1177 94 184 91 31",
+    "1366 2053 1820 1570 70 506 53 415 717 1263 82 366 74 1255 2020 1985",
+    "2365 5585 2285 4424 5560 3188 3764 187 88 223 1544 5023 4013 5236 214 196",
+    "1487 1305 1359 1615 6579 2623 4591 150 5030 188 146 4458 5724 5828 1960 221",
+    "3114 688 3110 334 1921 153 4083 131 2234 3556 3573 3764 127 919 3293 104",
+    "1008 78 1196 607 135 1409 296 475 915 157 1419 1304 153 423 163 704",
+    "235 4935 4249 3316 1202 221 1835 380 249 1108 1922 5607 4255 238 211 3973",
+    "1738 207 179 137 226 907 1468 1341 1582 1430 851 213 393 1727 1389 632"
+];
+    
+var sum = 0, i, x;
+for(i=0; i<puzzle.length; i++){
+	var stevilke = puzzle[i].split(' ');
+    var najvecje = 0, najmanjse = Infinity;
+	for(x=0; x<stevilke.length; x++){
+		if(stevilke[x]*1 > najvecje){najvecje = stevilke[x]*1;};
+		if(stevilke[x]*1 < najmanjse){najmanjse = stevilke[x]*1;}
+    }
+    sum += najvecje-najmanjse;
+}
+
+console.log(sum);
+    
+// DAY 2 - 2. HALF
+var puzzle = [
+    "1640 590 93 958 73 1263 1405 1363 737 712 1501 390 68 1554 959 79",
+    "4209 128 131 2379 2568 2784 2133 145 3618 1274 3875 158 1506 3455 1621 3799",
+    "206 1951 2502 2697 2997 74 76 78 1534 81 2775 2059 3026 77 2600 3067",
+    "373 1661 94 102 2219 1967 1856 417 1594 75 100 2251 2200 1825 1291 1021",
+    "57 72 51 1101 1303 60 1227 421 970 1058 138 333 1320 1302 402 1210",
+    "4833 5427 179 3934 4533 5124 4832 2088 94 200 199 1114 4151 1795 208 3036",
+    "759 876 110 79 1656 1691 185 544 616 312 757 1712 92 97 1513 1683",
+    "1250 1186 284 107 1190 1233 573 1181 1041 655 132 547 395 146 119 515",
+    "505 1726 79 180 86 1941 1597 1785 1608 1692 968 1177 94 184 91 31",
+    "1366 2053 1820 1570 70 506 53 415 717 1263 82 366 74 1255 2020 1985",
+    "2365 5585 2285 4424 5560 3188 3764 187 88 223 1544 5023 4013 5236 214 196",
+    "1487 1305 1359 1615 6579 2623 4591 150 5030 188 146 4458 5724 5828 1960 221",
+    "3114 688 3110 334 1921 153 4083 131 2234 3556 3573 3764 127 919 3293 104",
+    "1008 78 1196 607 135 1409 296 475 915 157 1419 1304 153 423 163 704",
+    "235 4935 4249 3316 1202 221 1835 380 249 1108 1922 5607 4255 238 211 3973",
+    "1738 207 179 137 226 907 1468 1341 1582 1430 851 213 393 1727 1389 632"
+];
+    
+var sum = 0, i, x, y;
+for(i=0; i<puzzle.length; i++){
+	var stevilke = puzzle[i].split(' ');
+    var kvocient = 0;
+	for(x=0; x<stevilke.length; x++){
+        for(y=0; y<stevilke.length; y++){
+            if((stevilke[x]*1)%(stevilke[y]*1) == 0 && x != y) kvocient = (stevilke[x]*1)/(stevilke[y]*1);
+        }
+    }
+    sum += kvocient;
+}
+
+console.log(sum);
+    
+// DAY 3 - 1. HALF - to sem rešil na papir
+// DAY 3 - 2. HALF
+var puzzle = 325489;
+var matrika = [];
+var w_h = 21;
+for(var i=0; i<w_h; i++){
+    matrika.push([]);
+    for(var j=0; j<w_h; j++) matrika[i].push([]);
+}
+var sredina = (matrika.length-1)/2;
+
+matrika[sredina][sredina] = 1;
+    
+
+var premikx = 0;
+var premiky = 0;
+var mesto = [0,1,2,3];
+var trenutno_mesto = 0;
+var x = sredina, y = sredina;
+
+var naravnost = [];
+    
+var rezultat = 1;
+
+for(var k=1; k<200; k++){
+    switch(trenutno_mesto){
+        case 0: premikx = 1; premiky = 0; break;
+        case 1: premikx = 0; premiky = 1; break;
+        case 2: premikx = -1; premiky = 0; break;
+        case 3: premikx = 0; premiky = -1; break;
+    }
+    x += premikx;
+    y += premiky;
+    
+    trenutno_mesto++;
+    
+    if(x >= w_h || y >= w_h || x<0 || y<0) break;
+    
+    if(!Number.isInteger(matrika[y][x])) {
+        var a1 = Number.isInteger(matrika[y-1][x]) ?     matrika[y-1][x] : 0; 
+        var a2 = Number.isInteger(matrika[y-1][x-1]) ?   matrika[y-1][x-1] : 0; 
+        var a3 = Number.isInteger(matrika[y-1][x+1]) ?   matrika[y-1][x+1] : 0; 
+        var a4 = Number.isInteger(matrika[y][x+1]) ?     matrika[y][x+1] : 0;  
+        var a5 = Number.isInteger(matrika[y][x-1]) ?     matrika[y][x-1] : 0;  
+        var a6 = Number.isInteger(matrika[y+1][x]) ?     matrika[y+1][x] : 0;  
+        var a7 = Number.isInteger(matrika[y+1][x+1]) ?   matrika[y+1][x+1] : 0; 
+        var a8 = Number.isInteger(matrika[y+1][x-1]) ?   matrika[y+1][x-1] : 0;
+        rezultat = a1+a2+a3+a4+a5+a6+a7+a8;
+        matrika[y][x] = rezultat;
+        naravnost.push(rezultat);
+    }
+    else {
+        x -= premikx;
+        y -= premiky;
+        trenutno_mesto -= 2;
+        if(trenutno_mesto < 0) trenutno_mesto += 4;
+    }
+    
+    if (trenutno_mesto>3) trenutno_mesto=0;
+}
+console.log(naravnost);
+
+
+// DAY 4 - 1. && 2. HALF
+var puzzle = [
+    'kvvfl kvvfl olud wjqsqa olud frc', 
+    'slhm rdfm yxb rsobyt rdfm', 
+    'pib wzfr xyoakcu zoapeze rtdxt rikc jyeps wdyo hawr xyoakcu hawr', 
+    'ismtq qwoi kzt ktgzoc gnxblp dzfayil ftfx asscba ionxi dzfayil qwoi', 
+    'dzuhys kfekxe nvdhdtj hzusdy xzhehgc dhtvdnj oxwlvef', 
+    'gxg qahl aaipx tkmckn hcsuhy jsudcmy kcefhpn kiasaj tkmckn', 
+    'roan kqnztj edc zpjwb', 
+    'yzc roc qrygby rsvts nyijgwr xnpqz', 
+    'jqgj hhgtw tmychia whkm vvxoq tfbzpe ska ldjmvmo', 
+    'nyeeg omn geyen ngyee rcjt rjuxh', 
+    'qpq udci tnp fdfk kffd eyzvmg ufppf wfuodj toamfn tkze jzsb', 
+    'rrcgxyp rbufd tfjmok vpyhej hcnz ftkojm', 
+    'jnmomfc jnmomfc bkluz izn ovvm flsch bkluz', 
+    'odisl hzwv hiasrhi hez ihihsra qpbmi ltwjj iknkwxf nbdtq gbo', 
+    'gjtszl gjtszl fruo fruo', 
+    'rdapv gaik cqboix sxnizhh uxmpali jdd usqnz advrp dze', 
+    'flooz flooz qad tcrq yze bnoijff qpqu vup hyagwll', 
+    'lnazok dze foi tqwjsk hpx qcql euzpj mwfrk', 
+    'ilb fmviby ivybmf gtx xtg', 
+    'rpauuu timere gyg wcolt ireetm safi', 
+    'croe szwmq bbhd lciird vhcci pdax', 
+    'hnc ykswt qqqmei goe bri wmyai hnc qpgqc pberqf bzs', 
+    'hsnrb wdvh iezzrq iezzrq rdbmpta iezzrq kemnptg alkjnp wymmz', 
+    'ngw don ddvyds nlhkoa aaf gptumum ugtpmmu', 
+    'vmccke qbpag kvf kvf tgrfghb kvf bhpd sglgx', 
+    'obomgk bkcgo yso ttft vbw ckl wjgk', 
+    'fli qvw zhin dfpgfjb udsin nihz ovr tiewo', 
+    'tgmzmph hauzieo jmg tdbtl lvfr qpaayq qapaqy ausioeu jun piygx', 
+    'jkp guqrnx asdqmxf vmfvtqb tloqgyo ioix gajowri tmek ilc puhipb', 
+    'uycn zxqm znft ayal znacus kvcyd ekv qqfpnh', 
+    'fqghur xtbtdd ztjrylr bpuikb ziyk', 
+    'rvakn uqbl ozitpdh uqbl dsej xehj', 
+    'laxp haz jyd xnkrb ijldth woy xapl iqgg alpx gnupa ukptmmh', 
+    'dyiy dyiy ihb qcyxr', 
+    'wbwkd hdwu zvgkn hdwu wjc sakwhn zxujdo npllzp uyr uyr', 
+    'fxczpmn cininu akcxs ggslxr riyxe ojisxe', 
+    'ppbch sampq dnct afikor dnct edsqy pnzyzmc afikor', 
+    'jnvygtn hijqjxl vsd jnvygtn nqcqv zns odq gkboxrv kolnq wrvd', 
+    'mroq mroq flsbu flsbu', 
+    'fyshor xvpaunj qmktlo xoce wkiyfu ukcl srndc ugwylwm ozcwdw mtqcste kpokr', 
+    'cfh cxjvx cfh cfh uewshh', 
+    'bpspbap bpspbap fquj mxmn bwls iirhvuk dmpkyt exrn mxmn', 
+    'tvyvzk ezszod ntxr xtnr och', 
+    'knfxhy kbnyl knfxhy xhkssx lxru uprh nkxpbx oodolxr tpvyf', 
+    'nblmysu iwoffs upgof tyagwf aan vovji ajk ywzq oyfi sfulz', 
+    'aushzkm lcaeki mkuzsah ynxvte rsntd refk pcm', 
+    'mgguob gobmug dzenpty gmogbu', 
+    'yvq eepof rgnree nerger fpb stfrln ernger', 
+    'hrgkbl mzwvswk rsrsbk ieru holco pajvvn ztgsr qkyp fyeg owpcmoj', 
+    'fowda gmsqdca yugj mcrroxv mqcbojd fjnqfji qdfsc jqs', 
+    'qnc rvjfz vvxk sjd xrma ucdjvq sbw zydyt dfzww', 
+    'ocajazv cozaajv tqunkla udwf ecnnmbz lsakqg bki njnda zsdu ccfqw rxpc', 
+    'qqm qdfya qxyx qmq qfday uqnfttt', 
+    'rnbirb iapor qet iapor hxkhz dfvzig pedl ybyb', 
+    'mkgamxg xkniv meb hbzmxjn dhbj zhbxjmn hdjb', 
+    'ilteux pyutyfx mau lrr bacak', 
+    'sjjonmn dbbbgs crxyuu jztstgd ezb uiabyaa', 
+    'tra fle ufzlvf nnaw kec hiwnnlj tei wld iyt syk hjdczb', 
+    'qmd jtlud dgh dbanock fzp dsjgqru wwvo jwvxwgv xlemfij jcacd', 
+    'rpkx oxesil snazcgx fly miiyc ikmtmp oefyyn egbw', 
+    'ypfpeu wldnyd acchppb yqwcaw wldnyd turbz megci nbgxq xkc ypfpeu', 
+    'iqqv iqqv neui iqqv', 
+    'ypsxm icqyup zyetrwq nbisrv', 
+    'viommi toszx dpueq eyy cunjou ffcjc jaeez djefra pxvkj liudlig yye', 
+    'fhnacbg jghchh ghjhhc iue hwqmo', 
+    'vbjw lpn cizba ltnsfpz tzoweml irewlc uzckhpd mszal obd', 
+    'yeos utxkft hflxkfe fxczge qpgigkc ksgr vuumql vhlvv', 
+    'xzmkv xzmkv krecdi klpem jsbu nwcmik emfzxf cjmpgnj', 
+    'vtkjo pmiv zou gxo qdiyxsf hwyinjk jhkgf rjq', 
+    'dyuoc ywiyvch irfgl ywiyvch fxb fxb', 
+    'tuz onhr syu rqya abkaf bcfx mbknex juwoor zmksl', 
+    'oheg spjorx ksdy vwtq fxz phvtazk tcze lrxg', 
+    'hew lbup botaj ltr jpd', 
+    'dxgc tzinkej gnz hxvvub adsqmc dxgc asgpp rqbdcra goy pmamdua bhiacva', 
+    'xqv ygb kihxqz vyv pjcny vmyvsdv cgsi nfyx', 
+    'tqga ssshrw ndq qlbvwh huyd pxbgj qbxk dkkbf jxy chsobw pph', 
+    'hxl iwph iwph xnr otifm ljhre', 
+    'zlgvpd kapxpoc dve rklk ogh hgnp rbrmc zzkz hhmcx aklmo', 
+    'sar gfor nkf hek nkf aql shc aql', 
+    'dtcrw kfjzcjx qyhi bldson whwdayo mqtgt xhqzp ttqmg', 
+    'omspdml isze jdl nvwo qrkm wztfg ssfgyh dryj jhp unsmty', 
+    'jxt cszylng ifht ixtuna azoi xutqlv jtx tjx', 
+    'usgm azuayp fgkby ezpyq jqwl ezofj', 
+    'tnhvil nrvg moyrpqs sldx qymoff megflxh pyhqwms xmdw', 
+    'zomy zcquwnv lzx bvcna yods mjp dgsez', 
+    'blklyf xokd gpit tiysj yrwfhm tofx', 
+    'dtig vhdp omuj vhpd', 
+    'fogwxim qvdwig emdiv jvhl euwbzkg xvxb hwmqo ujdmlp epmykj', 
+    'sjxll sjxll pedvgb sjxll', 
+    'drvay gtzhgtx yrt okz nqf', 
+    'haxfazn pvkovwb pgu tgshw mxcjf pbe nwoymzc mxcjf pbe hydwy jradcr', 
+    'prjsloa ahylvj okbsj qbdcdjt pmfo pagyoeg vkmhjzt khzmjvt opfm xfrji gyjqyel', 
+    'lzypt jdbtrad ogr jdbtrad heink', 
+    'rcoucuq gdxewa rcoucuq whlw zhhm rcoucuq azaqohe mzyli rdvaf', 
+    'yuag ebcf yuag nsotg qqzuxr jfmao vyucw wmoye', 
+    'qwvk xemm hgqrr wyxkpp tojndm xlvzypw jus bgnu bgnu nklfwhs', 
+    'daqi knenmku ccm xkiuy vkexsbc kvvdagx umopitw yaocnx yoakqql mllmsp', 
+    'mrxgl gywit mfopia ncnsvw vdxek axuiot rsejua nei prndudz mnu', 
+    'egqn gaa qgen urs mix zbn rhn', 
+    'ewharq aihy udkdaob kgrdd kgrdd kugbjtj fcef llqb pduxaq wcexmm', 
+    'dwtiw nelq hppad algxgf gcc upou akm efnb mxmhrud', 
+    'yxqaa ups okbhgt iet qns tqn rnjqxgp', 
+    'npmhdm cgds ldexvr typi jyivoqk zkgq vfyxu xgfo', 
+    'dkwnmr umm dkwnmr okpjw wqx jpztebl eqsib dkwnmr', 
+    'dxbild wpbup evscivq dxbild dxbild geqp ojfbpl jshvqej', 
+    'cxdntxs csfocjd pyy tuhws teb boyloz xfw scxh pxhonky', 
+    'lteucke xrgwy hszgzu hnyrcvb', 
+    'pfgsgwg dxzh fworek qbstod', 
+    'usemcrf psczxu gcjtr brls', 
+    'hjol efxczux bqdn gvrnpey yyoqse gbam ndzyj lbwb bhzn unsezg', 
+    'bapw xifz blupk qqdk bofvqpp wnbuwyt rnwocu lzwgtt zucag pov', 
+    'xkre lqvd juf lqvd xio xyg xyg', 
+    'tzdao ztheib aymcf aorg iyawrch hetcxa iyawrch czdymc ccv', 
+    'ucgl azlppu jvxqlj pest', 
+    'dvwlw fuuy mnhmm okrp ualnqlm uyuznba fzyejk yaq crl ctprp', 
+    'odfq knox mkbcku pxucmuf lpjpol phl', 
+    'ixongh hfs ruorbd auy qyssl kykwcix aytsm rlj aytsm duq segpqhk', 
+    'izufsk wedpzh podjkor eamo vqvev ifnz podjkor xrnuqe', 
+    'twyfps bmdbgtu qye qkwjms', 
+    'wlav htym vhsnu cocphsj mdsuq vhsnu jflgmrp', 
+    'opajag itwjhfu purnnvk opajag', 
+    'hpkopqp vnj aialpt lzrkzfs nwucez nwuezc', 
+    'mcx hzcjxq zbxr dsx tpknx fva', 
+    'rlvgm xrejsvn ghawxb efyos xty wdzdgh olahbtn rga efyos vhtm nsr', 
+    'cni mbab qtgeiow ulttn rckc kmiaju jvbq emyvpew cdlxldn ulttn brhkprx', 
+    'eykpffp rapik qki fhjgdyu tome ehjuy bibjk htxd vexvag', 
+    'wrk dpxt gwkuiov gbkif ike gbkif pcd wpj toywyf qzsa aol', 
+    'yqwzh uujn ujun ujnu', 
+    'srs ralwxrz yxvvmgp sjhbhk waasid cqtxoxf whcladv jkmaq khjbsh dlavcwh', 
+    'mdvsjh xaj etvxlsy fxgiy rgjesel rlegesj ptriz ebdyhkp kugxm dxv egljser', 
+    'lhehwrs mqevb ygmv gri izop qgb ivm', 
+    'loqqam alojlwg hgen hbyw qlwpun loqqam worgnwk kope', 
+    'phozre todsknr todsknr ibj mvllsar', 
+    'wuripy ruwlfbh wukbkey qhq iishw tvtvci xawvxc vxacwx hsiwi ogq', 
+    'xryq vxwupqa zhqex aquxpwv bnvxrba dtbxki', 
+    'yvvwh zvsm vqskhp vqskhp ggqqlw bpn wbuv', 
+    'kqz tdy goqwge ygn jgd', 
+    'szjjhdk zkpoo nxexz ebicc', 
+    'wzuemcj oyd qupulju iaakzmt vzkvz', 
+    'nppahov umm wpzev wxkgfxd owgekp bhhb bbhh dgviiw kdfgxwx wryb', 
+    'bnc rhes lmbuhhy kwbefga bnc rtxnvz bnc', 
+    'ani mggxf mcoixh zdd nai hbhzl mes bdpqr', 
+    'mjn uinoty jjegvze bjgqg yhqsxbt coj obylb hddude xqi rhfbhha alood', 
+    'cbjzj drmihy tfkrhsd nuhav hihzx bvblqpl tdd szmp gjgfv box', 
+    'uumhdxd cmwgyf vepr rwqdkj exwk', 
+    'hwvr ydvw bqefu kghes gvbhp awms iqsqes khgse', 
+    'mrey jqfw fwvzhps komj dayvs fbui zmtd cofn mrey', 
+    'dsjds fdpx irjj usndok qcctsvf fgk wvg txwxcl dxs llp zyilwtq', 
+    'xmkelgk fdukc cye legkxkm wwly', 
+    'enlny eynln cccku brkz dpof mwfoxcd yftmnqh wpebvyc', 
+    'ggdn jnysl dsacffw ukj hdae cmzxku', 
+    'uqhm gcachmn kxndfrl htmfis jfnajz fiqiypr kekho kekho ndcw ckrndub dejfna', 
+    'keazuq ertql rauwl keazuq obmh rauwl ksrotm', 
+    'jppp poigqhv repfsje grjk xwkyuh pkx ayzcj hoxzv', 
+    'yhjw pcuyad icie icie icie hwcsuy wcd yihjh jnrxs', 
+    'gaug ivvx ceb xujonak hbtfkeb ttciml cctoz', 
+    'dggyyi dggyyi gqlyumf yasu fwdfa cbb nncn verhq', 
+    'rhgcw gpcyct kiuhbg kiuhbg gpcyct jlmleo nhumm', 
+    'wulxxu jyjek hclcp ogob viex wiqcupq', 
+    'tthu nxgzpid kcnj mss ukapgkp nnc bxjocv qwxs oejwsif aywqtu brahkb', 
+    'dtde bgvb smu vbbg zhlu', 
+    'lyo nwjjmep ldbok wgxhto wwuh qfgjknk wnsl', 
+    'lleyr onha hkwulbm jfg', 
+    'bybjwd uoxvbh mvj iqfpnxs bybjwd zqtszp wvc lbazjr zkzenja cev', 
+    'rbuyyr divtslq yuqmyt ajyveb smxsjb nlk tzqhq ims fewg wpjhr gqh', 
+    'kpewfd beq klilis klisli eeezut', 
+    'euqh hueq ldoo crqurv lvrwh tmaewp oodl', 
+    'bqi lzrf jyhvxfh bqi jyhvxfh nbztd lwpdn cuzi', 
+    'srjylou phavzjd wost uxkaq byh sluryoj', 
+    'ihrdk bcegkpq nygrs qbcq wyjg dvzme pgzhjl vibg kvv', 
+    'ijsx iedemek ktlz gtga tbal lbki gtga', 
+    'vmiaxn kefig kefig vngxz', 
+    'vrdmfvi qts vlvhq vlvhq dihmq', 
+    'cfz dyrz zlw qnt vok fwvahg skshbqf hbwozdc ntana jdb uflp', 
+    'rimbj bxemw sfps krtk umta vnk ewmbx nrlje ymrtqrz mxewb kjxunbt', 
+    'egnuti ozat eltl ngueti', 
+    'qtcwoxq rmaf qtcwoxq qtcwoxq', 
+    'zws gcoa pydruw qsrk lrkybdf ugr wkrxoj nyvf vitwn', 
+    'tmr hhd dojid zwrj bhsim righ keqlep flzunou', 
+    'lwoquvy acjowxk tqudk oenvioh nyavyl', 
+    'rgh dfhgyke iff cpxhuz hui koe iff hui dmukrei', 
+    'bjiumig lcbmbgh vleipx sfawua rnf', 
+    'gftfh qwb tfdroe xbno qhgofm vqfoe mux', 
+    'ljdrr gyfggai iun nju xrucbis mhrcrh fukr obvuqc whlalfe xrucbis nju', 
+    'nxjmjr egqwg arllu xqaahri lzc ivt uhsti', 
+    'sqiepba rcmts kvesv nvp', 
+    'tiksw tiksw rjni gbhvzm ctbq zuqfyvz', 
+    'ibsnm kfka aoqigwo sqouih rxz', 
+    'jmymq lxio adtmk umyu sxvzquq bporqnb heol fow', 
+    'mepa eckq rqviawv dkqoei ifmngpp jiava rtklseu', 
+    'yuycd jiufjci yuycd uowg yuycd udq izkicbr csxobh', 
+    'nwu tfsjavb rruoxbn oepcov elxf rruoxbn rruoxbn azglwth jcjm ksqiqpv', 
+    'dthfwip zqnwa zqnwa zqnwa', 
+    'gso wruece ufl crgnlxv vllsm dpyfm wpa ctxko', 
+    'wvpze seodz lpq lpq pmtp wsxs ffppx', 
+    'yfxquj phvjn rtwieq rtwieq kgxztyu vbjvkc prqqd lyzmdo ojbrt ojbrt qiqjz', 
+    'esaezr rpggiy jey kbzrhu uthus osr xxaiijd qfxlf auhzbx gkigoqw', 
+    'yfhcj uvgck cds gjhhrg cmempgj yfhcj cjb', 
+    'yxi voxvtuw unwg jqqm', 
+    'igvjr ljz rus sru gbjtjt qfeg ztu zjl', 
+    'leof ocxns hbkoysh hbkoysh leof', 
+    'hab lyxmf yhh qeks fwhfxki xmbcak okqjii nfgzyg bhtfgdj lpmjn', 
+    'mgognh tad herere lvwnzx ixwqs zphmuuc etdjz kczsf', 
+    'mtej rlolsnn zbl uykek dpkan gmz etxtgj', 
+    'mihuieo emjgbp jgks mihuieo iexrfw mjdnr bvp mcuzea xkbusvi', 
+    'jvqpj bwt jvqpj bwt gxr', 
+    'qpnd fpt tpor bibbpcg hmvguez wqc afl ckviua gpi', 
+    'dntmcg jglm sxtnu sxtnu sxtnu', 
+    'fzkbptw cbfwo ozvwov wbv gcdd izqo ovwzov lolewo xikqpw', 
+    'nkxyxzd kpn datf fki werq mwidqx oiibor zizcjph', 
+    'xvgyxym zor ijoy lvwsf fjuara idvvq rreit mqyyy ctio tzwqqhj rnpee', 
+    'maqkfpk maqkfpk xukg sfdmnlg xjopvr xjopvr irf', 
+    'liujcd vnlkouy dxkwc gto vhjvtw', 
+    'swhqhj cas aupsd swhqhj cas bvbooii jquck dtdm', 
+    'igh iqicicf ghi pcxt srcrjx gmf gyscphv', 
+    'drplj drplj wopgpnk wytag wopgpnk', 
+    'zexe ilcqoh qiefb txkuv lirfzv', 
+    'ovvpn ovvpn uqeurqx uwzn hgmucj ovvpn sjxulms', 
+    'rox silka irhsvym kutus otasof tdneav pcagds', 
+    'mkja omu tyshbfq onp trxs lxa tftbv bnpl djhnc zdqfs muo', 
+    'tjj rmmqas cbbkxs qio pikk ykyew gxlxt nhsyl ykyew', 
+    'frcprg njrz oaxcmhc qben pedm ecvtga nzxwpb ior gaklot dpem', 
+    'zyt kncau spoe qlchg sqys wkpbng yflju qlchg vkve bzadbpa', 
+    'qtq pkaicl qtq mfkfqvr dnleiq brrjxsx uoyxh pkaicl yvmlug', 
+    'firwy imtlp ywl qfa dqrbazz ztzb pcsbwhn zesmlag', 
+    'ivey ivey mtvc mtvc', 
+    'lhize acwf moa cdeoazd voktshy qmvqq jvmuvk ljfmq tsanygc', 
+    'xreiqkc aawrovl pofcsg xreiqkc xreiqkc', 
+    'cjbzvn ozds iniqu sdoz gqmki bablvll krs vjzcbn', 
+    'izsod htkeqz entxn qtns prpcwu omfnmoy', 
+    'kwfb tctzda aztctd tadtcz gyt wunbcub ydiwdin xxk', 
+    'epnl ijcp giq ltfk zjcabve zfksmz epnl giq xxxbsom', 
+    'ulyukpa mdjsbn dydko uhkdt qms aaaj hustlwu', 
+    'zlsbu ohx jcwovf egf zlvpqgx qhejm wrywdmw', 
+    'uhxqrzr mmu kjxcalj unuohiq rri yzngnb ikvlxry mfiym qbksdx', 
+    'khqciz som yklmm jceb khqciz jspy jceb', 
+    'ncwggv njvi nqox krtsn lnm', 
+    'bgtqme xaxcoq qbtgme obqual vorfk baoqul lgrb', 
+    'jli tsbb nlxjc pkwzmz dlxrj hmho gzguko ilj iyaasm', 
+    'wlmw grkumg dynwtyo emxhhqr huluk slpqu uhqcmd absmr ufirmwr', 
+    'pbs pcammxv dplfr tzvmav nccyy blvyq ffhnz bccutq', 
+    'hgge ghge vxmvz hqxgjdg zab guo gheg', 
+    'ylj bucoyoq udndc wpgyrbx ueh udndc gxdsdh hdoz wwgqlg', 
+    'cjdeh gttyqe kdkm ltzd lfeozse quvjq mnwhokm kdv oojxm nxt', 
+    'mfkzus knqxt saxkqww njx zumsfk sbmcyad cpt agvbuv', 
+    'tukn vyco yobvsn bzgnn klrnzy kea thzk pxpwq ryfff nxzm', 
+    'ylbm lxlz lybm lzxl', 
+    'wgtxoij zad slgsi cvnxfg iomswwl vmx', 
+    'hkm yinhnkj kmh kwkw kayknck chur styjif yknakck', 
+    'rtfwhkq rtfwhkq zsf zsf', 
+    'sldq zlntr ueegiw kajivqc ozcbm ceft snvugom pdyc elppeed nnqrp prwwf', 
+    'lhk xjonc muc tudag tsafx mmivb dvrjbp qgrew', 
+    'hnzer fbgqp aazta aazta lxaz lmgv aazta', 
+    'victgxu victgxu mlpd ummrnbx cazjgnw isxcyp efy zfa cyusj', 
+    'gyojxo onzq gyojxo uxufp awi ilhl wefwfxr gcjlt tmliynw uxufp pdcnxah', 
+    'wjwachn xkuhfbp oky oky ybaeqkr rbuix yreoaw wepmye brvon aasb', 
+    'kiidorw vxtxiqx wtqvbrv efdth isel qbom vcssyc vxtxiqx wtqvbrv riafzsw mqzsj', 
+    'eurpjd vkhdamt tmfx czeoot hiz ykz lmixzq tfur jhzr', 
+    'ipuftpj qbll sqkkdw fwncmiv bri oeeh lehd ioh wag', 
+    'suima nanngc imrmc krq atxdo woy atxdo akev qlr aezco qlr', 
+    'cfc efwbzck ozkmcxv moczkvx ccf', 
+    'bnekky iakrk sask uwgnjp iyi rynev bdnas ldh kass', 
+    'sicmw vvjbvv cap nsumc xgvrlm wsoo uoqdu psykckm', 
+    'ugg mtr wnzhmmh tjxc ehwnji lwhu mdsckk yvmk enubrqo', 
+    'grb oxmxz ohu ytetedv ssx apzlppg fdkamm sxofc jdt ynmu wyejok', 
+    'umoep rbyqm eqfk twqnog cptbbi dragna ngqs ffb cexxnc rbyqm', 
+    'utizi ormkel wvwur bdx ecelqbv xiccama aag glfvmj', 
+    'znb rsuqoa uxo svc', 
+    'obs lbifa cffi catpd', 
+    'qkxwian ajlzjz wewduzp bbyv qmt fsr qgiu epinp ghmf', 
+    'hatg bfgmb aght ghat', 
+    'kuq inp dun cknbun wmwsu drlmmg kyxc bdl', 
+    'bddybth swdbf jhi fva qpobio bjwm wjaztp jywi', 
+    'mgckz vhveu zkemhp zdf xtiqqew mlx wazgd', 
+    'umbjq pya lvvxf jeavij rhrxvew bwjqgpr piz', 
+    'xaycpwo vjcuc qksc yuixhni sfbfb dydyaq gdfvb tggg xidphvf bpjdrl goskxym', 
+    'agxfoip gguif wvo agxfoip ntkbaw fbyggy ooft zxih', 
+    'nzvsu ffwq uxvfbl qrql olhmhom qhdltg ymwz krtndtx olhmhom nfsv krtndtx', 
+    'qdp jqk ustz xjripzv mnk grnodk pjwdsj uug zqxjqj', 
+    'mufrcox zunisfs ocvcge acamm xua vor bsde kxr vor kxr orccxx', 
+    'ncycbp anvcxay bmm wndmeaw oso knmk mmb wamenwd kmkv ppdd', 
+    'motdcn xzagzwu vuzt utffrn yuqxzrh uvzt ujttq', 
+    'tauoqy coiy ybesz tauoqy wpmr trquyne ahxbj jzhems dsdy', 
+    'aczq ypw pgmzz srfn quatjgf', 
+    'cih ypapk bfxvr euvhkk gugru auhqui', 
+    'vyf pssgfvy dnhvbfl xpacme dnhvbfl mzdv iynq hcqu', 
+    'lbzvbu hhxiq hdfyiiz iyzihfd xhqih uzdqyxr', 
+    'iapbdll vdr cprmrkk vdr dfjqse mlry flpqk vdr', 
+    'grrfkq xcpxd grrfkq dxc bjpr prvwh swoc swoc', 
+    'bopo chvwuhf qhd ieesl xey ieesl fnjcbe', 
+    'kic fyq hsucnu agwyl pzzmd hqksh psw', 
+    'mxf uau iti lcoz lpg zbu ocre wqlocmh mxf nidqj lcoz', 
+    'bypmix ptzxgmf xmtzgpf hrvzzq', 
+    'lbfw zwusma lbfw tuyyy', 
+    'lrf uej unswvh obgsb npbl zajr kenea uej qnyjcu wzufim qpzkgya', 
+    'qcrxj llyu kligt hlm ehwtbx dda lgsvhdt xewfcv uikn', 
+    'nfzjx izqdbq mfbxs imiuc yqxb xlmvix izqdbq eflqfq wku omgtuu izqdbq', 
+    'lasdwg hiy btzt eefd eyoep icn nnmhg otml rek luixac nyzgn', 
+    'vekteds utsuxdx utsuxdx vekteds', 
+    'feyov qrij zbebwg ijrq seplram wttkwm zewbgb kzuhuh', 
+    'dmkgtv wohgqo ddtqmv zatahx mym hqowog tkmvdg', 
+    'vhha wjrmuyx kqh vyyrj xzchbi ejsdq orlxg vyyrj dlrc', 
+    'yetngqn zdtuqox hkarjei fqpsgh eaqwbg zsssog ghb gddqqzr hbg', 
+    'obldb zsrhz zxp uxphnev mwnbc pfjft fms xwslk vjm fxy', 
+    'nfij dbfykv ttq gyjgac igxuyqi gtiioqx ilhdex dbfykv uyp bdiwya gqf', 
+    'pffzruz vogfosh dcs wje', 
+    'pohhf fhpoh oon yyz', 
+    'xxuam afwm qxl lnt syyr bwxhhf sozauq shlhfmz kwnn milav ochq', 
+    'wefcqrt gejw cwerqtf fttf gjew', 
+    'jfsvnmr osca epwtle pgfif sxom', 
+    'exlfzmq nakp rgdnx rrcvth vhrrct aajjdrt ryyg dsozd jdqlqj pakn iruv', 
+    'rmcvo txszcs xxhyxz hbsozk wshkocf rmcvo rcbnt', 
+    'kitz yjgney yvkymef nauj hmllsgl kyhm kqr pzsu rcf pzsu qpte', 
+    'cdinpx bfur mkj naz ihkheyr nohhoe', 
+    'ylris xeqcgup wap bbfih tgfoj', 
+    'ina gnlnm zyeqhij cudfuf ipufae bvkdzni aat teqsg cudfuf bjokrbl teqsg', 
+    'aedx edax dnfwq qndwf', 
+    'rdngdy jde wvgkhto bdvngf mdup eskuvg ezli opibo mppoc mdup zrasc', 
+    'qcnc iaw grjfsxe gnf gnf', 
+    'zbjm snznt zelswrk gkhlnx dqxqn qqxnd dmro', 
+    'zisecvx ztezof uzbq otnrtj qsjzkwm ewvcp rlir bfghlq tgapdr qxmr', 
+    'ipnqj opjf vabyoe wkwnd', 
+    'wyf mfqxnrf apm snarf jqu aaghx pwecbv lvghayg', 
+    'acncv jmmbwlg oiphlm ifuo cvt', 
+    'pvmb egansnd zmh gcuzzci rrxpslv ubith', 
+    'uoleptg xbouzn xbmg cfh cpn wpqi xbouzn xtxis sxzpns', 
+    'rilybri kurbpq vfmjpck tjyogho hfyxad svfofx lfbbhxj khaerfs iqr', 
+    'seaebgz wlmtkre qguv qguv wlmtkre', 
+    'sgo edkxya zdqgwtt gxu nibuu rairqoq mzxli dci qsv', 
+    'tsol mdhzqr rmaqnru ggvcq arbwkn hlkcnj ljkcuof', 
+    'mmliphp ocup puoc eijjv', 
+    'gmajqpb ijki ijki kvz', 
+    'pmqss unhlpcj dlkll nuhlcjp expe tlurzmv nsy vlumtzr tgseozl', 
+    'gkvaoni hsba hsba viuedv phyoclp fdq phyoclp febld nqfs', 
+    'rxvdtw abn pntv qrqfzz slsvv abn lrxix mnu npot', 
+    'ghlfjp woy xwkbmv bkahpkj jve cncvk jvdype fwgvoju yrkwjp gwfvln mvkv', 
+    'kmluh mie bby fwer chsinb ojglqr nqk mie', 
+    'yzmiu igkgca ybnsqja jpfejtp yjddy xsosxfi ingx qwuhb emrkwpx idqjmmm', 
+    'btrllw mphm dkvo ewdl dchcul yah btrllw kmqi mtvgk wtb', 
+    'hxsgard yuikc lykt tdee adprp gpougod klnzk mzsmlb', 
+    'hdn znblw ifoblur bwzln dbv', 
+    'smofpbs vjuyiro llk lfzesga tybu tybu', 
+    'gffnpug xaup iqiyz fjkpnkz drrk fwyxw lwzfskz gslwpmv vjxylva tbkyo nib', 
+    'evydmb nhwuiiu fkerq nkgbuyy uclrs ydjgglh xhotwbm riirgzt', 
+    'bsub eavbt uvd dpzwyt rhn khrbptt xszckc djnfxju axofhat powmso nvdffrv', 
+    'xtuykl fjz mbikc xpnx hmey fjz fjz', 
+    'rkls nwdcsyx rkls rkls', 
+    'tygml untequ ybdfumz nqffbq uipc sove hfnqj', 
+    'ytecew vven koqn royynd qsn ksl qsn sdw', 
+    'hknlw qwho whoq oqwh', 
+    'lzmmtqu qvhyeo cnofuj utpwkjz gnirz yhhu aodbnd', 
+    'zsr axw kwtzcv tydzo kwtzcv lkxsm', 
+    'rbjtqe nihifd gvdxd bpxzy rxteky vgcgllv vbbua anygiup rqo', 
+    'dpd wblfwp wblfwp wblfwp ygahc tqjbaq', 
+    'gsw gsw pacgj xmrcz zmxhmch xmrcz', 
+    'pdq rhe xqmq lgpkhg fyffrot ovnqh wle', 
+    'tbjavke ypzzrj jizx gdxoh icjsat otfh fmygumv', 
+    'snch nxlgjgp jeyn sxoqfj jtage jtage iuice', 
+    'rtb coefuj grwg grwg rtb krhqnma vfhgbr', 
+    'vhegtl btorwxg szcev kbvkx itsk nlzpbed', 
+    'hiukrf ilzkm yllhh xsgwkdp zyy kjbv', 
+    'rfcg tdorci zcj wzftlv rfcg rfcg', 
+    'lgbc lzizat vsno pau nvv vsno bbr lzizat qhtb gwp', 
+    'sfwnio tcugjk bsfsz ykyfwg ibkap fsrvy mygk kzunawx zyhyh', 
+    'mpavlh qps bylh lttjkz rqabgk vewb bwev tlzkjt gzrbxga ktmso prpkj', 
+    'gpf ims ynh ffrs vpa iemp gofh cgbauje', 
+    'secys qks mcnfhwh drog kqs pajy zoltkw lfihnb myb ioxptu', 
+    'ytq nrta ouk ajqblf yuwwcd zdy blyoxbw dakk nvgi bzrhzaa', 
+    'nkoych sufiia xkdvw crtldee zycl qblab egqhr qblab', 
+    'nllno muxaf vds qjnitmw zkpj wskyhft kmqct xamuzpw qcai cdjtbt kaxv', 
+    'qzdytpe osr fuw osr qzdytpe whperd rydwdcl knoa', 
+    'zkdznhd peh duoygr zamrgl irnvj otpe pltpq jdkecg', 
+    'byzgw rece iigdug ehif tpgje', 
+    'ccnn foqdran gbctca tefdjxh ntcr rjciii xip xlss crl wvvhzqm twyohf', 
+    'dqyii milqqc qjgkojp qjgkojp ryde', 
+    'tdkyj tbrcud tsba vqtmb cjwxnf', 
+    'hqhmq wemvrce nagig pwnw nagig epg nagig vlsi', 
+    'tqgvw luoplw hccti npjm rytdruq cylrsun rytdruq vjsbjl rytdruq ppti', 
+    'itgt tuwc itgt rvp itgt tigns eipl ksmru', 
+    'pdw wdhtkn nbdbpn wff zhuuipg rvemv qxr', 
+    'qgkwdq cjilayh ymeks mrpuzai dwgs stfstgz ucvqhb yout oiq', 
+    'vpxik ypfr qytimvu qms oxbmw ppyfx', 
+    'fwwidn gdhd pyuexk snsz iwndfw', 
+    'lfcb sllxjna lfcb hpzahfg mmvgaa svny jhuzd', 
+    'unyg gicmzd fwc spkciy toyq wjupckd vzzx iuqgka ytqycb pxsufj', 
+    'goj tnrcml eyizngj txa xrkiw zvu igduz', 
+    'wek xrrlkna clyof rrlnxak', 
+    'cjm rmyuku vjom gtf', 
+    'buk cfae awstd dywgqp hxo wcxvf laihqw xdqfes wdbh qceh uzlwj', 
+    'sudguo dxwplto rlebdh bkamu dxwplto', 
+    'crwkyxm yuz kjtdhom crwkyxm', 
+    'trhc sduorxr aizfryh rsudxor gbyc', 
+    'pczkyl bptp qnn nxmpwsx udrg hhlb rubtrmx twzodlp xygnht', 
+    'jmqct cden yfajtkz fevcw sxonbxz sxonbxz qkzkm hhngr fbv', 
+    'sdsnm mwvicr wypfi cty ndbowr woiz mrauwzd qlno mwvicr', 
+    'vteyo fng lvr lxytn txpj milg', 
+    'wjx ahtmgo cgwcaj kaxae fhlvlqf', 
+    'ezj eetqhzu upwda iiefwlk vyvby', 
+    'imalvy yeghqe jwcu mvrod cwju', 
+    'bxnmsa yhfu npsdar tsbri hfuy sirbt oofxmy', 
+    'fkndt elbjtn vepqtxt elvpf fpelv bzkgag qttexpv prblwb', 
+    'rmq iqs yvprnyy iezqrzm wlqsrr', 
+    'yviovq lekxghj oey qwhzj lxknxw qiyovv ksnt jptz', 
+    'tyrg cifxt hugqf tyrg ffuiv jmax qyw fozfosq ffuiv', 
+    'nmg rsl jpzazd qbtlf yxqtsj czwmdfd bamge lbjdof uqy jssc', 
+    'cbx boozjip pwgvzlq rjz kxy kxy hszacok fvsq jhnir cnsba gafz', 
+    'sbcuxb wfur nnnfqjj fdwg huhe sbcuxb', 
+    'icwk qelbxs uevp qped zsnhh wpuok wddxsln ftnzupr ruxol cgxjb jbhh', 
+    'izcp htykj xxmndoq amnspe htykj', 
+    'vverol oixwlny vqd tvfzu henc gnyrwr', 
+    'ytxio etytsx choynep zqapo hfjit', 
+    'lkvgr oyzfa taiqr jok djatvy ckif tmdw oyzfa zroy', 
+    'jlgpyp kkqysg oqjki hjohoug hbhta muilz zft', 
+    'sumfyu wftcu bwwdcy lezimwa qwvxv zwh mqyv bmfot aii torcol rnt', 
+    'tpdj xrw ccsbnh fhptv fwkxjfm dmqaokd bjci', 
+    'zxi vmf vmf dpyg', 
+    'sfzxysw lcms bkojtv bkojtv', 
+    'opywo qll ipkitr mtwp tudrr svhyp huz bxsdpn xomfy', 
+    'gkod luo qrosbp orbd rpsjzyd rlh gdok tze', 
+    'nusiuq nusiuq zeys ahufexc', 
+    'veno jntg avtmtdn qojxru zegdcql odfcetz pgehau', 
+    'uqun vigjm ykac ozlelj danmji bibugox', 
+    'rpuozh ajwru rbvuevv uhzsq', 
+    'iawoe tyb aewio ymf byt inijv ctu fcys micsgzl pbby alt', 
+    'gktyxp ris mqpfm bkqsfl nrg idbbcxg jhcf', 
+    'qibt invvv qibt luitx rnm eby hrfbmwl wnap sgkzvb qlwc hrfbmwl', 
+    'jwkv qecsjbw lycgldd wjvk tjcp dycldgl pzrvr zrlcf kji', 
+    'nzsrmiq nmhse ilivrk kqv', 
+    'besmyzi imkgpt iekbjax abxeijk uvzs wwv', 
+    'jdocl uki ltswp tjkljc ymce iuepze qygqxzs tei lkry', 
+    'hhyfy gvzd mqksxlq czn afe mesnag eep frwgekg mqksxlq phpy', 
+    'ehg connnza ekt ddgokw', 
+    'mpbsoms uzhzl xevww ztt uzhzl', 
+    'lftybr firc awsud dsxdkk ltf ipjv dtx lcymth', 
+    'vkcpb gxtxq yioeq fexj xxgqt', 
+    'srvca fslnnvf nfmkpvt egw wemumq jie vznf dzsjw cukf kcvyir', 
+    'yxjkl lyjkx jyxlk kgc xtz', 
+    'tpoe xzov csp leleoqo noyre tdhf cyib sjgtdx raehdw nmcxp', 
+    'qvt uhznqe bpvos vtq ddlebtd tqv', 
+    'xlw utsxs gpia rvlvnts elkxr dddihy tnrslvv ibf wlx bxg', 
+    'cwqnnrt rkkqyf dye yde fzl pthanj', 
+    'boc rqjenpp xjqte jteqx pvoofc pidqe ruoucy gvnro ognrv', 
+    'qhalb gnazwc fhl iuti', 
+    'clnbjfo nnfs nnfs heymvr oarew oarew nxu', 
+    'lwtrotg hiaxwj ymzbly nvhzjhj zlsaheg nvhzjhj ymzbly', 
+    'rrvi tsjp tsjp tsjp killji', 
+    'rpx hiclj cmwq ibhj nfd', 
+    'pvwymn iebkd xmpw vuhhkap ksw zigzy mzzyyxy rmuh iwwhea cglfq', 
+    'rlwelgy sffml jin qsdzro xlsty mgqzuu etxjuo emzd jgnoyq tkjuy vfvb', 
+    'tkctdj hhkuc viskmy obw', 
+    'zvjkuj akeky ikj jqd hfhzbwe bkc', 
+    'btev nrdo hcyiuph stf qharfg vpmel mpfz nvs ytgbbc', 
+    'ieepn ndueuw svmdr tcvumw mceyrn mrjwhyl tbdj mgrgvz', 
+    'uxrs ckyi xpmqm czzrkl cjp', 
+    'nlliwd wrqkrkz yjmng nlliwd zirde hcjjn wco ysf mgl', 
+    'dxti lcahe ommare izlwf ramsfb nzgfvo ijvm fwymrdu bndq', 
+    'isxy jpvuzu tdduyhw dixp cfa fkzbteg ytoi kepk ysf yqcpi', 
+    'qmeprfj soqo ncgeor cqsuuj grzy wogxy vyblnbg slvtry vdols kka', 
+    'ltykfp gtzl olrp gxend vapee deq', 
+    'emywfbn dbfiut rkt wvwe dbfiut bwffhea yuzcxv gogpicp wvwe', 
+    'vqvmrp ofbk dlfabd jwllzxk obx vqpwjj umvng tqwis fstxy fstxy', 
+    'miha zgvyux rmraszo xwf', 
+    'kjaagk btm kjaagk wkewjrg kjaagk', 
+    'lbmli aizs omrdr gzktnx asiz ptanzpa xlo ljre ckyb wob', 
+    'svz dlk rijagg avxmg fkzwhk uro gegm', 
+    'dzplum temdw jqnm tvxcww bmg tftttpp deuw comxey xfimzjx caluczi nqn', 
+    'uwvhxa ztkd nlsdyt vihl julkwwv uzch dwakhs', 
+    'wkhuihh ycrc cxff vzcfhpp uegfd gaok kcnvz lhzogq lwa tyrypvu', 
+    'idp zmrrzp zmrrzp nktp xsnx rjsxn', 
+    'eybrnib ivgntl vaxsbpi eybrnib', 
+    'nzvnq xvbfa pbhwwh ylju runvsj imlx vztesn', 
+    'nfdohd nfdohd gtevnky pivjyct ihvd fzcsrq lko fmqk', 
+    'kwpkks ecikxu bcxswlt qvrxm sbcqmh', 
+    'kdjrmj piuh kdjrmj vnaf gyedkg vptxgm xezssxx zsg qjzpo zsg', 
+    'oqo sley aqx qmpqb fgmylbj egd zivj kepxizv kuakyn lunbnd', 
+    'hmcf hmcf xlhgc hmcf cdlm buofnx', 
+    'onjcj yluonz kzmk phqo phqo phqo', 
+    'ohaafy efl bnkkjww wwjnyoj dxeaig ywnjjwo slk hrbebw ohlyju elf', 
+    'msohiqz aunk njki bfktdgi htmyrj mgx', 
+    'numlzrl rmnlulz glb ltt fhbajz gqxpu', 
+    'gko hco oai ryq xwy sdqosft spjkiu cxfhg ycwpglh noy rah', 
+    'btzpjem brpk vqr atxu rhlh rqv jmg fvyus', 
+    'phmxxgj ejx xje qtk hsb kqt npwj gqt', 
+    'hujyjp nwmsd ant zipuya lrkahww uwqal vzlo qmbo twkjkse ufivi', 
+    'zfbnyz fwvh xrnrw usn zin daq iwjzj', 
+    'yykyg iwypfy hehqnl cjvk cevdrec', 
+    'gui muuto wsta glqmx gfo rdmbv mxwz gffzt eejpw gion', 
+    'lpng nduid iqbpu nduid knrqd', 
+    'xwxn oefpckv gjaua ugaaj gjuaa', 
+    'qxk aeql trqdmqc crzlinj crzlinj trqdmqc rijcne ewyf', 
+    'rfv qmbe fvr bmeq', 
+    'upqyfw lowzq wpen upqyfw gfskbil sljuzh wpen', 
+    'bdcara qyhx rtaez qyq gbyr', 
+    'evzls qxtxq clzd svbgqi zxlzgss vtrre fko eebo qjyl', 
+    'zaapeo kpwhz tygknau nyd pch trp xqe', 
+    'ypzcafg rnqmbh qtteg sncu ssojhhm zonfym thir xmgheb wqj gpjg ssojhhm', 
+    'wvcwyn xrf muozyya lasdp xpjgu kpqv zkiihiv ifje cbdlavg xbied hfnaa', 
+    'qqqb rettz rycukl ihpkhh', 
+    'dnxzxqv znb znb fbxj azxtezb xvxa', 
+    'peqkd xlzqkov esgnw ucku hrwpfxd xtd vnig vlmfp ajte qswr kqoj', 
+    'dpwy oavzkk dwyp ehij upqxgii pydw', 
+    'amfc hfv xmqa nqvn cal rqmcq oej amqx cla ntxj', 
+    'hqhhe qkbhwli wmhlcq xaczs peywuo', 
+    'vcr xfv xfv kymo qpszwzo xfv', 
+    'nmrbur tswo xbo ljlrzo bmhpgc pev zovkznz lok wbbhtkk', 
+    'tojj lxqgr rhjavrm ndsdup gdbjwaq cqpnl wfaxivl rfry ryfr udspnd', 
+    'beffod sknlph amb feobdf', 
+    'mldgn jxovw yuawcvz kzgzwht rxqhzev fsdnvu vluuo eycoh cugf qjugo', 
+    'tlnd qcxj ker fdir cgkpo nrqhyq raef uqadf iahy rxx', 
+    'mhvisju lhmdbs tcxied xeidtc ujry cditex gvqpqm', 
+    'cgc jazrp crgnna uvuokl uvuokl uoiwl sknmc sknmc', 
+    'rvbu czwpdit vmlihg spz lfaxxev zslfuto oog dvoksub'
+];
+
+    function solve(){
+        var not_valid = 0;
+        for(var i=0; i<puzzle.length; i++){
+            var besede = puzzle[i].split(' ');
+            for(var j=0; j<besede.length; j++){
+                for(var k=0; k<besede.length; k++){
+                    if(besede[j] == besede[k] && j!=k) { // prvi del naloge je samo tale if
+                        not_valid++;
+                        k=besede.length;
+                        j=besede.length;
+                    }
+                    else{
+                        var crke1 = besede[j].split('').sort();
+                        var crke2 = besede[k].split('').sort();
+                        if(crke1.length == crke2.length && k!=j){
+                            for(l=0; l<crke1.length; l++){
+                                if(crke1[l] !== crke2[l]) l= Infinity;
+                            }
+                            if(l == crke1.length){
+                                not_valid++;
+                                k = besede.length;
+                                j = besede.length;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        console.log(puzzle.length-not_valid);
+    }
+
+// DAY 5
+    var puzzle = '2, 2, 1, 2, -2, 2, 1, 1, -4, -2, 1, -3, -9, 2, 0, 1, -8, -9, -12, 2, -5, -8, 0, -11, -3, -1, 2, -20, -21, -18, -25, -25, -16, -18, -27, -25, -17, -13, -9, -35, -25, -1, -20, -22, -11, -3, -26, -32, -33, -21, -3, -42, -4, -48, -36, -15, -20, -29, -32, -12, -53, -32, 0, -4, -2, -32, -55, -49, -23, -18, -34, -39, -70, -4, -64, -58, -66, -59, 1, -36, -19, -38, -55, -25, -15, -65, -66, -65, -58, -53, -54, -18, -24, -79, -10, -73, -90, -11, -94, -79, -64, -74, -41, -85, -66, -38, -84, -46, -101, -38, -33, -107, -38, -70, -101, -7, -37, -94, 1, -69, -42, -71, -15, -36, -70, -76, -42, -118, -39, -97, -27, -30, -6, -70, -23, -113, -103, -89, -35, -43, -11, -97, -137, -19, -6, -21, -107, -93, -50, -107, -46, -90, -51, -115, -134, -122, -88, -122, -74, -30, -10, -53, -12, -152, -68, -110, -123, -111, -40, -164, -10, -168, -38, -71, -67, -171, -146, 1, -33, -13, -168, -106, -135, -145, -163, -125, -12, -156, -172, -69, 0, -15, -137, -1, -21, 0, -76, -48, -31, -86, -140, -9, -179, -45, -106, -85, -131, -180, -190, -3, -7, -89, -44, -106, -40, -171, -59, -214, -158, -160, -89, -59, -13, 0, -215, -110, -204, -39, -171, -44, -173, -112, -153, -155, -85, -113, -226, -74, -104, -152, -5, -187, -171, -12, -165, -190, -152, -49, -177, -179, -123, -158, -131, -244, -143, -127, -124, -125, -170, -211, -201, -97, -33, -47, -243, -136, -243, -89, -192, -217, -105, -116, -268, -40, -154, -262, -223, -96, -20, -66, -239, -42, -24, -112, -162, -227, -52, -81, -80, -3, -33, -152, -33, -168, -48, -245, -87, -74, -139, -295, -17, -73, -180, -48, -182, -162, -59, -296, -37, -241, -67, -83, -218, -124, -136, -303, -38, -85, -205, -137, -14, -248, -13, -212, -266, -304, -294, -54, -145, -22, -312, -298, -23, -5, -126, -307, -190, -294, -43, -293, -339, -129, -223, -231, -59, -104, -60, -239, -11, -291, -242, -115, -117, -89, -7, -57, -280, -70, -70, -6, -35, -124, -253, -120, -322, -45, -187, -288, -237, -76, -192, -179, -269, -14, -269, -227, -374, -84, -15, -144, -266, -256, -162, -336, -266, -31, -367, -172, -156, -157, -220, -189, -152, -336, -253, -36, -324, -222, -175, -313, -289, -65, -123, -229, -204, -44, -72, -20, -78, -43, -226, -93, -399, -10, -150, -153, -221, -7, -302, -237, -288, -172, -233, -119, -247, -33, -170, -46, -424, -403, -40, -65, -116, -372, -148, -336, -287, -431, -134, -354, -14, -162, -228, -152, -119, -240, -356, -305, -15, -77, -303, -189, -205, -380, -175, -316, -396, -44, -42, -142, -363, -418, -313, -322, -307, -363, -454, -157, -308, -361, -398, -347, -249, -57, -453, -167, -194, -29, -443, -45, -359, -445, -89, -136, -60, -446, -97, -282, -298, -245, -91, -130, -423, -387, -492, -282, -415, -64, -294, -468, -251, -323, -210, -490, -142, -121, -393, -251, -265, -268, -135, -224, -116, -7, -27, -165, -265, -352, -226, -25, -327, -490, -493, -80, -501, -522, -436, -36, -464, -47, -349, -91, -460, -167, -436, -207, -41, -386, -461, -430, -412, -161, -460, -488, -207, -221, -17, -265, -115, -36, -499, -111, -518, -390, -526, -280, -150, -405, -458, -503, -527, -303, -383, -154, -317, -64, -379, -564, -385, -490, -524, -440, -69, -317, -377, -53, -503, -136, -71, -190, -19, -238, -572, -281, -294, -538, -146, -130, -406, -236, -223, -234, -16, -436, -391, -249, -508, -153, -41, -380, -229, -489, -466, -94, -596, -96, -544, -532, -106, -349, -34, -162, -6, -495, -287, -82, -307, -466, -358, -272, -282, -220, -84, -168, -124, -271, -307, -164, -627, -442, -348, -368, -548, -574, -248, -144, -516, -369, -319, -215, -476, -191, -326, -462, -286, -565, -395, -190, -353, -180, -88, -403, -520, -203, -268, -198, -374, -636, -565, -76, -447, -118, -658, -311, -468, -214, -215, -68, -370, -179, -286, -394, -532, -493, -339, -471, -344, -274, -512, -90, -306, -222, -348, -331, -670, -73, -136, -358, -518, -521, -41, -204, -476, -582, -633, -44, -133, -410, -658, -443, -158, -76, -162, -509, -150, -304, -407, -210, -667, -279, -109, -469, -680, -702, -101, -159, -197, -134, -154, -270, -90, -568, -237, -95, -328, -23, -493, -310, -649, -283, -31, -234, -126, -244, -312, -409, -84, -522, -72, -458, -190, -707, -338, -433, -709, -81, -693, -367, -302, -260, -322, -282, -379, -401, -60, -126, -645, -573, -91, -685, -312, -165, -217, -594, -386, -357, -72, -426, -354, -246, -278, -451, -37, -484, -232, -638, -569, -376, -278, -554, -666, -191, -513, -564, -502, -640, -531, -1, -667, -146, -20, -375, -771, -263, -754, -182, -190, -626, -249, -418, -278, -722, -676, -161, -666, -462, -488, -70, -569, -779, -642, -121, -556, -146, -531, -323, -116, -100, -76, -260, -339, -743, -44, -811, -137, -456, -462, -469, -500, -650, -681, -424, -336, -445, -172, -604, -776, -133, -829, -72, -88, -219, -247, -269, -205, -532, -222, -232, -201, -762, -105, -478, -263, -177, -475, -584, -439, -316, -722, -371, -35, -132, -417, -385, -695, -76, -452, -201, -848, -359, -731, -721, -211, -698, -502, -113, -271, -31, -66, -588, -794, -189, -417, -715, -96, -95, -691, -587, -193, -788, -445, -761, -347, -696, -34, -14, -358, -633, -152, -140, -371, -795, -500, -477, -617, -83, -462, -338, -167, -345, -99, -806, -798, -447, -338, -263, -76, -382, -913, -577, -657, -69, -344, -853, -679, -204, -560, -238, -455, 1, -1, -163, -536, -344, -386, -600, -915, -245, -717, -914, -192, -931, -31, -230, -42, -531, -122, -66, -347, -476, -3, -506, -396, -839, -365, -12, -453, -247, -448, -369, -661, -451, -175, -64, -805, -63, -597, -451, -350, -77, -958, -525, -194, -116, -398, -100, -687, -758, -162, -424, -920, -162, -577, -549, -250, -594, -853, -44, -34, -882, -656, -358, -425, -592, -257, -963, -295, -561, -970, -885, -968, -112, -111, -734, -375, -825, -462, -333, -154, -490, -1004, -391, -925, -175, -299, -985, -432, -165, -721, -289, -817, -393, -831, -697, -599, -145, -977, -550, -577, -249, -743, -711, -4, -442, -252, -897, -130, -528, -906, -809, -228, -548, -695, -912, -676, -936, -209, -312, -951, -671, -898, -205, -730, -873, -798, -943';
+    
+    puzzle = puzzle.split(', ');
+    console.log(puzzle);
+    for(var j=0; j<puzzle.length; j++){
+        puzzle[j] = puzzle[j] * 1;
+    }
+    console.log(puzzle);
+    
+    /* 1. HALF
+    var i=0, stevec=0, trenutno_mesto=0;
+    while(i>=0 && i<puzzle.length){
+        stevec++;
+        
+        trenutno_mesto = i;
+        i += puzzle[i];
+        puzzle[trenutno_mesto]++;
+    }
+    
+    /// DAY 5 - 2. HALF
+    var i=0, stevec=0, trenutno_mesto=0;
+    while(i>=0 && i<puzzle.length){
+        stevec++;
+        
+        trenutno_mesto = i;
+        i += puzzle[i];
+        if(puzzle[trenutno_mesto] >= 3) puzzle[trenutno_mesto]--;
+        else puzzle[trenutno_mesto]++;
+    }
+
+// DAY 6
+    var puzzle = [10, 3, 15, 10, 5, 15, 5, 15, 9, 2, 5, 8, 5, 2, 3, 6];
+    
+    var situacije = [];
+    situacije.push(puzzle.slice());
+    var najvecja = 0;
+    var index = 0;
+    var infiniti_loop = false;
+    var stevec_korakov = 0;
+    var stevec = 0;
+    
+    
+    function basic(){
+        while(!infiniti_loop && stevec_korakov < 50000){
+            najvecja = 0;
+            for(var i=0; i<puzzle.length; i++) if(puzzle[i] > najvecja) najvecja = puzzle[i];
+            index = puzzle.indexOf(najvecja);
+            puzzle[index] = 0;
+            for(stevec = najvecja; stevec>0; stevec--){
+                var nov_index = index+(najvecja-stevec+1);
+                if(nov_index >= puzzle.length) nov_index -= puzzle.length;
+
+                puzzle[nov_index]++;
+            }
+            for(var j=0; j<situacije.length; j++){
+                for(var k=0; k<puzzle.length; k++){
+                    if(situacije[j][k] == puzzle[k] && k==puzzle.length-1) infiniti_loop = true;
+                    else{
+                        k=puzzle.length;
+                    }
+                }
+            }
+            situacije.push(puzzle.slice());
+            stevec_korakov++;
+        }
+        console.log(stevec_korakov);
+    }
+    
+    basic();
+
+
+// DAY 10 HASH
+    
+    // 1. HALF
+    var puzzle = [106,16,254,226,55,2,1,166,177,247,93,0,255,228,60,36];
+    var list = [];
+    var index = 0;
+    var skip = 0;
+    
+    function solve(){
+        for(var i=0; i<256; i++) list.push(i);
+        for(var i=0; i<puzzle.length; i++){
+            var sub_list = [];
+            for(var j=0; j<puzzle[i]; j++){
+                var sub_index = index + j;
+                if(sub_index >= list.length) sub_index -= list.length;
+                sub_list.push(list[sub_index]);
+            }
+            sub_list.reverse();
+            for(var k=0; k<sub_list.length; k++){
+                var sub_index = index+k;
+                if(sub_index >= list.length) sub_index -= list.length;
+                list[sub_index] = sub_list[k];
+            }
+            index += puzzle[i] + skip;
+            if(index >= list.length) index -= list.length;
+            skip++;
+        }
+        document.getElementById('html').innerHTML = list[0]*list[1];
+    }
+    solve();
+    
+    // 2. HALF Knot Hash
+    
+    function knot_hash(input){
+        var puzzle = input.split('');
+        for(var i=0; i<puzzle.length; i++) puzzle[i] = puzzle[i].charCodeAt();
+        puzzle.push(17, 31, 73, 47, 23);
+        
+        var list = [];
+        var index = 0;
+        var skip = 0;
+
+        function solve(){
+            for(var i=0; i<256; i++) list.push(i);
+            
+            for(var n=0; n<64; n++){
+                for(var i=0; i<puzzle.length; i++){
+                    var sub_list = [];
+                    for(var j=0; j<puzzle[i]; j++){
+                        var sub_index = index + j;
+                        if(sub_index >= list.length) sub_index = sub_index%list.length;
+                        sub_list.push(list[sub_index]);
+                    }
+                    sub_list.reverse();
+                    for(var k=0; k<sub_list.length; k++){
+                        var sub_index = index+k;
+                        if(sub_index >= list.length) sub_index = sub_index%list.length;
+                        list[sub_index] = sub_list[k];
+                    }
+                    index += puzzle[i] + skip;
+                    if(index >= list.length) index  = index%list.length;
+                    skip++;
+                }
+            }
+            
+            var hash = [];
+            for(var m=0; m<list.length; m+=16){
+                hash.push(
+                    (list[m] ^ list[m+1] ^ list[m+2] ^ list[m+3] ^ list[m+4] ^ list[m+5] ^ list[m+6] ^ list[m+7] 
+                     ^ list[m+8] ^ list[m+9] ^ list[m+10] ^ list[m+11] ^ list[m+12] ^ list[m+13] ^ list[m+14] ^ list[m+15])
+                );
+            }
+            for(var m=0; m<hash.length; m++) {
+                hash[m] = hash[m].toString(16);
+                if(hash[m].length == 1) hash[m] = '0'+hash[m];
+            }
+            hash = hash.join('');
+            return hash;
+        }
+        return solve();
+    }
+    
+    document.getElementById('html').innerHTML += knot_hash('1') + '<br>';
+    document.getElementById('html').innerHTML += knot_hash('2') + '<br>';
+    document.getElementById('html').innerHTML += knot_hash('3') + '<br>';
+    document.getElementById('html').innerHTML += knot_hash('4') + '<br>';
+    
+    // Day 8
+    function solve(){
+    var puzzle = 'q inc -541 if c != 4***s inc -555 if o > -5***px dec -84 if x >= -4***y dec -822 if txk > -1***wdc inc -731 if tup < -5***ug dec -943 if s != -551***rz inc 468 if j > 1***rz dec 628 if j >= -3***zeq inc -801 if gr >= 7***jb dec 592 if px > 80***q inc -151 if rz <= -628***l dec -423 if b <= 7***vhu inc 904 if q >= -700***b dec 438 if kyh == 0***o inc 491 if vhu < 908***l inc 761 if tup >= 8***kq inc -790 if kyh > -9***tup dec 171 if vhu != 909***y dec 473 if px != 81***kq inc 689 if jb < -590***vhu inc -802 if o > 488***jb inc 165 if l >= 418***kps inc 49 if s >= -564***kps dec 508 if ug == 943***txk dec 352 if djl > -2***axi dec -4 if y <= 347***rz inc -40 if x <= -4***xhe inc -538 if l < 428***l dec 396 if kq < -97***djl inc -462 if rz < -619***xhe dec -173 if vhu > 98***ug dec 227 if jb < -417***x dec 754 if q == -692***kps inc 671 if gr < 10***ug inc 722 if o > 490***o inc 743 if s == -562***rz inc -427 if mp >= -2***s dec -630 if j < 0***vhu inc -413 if kyh > -8***kyh dec -389 if djl != -458***wdc inc 593 if ug >= 1432***o inc 988 if kq != -101***b inc -550 if c > -5***c inc -390 if q != -701***axi inc 450 if wdc <= 586***xhe dec 840 if kyh > 385***mp inc -789 if vhu > -313***wdc dec -387 if j <= 1***kps dec 625 if wdc != 980***q inc 40 if b <= -979***gr inc 164 if b > -982***ug inc 124 if kyh == 389***rz inc -893 if axi != 8***b dec 428 if x <= -757***vhu dec -205 if o != 500***ug inc -375 if q < -644***djl inc -954 if jb >= -434***px inc 170 if kyh <= 396***jb dec -844 if mp > -796***px dec -473 if c != -390***rz dec 480 if x > -759***kyh inc -698 if l <= 32***q dec -185 if x <= -753***c dec -765 if kps > 210***mp dec 207 if l < 28***l inc -870 if kyh <= -309***kyh inc -323 if s <= -559***x dec 805 if axi == 0***q inc 376 if kq == -101***x inc 550 if s < -550***x dec 647 if kps == 212***zeq inc -839 if rz >= -2436***djl dec -759 if l > -850***tup inc -551 if o > 481***vhu inc 12 if kq != -101***kq dec -953 if px == 254***c inc 523 if djl >= -657***kyh dec -524 if c == 898***tup dec 478 if px == 254***xhe inc 301 if q == -91***kyh dec -638 if y == 350***l inc -412 if rz <= -2421***ug dec 548 if kps > 207***djl dec -830 if mp <= -997***tup inc 367 if gr <= 0***ug dec 997 if tup < -824***mp dec -253 if txk >= -356***kq inc 204 if jb >= 415***px inc 567 if jb < 410***kps dec 306 if txk == -353***kps dec -171 if kyh > 222***djl inc -833 if xhe <= -902***kyh dec 648 if vhu >= -114***djl inc -903 if kq < 1051***kps inc -940 if djl < -1489***y dec -408 if j <= -10***mp dec -886 if o == 491***rz inc 571 if l >= -1246***s dec -178 if kq < 1062***kq dec 718 if jb < 421***axi dec 587 if kps <= -721***jb inc -879 if j != 0***tup dec 632 if zeq > -843***tup dec -673 if s != -378***kq dec -88 if vhu > -114***jb dec 74 if o <= 492***ug inc -716 if s <= -387***rz inc 265 if zeq > -842***axi inc -995 if l != -1246***px inc 481 if gr <= -1***x dec -811 if axi < -1590***y inc 375 if s != -386***wdc dec -484 if tup < -790***c inc -335 if xhe == -908***c inc -80 if px == 254***c inc 263 if kq == 426***gr inc 259 if kq > 429***tup dec -749 if txk == -356***jb inc 399 if wdc >= 1455***mp inc -334 if axi <= -1577***b inc 442 if zeq <= -836***px inc -890 if xhe >= -912***zeq inc -41 if o != 488***ug dec 781 if x >= -1654***wdc dec 246 if px > -645***gr dec -707 if djl <= -1482***wdc dec -90 if y <= 730***y inc 674 if o != 491***j dec -911 if vhu <= -102***jb dec 575 if y == 724***rz dec -10 if c <= 1088***axi dec 272 if axi != -1586***gr dec -678 if s != -377***kyh inc -768 if gr == 707***s inc 499 if mp > -195***zeq inc 574 if wdc <= 1317***axi dec -339 if x != -1647***o dec -884 if xhe >= -905***mp inc 718 if c >= 1073***l inc 101 if px == -636***djl dec -7 if y != 723***wdc dec 997 if b != -537***gr dec -155 if jb >= 176***tup dec -403 if kyh < -1201***kps dec -240 if djl <= -1480***c dec -786 if mp > 525***px inc -452 if ug >= -365***x inc -527 if vhu >= -113***zeq inc 524 if b != -552***djl inc -429 if mp != 528***c dec -667 if o >= 1368***o inc 724 if x >= -2185***gr dec 568 if kyh < -1195***axi inc -571 if j <= 904***px inc 423 if b >= -547***txk inc -561 if q <= -87***tup dec 382 if kps < -487***gr dec 18 if px > -674***xhe dec -981 if y > 721***tup dec -68 if txk > -908***q inc 583 if axi < -1508***gr dec -404 if s != 122***ug inc 743 if c == 2534***xhe inc 985 if c <= 2537***axi dec -258 if b != -538***o dec 994 if gr >= 113***vhu inc -278 if tup != -1181***djl inc 489 if djl == -1912***axi dec 580 if kps <= -490***ug dec -803 if xhe >= 1055***kps inc 156 if mp != 526***zeq inc 214 if mp >= 518***vhu inc 830 if mp < 536***b dec 249 if b > -549***o inc -626 if rz == -2153***jb dec -220 if x > -2193***djl dec -546 if j >= 902***px dec 964 if px >= -669***tup dec -719 if kps > -326***gr inc -555 if s >= 132***j dec -922 if o >= 485***j dec -112 if q != 482***tup inc -463 if s <= 118***jb dec -195 if o >= 472***x dec -973 if gr == 121***x inc 253 if axi == -1247***o inc 818 if wdc == 311***gr dec 687 if tup != -1171***s inc -869 if vhu <= 450***vhu dec 288 if l < -1149***rz dec 703 if xhe != 1067***rz dec 700 if o >= 1293***txk inc -983 if zeq >= 440***kq inc -364 if q != 492***kq inc 789 if x == -1201***px dec 560 if x <= -1208***wdc inc 562 if s == -741***j inc -665 if kyh != -1198***s inc 332 if kps >= -333***mp dec 411 if rz < -3552***axi dec 504 if wdc != 311***kps dec 56 if ug > 1182***jb inc 497 if px > -2191***axi dec -364 if q < 501***kq dec -308 if x < -1211***zeq dec 304 if q >= 489***kyh dec -957 if x >= -1211***tup dec -670 if l > -1145***jb dec -166 if o <= 1297***l dec -900 if s <= -406***txk inc 917 if px >= -2182***rz inc 426 if y == 724***kyh inc -993 if j > 353***y dec -513 if kq != 425***zeq inc 329 if l >= -251***kps dec 460 if mp < 121***wdc dec 492 if xhe != 1062***djl dec -945 if gr <= -560***px inc 368 if wdc == 311***zeq inc 250 if y != 1247***wdc dec 182 if y < 1237***txk dec 577 if rz <= -3128***b inc -252 if l < -247***j dec 173 if px == -1821***djl inc -858 if px == -1821***mp dec 609 if wdc != 321***wdc inc -723 if kyh != -1230***kyh dec -172 if kyh < -1229***wdc dec -702 if ug < 1187***px inc -276 if jb <= 1245***l dec -208 if txk > -1483***y dec 319 if kps < -850***kyh inc -597 if kps != -848***c dec 161 if tup == -1170***kps inc 320 if o <= 1302***rz inc 972 if px == -2097***kyh dec 483 if rz >= -2165***kps dec -845 if q <= 494***kyh dec 268 if o == 1301***jb dec 835 if ug >= 1192***kq inc 93 if vhu != 158***vhu inc -693 if q != 490***x dec -75 if txk <= -1484***jb dec 419 if jb >= 1243***b dec -84 if x >= -1137***xhe inc -156 if kq <= 424***s dec 653 if o >= 1297***kyh inc 880 if c >= 2530***wdc inc 295 if xhe > 1061***y dec 140 if xhe != 1062***txk dec 28 if wdc == -117***kps dec 640 if rz >= -2166***x dec 369 if y > 1232***kps inc 232 if l >= -255***b dec 89 if gr < -566***wdc inc -217 if b <= -954***vhu inc -29 if zeq <= 385***kyh inc 861 if zeq <= 370***rz inc 425 if jb == 826***ug inc -857 if ug >= 1189***mp inc -418 if x != -1505***jb dec -815 if kq == 426***ug inc -584 if xhe >= 1055***kyh dec 216 if y <= 1240***txk inc 106 if s <= -1064***gr inc -775 if xhe > 1063***o inc 647 if l == -254***djl inc -461 if kq == 426***s dec 962 if x >= -1512***s dec -721 if y < 1230***rz dec 289 if vhu == -567***kq inc 651 if kq < 432***px inc 371 if vhu <= -564***axi dec -325 if kq > 1071***b inc -971 if s != -2030***c dec -526 if zeq >= 380***zeq dec 239 if jb <= 1643***kq inc -757 if kps != -87***q dec 436 if y < 1241***kq dec -557 if kps < -81***s dec 115 if y >= 1236***s inc -134 if c < 2543***q inc -304 if txk <= -1407***xhe dec 975 if rz == -1733***tup dec 814 if rz >= -1742***l inc 969 if ug == 604***vhu dec 625 if wdc < -333***xhe inc -406 if zeq != 136***xhe inc 448 if jb >= 1640***c dec -894 if q > -249***b dec -778 if axi == -568***zeq inc 966 if o <= 1953***zeq dec 148 if wdc <= -334***mp inc 812 if zeq <= 958***zeq inc -295 if kyh != -878***j dec -719 if axi >= -574***tup inc -59 if c > 3425***txk inc 538 if jb == 1641***zeq dec 854 if jb <= 1644***mp dec 735 if o <= 1949***axi dec 750 if c >= 3421***gr dec 633 if axi >= -1321***x dec 626 if mp >= -827***xhe inc 138 if txk <= -872***axi inc -838 if txk < -866***px inc 571 if tup >= -2045***jb dec 793 if px >= -1730***l inc -759 if zeq == -202***kyh inc -923 if kq <= 881***tup dec 903 if b <= -181***o dec -958 if l != 707***xhe inc 814 if x == -1504***o inc 454 if o != 2906***djl inc 469 if jb == 848***mp dec -114 if q != -240***y dec -393 if djl < -776***ug inc -365 if mp > -713***tup dec -254 if gr == -1199***rz dec 587 if gr > -1203***px dec -611 if b > -191***txk inc -488 if kyh <= -1800***axi dec 834 if c <= 3437***tup inc -946 if gr <= -1199***x inc -225 if wdc < -342***j inc 526 if s < -2273***ug dec -654 if c != 3427***mp dec -521 if s <= -2274***vhu dec -319 if txk >= -1352***c inc 615 if gr > -1203***vhu inc -464 if zeq == -192***ug inc 469 if txk > -1367***l dec 541 if px >= -1106***s dec 632 if s <= -2282***djl dec 289 if q <= -245***xhe dec -816 if b >= -189***kps dec -166 if rz != -2326***txk inc -207 if txk == -1362***o inc -566 if kq < 879***ug dec 662 if kyh == -1807***s inc -147 if vhu != -1653***djl dec -675 if mp >= -200***c inc 734 if zeq < -191***y dec 440 if x < -1503***tup dec 267 if zeq == -192***o dec 971 if tup == -3909***c dec -880 if x > -1510***o dec 75 if s == -2279***jb dec 956 if c < 5659***txk dec -95 if c > 5655***wdc inc -521 if jb > -113***djl dec -798 if xhe <= 1901***vhu inc 711 if jb <= -104***jb dec -44 if tup < -3906***kyh inc 57 if wdc != -860***jb dec -817 if xhe <= 1902***x inc 91 if rz <= -2313***txk dec -604 if kps != 69***vhu inc -714 if xhe != 1894***txk inc 590 if rz <= -2318***tup dec -557 if vhu > -1649***wdc inc 621 if c == 5657***q inc -39 if ug <= 1067***s inc 947 if jb > 752***rz inc 974 if xhe != 1902***kq dec 787 if tup < -3913***px dec 41 if djl != 399***q dec 618 if kyh >= -1758***kq inc -265 if xhe != 1906***kps dec 748 if zeq >= -188***s dec 78 if q != -908***c inc 10 if px >= -1160***j inc 526 if djl < 411***s dec -329 if vhu == -1653***l inc 922 if px < -1149***y dec 546 if o >= 1738***tup dec 505 if rz >= -1347***zeq dec 983 if px < -1149***j inc -997 if txk < -275***rz inc 216 if xhe >= 1890***jb inc -616 if vhu >= -1664***kps dec 357 if wdc == -234***jb inc 241 if zeq >= -1184***djl dec -907 if kps < -285***xhe dec 699 if y < 650***x inc 319 if tup <= -4415***l dec -715 if x != -1419***tup dec -13 if rz > -1133***vhu dec -127 if mp > -209***kps inc 907 if mp < -196***kyh dec -953 if vhu >= -1530***gr dec 47 if mp >= -196***wdc dec 462 if px != -1164***wdc dec 441 if zeq > -1184***s dec 846 if ug > 1057***djl inc 418 if s >= -2260***tup inc -428 if ug == 1065***djl inc -471 if ug >= 1065***x dec 580 if tup < -4825***o dec 825 if kps < 619***s inc -901 if tup <= -4823***c dec -641 if xhe >= 1200***j inc -966 if gr > -1205***px dec 141 if zeq < -1173***kyh inc -244 if gr < -1192***j inc 759 if zeq < -1166***xhe dec -129 if axi >= -2999***gr inc 567 if axi == -2990***x inc 856 if axi <= -2993***kq dec -151 if djl < 351***kps dec -397 if q != -907***axi inc -714 if jb > 370***y inc -630 if tup > -4834***o dec 610 if y <= 16***ug inc -172 if jb > 380***gr dec -531 if s == -3157***s dec -860 if o > 1126***djl inc 584 if j >= 745***tup inc 861 if c < 5677***axi inc 562 if px < -1290***axi inc 55 if txk > -271***djl inc -747 if gr < -100***ug inc 601 if q > -896***x inc -77 if b < -175***l dec 448 if txk > -289***gr inc 469 if axi <= -3135***jb inc -627 if q < -913***s dec 830 if kps > 1020***l dec -386 if j <= 760***c dec -119 if axi != -3149***djl inc 960 if x == -2070***kq dec 326 if mp != -197***s inc -453 if y == 17***gr inc 386 if j == 752***q inc -147 if ug == 1065***s dec 657 if px <= -1303***b dec 810 if c < 5781***b inc -918 if q < -1051***zeq inc 342 if px > -1300***o inc 54 if kps >= 1018***j inc 239 if zeq <= -827***ug dec 428 if y < 23***ug inc -433 if mp <= -203***jb inc -356 if txk <= -286***ug dec -760 if j <= 989***djl inc -770 if axi >= -3142***wdc inc -880 if wdc != -1140***b dec -461 if o != 1184***mp inc 319 if px >= -1301***txk dec -110 if o <= 1196***s dec -752 if wdc < -2007***vhu dec 278 if zeq <= -825***px dec -505 if b == -642***ug dec -184 if kq > 430***kyh dec 507 if kps <= 1024***l inc -115 if kq > 445***q inc -359 if s > -2375***kq dec -35 if o >= 1193***l dec -610 if vhu <= -1810***xhe dec 124 if x <= -2064***txk inc 167 if ug <= 828***y inc 684 if q > -1058***xhe dec 706 if c > 5777***vhu inc -533 if rz > -1137***ug inc 140 if s >= -2379***kyh dec -93 if l <= 2294***jb inc -112 if axi < -3139***ug dec 987 if x < -2060***zeq dec 828 if axi > -3146***jb dec -573 if ug >= -31***gr inc -56 if o != 1190***txk dec 752 if xhe > 494***c dec 616 if l != 2289***tup inc 474 if tup < -3961***l dec -950 if mp != 125***zeq inc 516 if j == 991***l inc 313 if x >= -2071***rz inc 545 if djl > 370***txk inc 268 if o <= 1190***kq dec -484 if vhu >= -2330***s dec 241 if kq > 442***xhe inc -956 if kyh != -1456***mp dec 315 if mp == 120***wdc dec 925 if vhu >= -2345***y dec -789 if vhu < -2336***tup dec 281 if j != 990***s dec 899 if vhu == -2340***c dec 308 if j < 999***l inc 982 if s == -3274***axi inc 374 if gr >= 692***vhu dec 586 if kyh > -1465***mp dec 73 if xhe <= -457***o inc -210 if zeq >= -1154***vhu inc -484 if txk == -487***rz inc -481 if gr >= 689***q inc 882 if djl < 379***s inc -771 if xhe > -466***zeq inc 804 if c < 4871***djl inc -899 if kq <= 441***axi inc -29 if ug == -26***jb inc -562 if txk != -495***j inc 921 if q <= -168***s inc -148 if y != 1478***j inc -277 if xhe >= -468***txk dec 210 if jb != 277***zeq dec -86 if vhu > -3419***ug inc -330 if x <= -2062***xhe dec -893 if c != 4859***gr dec -290 if j == 1635***zeq dec -98 if b < -647***kps inc 954 if ug >= -357***wdc dec -497 if o != 974***q dec -882 if o > 969***axi inc -65 if kq <= 446***wdc inc -492 if wdc > -2455***vhu inc 704 if gr > 987***x dec 672 if j > 1626***kyh inc -785 if jb == 268***ug dec 0 if djl < -514***jb inc -706 if txk >= -487***mp inc -786 if y > 1485***px dec -734 if j == 1635***jb dec 43 if c <= 4869***rz inc -239 if tup <= -3775***kyh dec -694 if djl != -531***l dec -520 if txk <= -483***q dec 499 if jb > -474***l dec -452 if c > 4858***b dec -583 if axi > -2867***txk inc 556 if s != -4193***j inc 590 if c == 4860***y dec -309 if q >= 204***xhe inc 9 if s < -4197***xhe inc 92 if y == 1796***gr dec 184 if rz == -1304***jb inc 213 if zeq != -251***xhe dec -784 if q < 217***q inc -117 if xhe <= 1312***axi dec 140 if c <= 4870***gr inc 915 if ug <= -351***px dec -135 if djl > -523***rz inc 475 if kyh <= -756***mp inc 216 if jb < -249***q dec 337 if wdc > -2938***wdc inc 288 if kyh <= -757***jb inc -395 if ug == -356***c dec 747 if rz < -827***jb inc 930 if px > -60***tup inc -581 if jb > 285***px inc 340 if djl < -525***kps inc 973 if q < -243***vhu dec 753 if xhe <= 1313***o dec -284 if s >= -4199***xhe dec 196 if q == -241***l inc 818 if x == -2742***txk inc 917 if rz != -837***kps dec 247 if ug >= -361***zeq inc -944 if txk >= 431***axi dec 700 if j <= 1643***x inc 958 if x >= -2751***axi dec 413 if tup >= -3782***y dec -569 if x == -1784***mp inc 838 if q <= -237***jb inc -736 if wdc < -2645***q inc -755 if s <= -4189***gr dec 489 if tup < -3774***s inc 185 if tup < -3783***y dec 708 if l != 6327***kyh dec 738 if zeq < -253***wdc dec 483 if c != 4110***q inc -994 if txk < 421***px dec 942 if tup >= -3779***s dec 740 if djl > -527***q dec 924 if y >= 1655***vhu dec -383 if xhe == 1114***b dec -285 if kyh != -1499***zeq inc -594 if ug < -351***mp dec 349 if kps < 1733***gr inc -329 if gr < 1416***ug inc -423 if l > 6323***s inc 681 if jb > -470***o inc 802 if s <= -4258***kyh inc 979 if kps <= 1738***kq dec -48 if mp < -348***kyh dec 602 if b <= -58***zeq dec -844 if wdc != -3141***gr inc -725 if zeq < -4***px dec -295 if px >= -1005***kq inc -756 if s >= -4259***jb inc 775 if tup >= -3777***axi inc 181 if zeq != -6***txk dec 397 if c <= 4123***gr inc 518 if s >= -4246***rz dec 497 if c != 4107***l dec -579 if wdc == -3132***zeq inc 56 if kq < -269***wdc dec -268 if l <= 6906***zeq dec 241 if c >= 4106***djl dec 866 if j < 1629***txk dec 546 if vhu >= -3081***kyh inc -667 if xhe < 1122***o dec 759 if o == 1262***vhu inc -288 if rz != -1324***rz inc 355 if djl < -521***x inc 126 if rz == -972***djl dec 845 if l == 6904***vhu inc 551 if mp == -349***o dec -327 if axi == -3934***s inc 121 if mp < -349***djl inc 87 if q == -1920***zeq dec -157 if x != -1659***c dec -953 if j > 1635***ug inc -247 if mp >= -351***q dec 408 if l < 6914***rz dec 610 if axi >= -3936***jb dec 90 if kq <= -270***o dec -899 if ug > -1027***c dec 985 if j <= 1638***vhu dec 684 if c != 3130***s dec -392 if axi == -3934***tup inc 528 if kps != 1724***kyh dec 200 if j != 1635***gr dec -288 if wdc != -2865***j inc 253 if b > -64***c inc 102 if zeq < -26***q dec 415 if q >= -2336***l dec -913 if tup >= -3251***c inc 678 if px <= -705***b inc -887 if wdc != -2864***gr dec -710 if axi >= -3936***kyh inc -871 if q != -2749***j inc 262 if l <= 7821***tup dec -906 if o <= 1736***j dec -191 if jb > 218***mp dec 296 if tup >= -2342***j inc 582 if ug == -1026***y dec -480 if c == 3910***tup inc 184 if mp < -635***rz inc 825 if tup != -2162***q inc 931 if tup != -2153***b inc 223 if kyh <= -2657***xhe inc -399 if jb > 216***vhu dec -109 if kq > -276***txk inc -925 if xhe != 714***l inc -221 if axi <= -3934***axi inc -226 if b != 160***px inc 820 if vhu <= -2702***rz inc 638 if mp <= -636***axi inc -198 if x <= -1653***y inc 259 if djl >= -1285***j inc -665 if zeq <= -41***axi dec 906 if y <= 2403***axi inc -807 if px < 117***zeq inc 372 if o >= 1723***x inc -462 if s >= -3851***rz inc -852 if gr < 1355***y inc 698 if l >= 7606***y inc -731 if o == 1729***o inc 894 if l <= 7599***x inc -722 if xhe <= 719***kps inc -502 if b <= 165***djl dec 847 if zeq <= 335***s dec -400 if l >= 7594***zeq dec 513 if ug >= -1021***y inc 797 if wdc != -2864***b inc 332 if b >= 158***gr dec -59 if wdc <= -2860***vhu inc -968 if zeq < 334***wdc dec 100 if wdc == -2864***s dec -862 if y <= 1672***axi dec -319 if o >= 2632***j dec -294 if kyh > -2670***mp inc 342 if mp > -647***ug inc 337 if mp < -311***kq dec 702 if tup > -2163***px inc -729 if px >= 119***zeq dec 161 if xhe != 711***jb inc -745 if kyh <= -2654***txk inc 671 if djl < -1280***y inc -974 if gr < 1425***vhu inc 929 if gr == 1417***djl inc -771 if vhu < -1765***y dec 764 if vhu >= -1783***axi inc 913 if kq >= -969***y inc 428 if rz != -122***j inc 44 if c > 3901***wdc inc -219 if kyh == -2660***rz dec -713 if wdc <= -3178***jb dec -510 if kyh == -2660***rz inc -835 if mp <= -306***xhe inc 461 if tup <= -2152***c dec -986 if ug < -1017***wdc dec 838 if txk != -777***xhe dec -402 if zeq != 186***x inc -791 if tup < -2155***o inc -453 if jb >= -12***ug dec -531 if s <= -2591***s inc -552 if b > 500***vhu inc -780 if tup == -2157***zeq inc -198 if l <= 7601***ug dec 875 if vhu == -2555***y inc -896 if j == 3261***o dec -9 if kq >= -973***ug inc 383 if c == 4896***y dec 592 if l < 7601***q dec -111 if px < 122***l inc -845 if s < -2593***tup dec -602 if zeq >= -12***o dec -689 if ug > -997***c dec -587 if ug < -984***c dec -376 if mp >= -305***px inc 159 if o > 2866***txk dec -763 if rz < 597***rz inc -403 if ug <= -983***px dec 393 if l != 6759***kq dec 65 if q >= -1707***q dec 363 if gr <= 1407***rz inc -205 if c >= 5856***ug inc -810 if kyh < -2653***px inc -11 if jb >= -19***tup inc -997 if mp >= -297***l inc 365 if kps <= 1219***c dec 568 if txk <= 0***x dec 704 if s != -2598***gr inc 997 if gr != 1417***djl dec -200 if j <= 3270***vhu dec 534 if jb < -8***px inc 726 if q == -1701***mp dec -952 if wdc < -4016***zeq dec 851 if axi < -6072***rz dec -92 if djl <= -1849***wdc dec 115 if y == -1133***vhu dec -641 if mp < 652***b inc -389 if y != -1126***kps dec -429 if vhu <= -2440***rz dec 242 if l < 6758***axi dec -745 if jb > -16***j inc 343 if gr > 1415***x dec -733 if ug <= -1795***axi dec 6 if txk != -4***jb dec -438 if b == 107***axi inc -488 if q <= -1699***kq inc -648 if j <= 3610***jb dec 270 if wdc != -4139***txk dec 356 if axi >= -5819***txk dec -620 if b <= 111***l dec 394 if s == -2601***o inc 128 if x <= -2433***ug dec -749 if rz > -174***zeq dec 374 if gr > 1410***kyh dec -901 if mp != 647***b inc -161 if tup != -2157***txk inc -208 if o <= 3002***ug dec 940 if y != -1126***kyh inc -956 if tup == -2157***xhe dec 457 if b >= 101***mp inc -966 if c > 5290***px inc -408 if djl <= -1844***kps dec -599 if kq > -1683***jb dec 798 if gr <= 1426***wdc inc -749 if kq < -1685***tup inc 254 if txk != 51***b dec 841 if jb < -631***o dec 961 if l > 6758***wdc dec -597 if kq <= -1677***px dec -414 if l < 6757***kps inc 373 if px < 610***xhe dec 887 if ug >= -1992***kyh inc -715 if kyh > -2712***l dec -919 if rz <= -164***xhe dec -127 if l <= 7675***x dec 483 if b <= -727***jb inc 659 if ug >= -1997***tup dec -278 if jb > 17***jb dec 295 if c >= 5299***kq dec 624 if q >= -1703***xhe dec -771 if vhu != -2455***c inc 809 if kyh > -2716***djl inc 533 if mp < -307***xhe inc -291 if q == -1701***kyh inc -677 if x > -2928***b inc 828 if txk <= 54***s dec -989 if x > -2929***txk dec -303 if x != -2930***rz dec 462 if jb < 25***tup dec 378 if mp < -308***y dec -173 if xhe == 841***tup inc -808 if l >= 7669***s inc -185 if txk >= 347***s dec -782 if txk < 361***axi inc 551 if xhe >= 834***kq dec -155 if tup > -2814***rz inc -169 if gr >= 1422***mp dec -938 if y == -960***vhu dec 779 if zeq != -394***rz dec -788 if zeq != -389***djl dec 936 if kq != -2164***x inc -767 if c != 6096***xhe inc 425 if kyh <= -3394***kq dec 653 if rz == 162***ug dec -256 if kyh >= -3399***djl dec 160 if kyh == -3392***tup inc -748 if q != -1711***kq dec -338 if axi < -5254***o inc 223 if ug < -1723***c dec -66 if q < -1699***gr inc -340 if tup <= -3550***txk inc 471 if s == -1012***wdc dec 105 if y != -951***gr dec -866 if tup < -3566***kps dec 5 if wdc <= -4392***wdc dec -614 if wdc != -4390***l inc 511 if tup <= -3555***y dec 479 if ug != -1732***txk dec 712 if y != -960***b dec -508 if wdc < -3776***ug dec -573 if b != 609***vhu inc -954 if kps > 2022***gr dec -964 if djl >= -2412***txk inc 533 if px != 595***x inc 538 if gr < 1084***j inc -31 if b != 602***rz inc -934 if b != 600***j dec 566 if wdc != -3788***l dec 756 if l != 8189***q inc -567 if zeq < -384***rz inc -745 if wdc > -3788***px dec 453 if tup > -3558***ug inc -665 if l >= 7425***tup inc 798 if ug != -1816***ug inc 709 if jb == 23***txk dec -173 if ug > -1822***ug inc 501 if xhe < 850***gr inc 90 if o != 3219***tup inc -919 if kq <= -2461***axi dec -83 if xhe == 841***y dec 200 if wdc >= -3779***wdc dec 424 if o != 3226***zeq dec 253 if kq > -2473***rz dec -281 if mp <= 629***tup inc 760 if kps != 2031***mp dec -248 if y >= -1161***s dec 902 if djl <= -2408***mp dec -498 if txk < 1359***mp inc 996 if kyh == -3394***jb inc 492 if px <= 604***px dec 701 if mp >= 863***s dec -957 if tup < -2912***gr inc 214 if tup == -2920***o inc -730 if jb > 508***rz dec -646 if jb <= 513***x dec -2 if x == -3150***b inc -938 if l != 7420***x inc -268 if j != 3048***kq inc -589 if ug > -1317***xhe inc 83 if kps <= 2027***mp dec -962 if kyh <= -3383***j inc 977 if djl == -2415***axi dec 169 if mp <= 1831***px dec -774 if px != -92***kps dec 279 if px < 678***j inc -731 if o <= 2489***x inc -58 if c > 6167***gr inc 610 if vhu <= -3398***vhu inc 209 if kq > -2467***txk inc 11 if jb == 511***rz dec 341 if zeq >= -639***djl dec 297 if q > -2263***xhe dec -357 if o < 2496***kyh dec -579 if b >= -330***kps inc 186 if l < 7426***kyh dec -25 if y == -1160***djl inc 996 if djl >= -2416***mp inc 773 if zeq < -637***xhe inc 759 if tup > -2929***s inc -122 if axi == -5349***vhu dec -603 if l == 7425***gr dec 741 if tup <= -2919***djl dec -996 if mp < 2608***kps dec -645 if vhu < -2793***px dec -25 if djl < -416***px dec -624 if djl > -429***px dec -380 if kq > -2480***mp dec -526 if xhe != 2031***q dec -358 if zeq <= -639***rz inc 218 if jb > 507***q inc -54 if x >= -3420***mp dec 140 if kps < 2581***vhu inc 234 if vhu == -2799***q dec -428 if b == -336***mp dec 825 if wdc > -4209***px dec 22 if x != -3416***j dec -952 if axi > -5352***y inc -551 if y > -1167***djl inc -832 if txk >= 1364***vhu inc -318 if px >= 1701***o dec 783 if txk <= 1376***o inc -479 if txk >= 1365***j dec -924 if px > 1700***ug dec -230 if ug == -1323***q inc -572 if o > 1231***xhe inc 266 if ug <= -1099***y inc 810 if xhe >= 2035***j inc 599 if tup == -2920***xhe dec -795 if o <= 1232***b inc -972 if vhu <= -2884***q dec 715 if s != -1079***vhu inc -143 if y <= -902***wdc inc -704 if kq >= -2477***wdc inc 718 if rz >= -372***jb dec -224 if vhu != -2889***kps inc -197 if ug <= -1092***x inc -81 if x == -3416***xhe dec 492 if tup < -2917***px inc -853 if kq != -2470***djl inc 881 if kq < -2462***q inc 306 if j < 5768***mp inc 618 if b <= -332***s inc 651 if vhu >= -2889***x dec 852 if ug == -1092***x inc -61 if ug >= -1088***tup inc -674 if mp > 2775***j dec 656 if y < -892***kps inc 314 if djl < -364***txk inc -344 if x >= -3498***c dec -768 if ug >= -1101***mp dec -693 if axi != -5349***zeq inc 495 if axi <= -5347***b inc -944 if b <= -330***x inc 790 if mp == 2783***djl inc -776 if y > -911***txk inc 156 if wdc == -4189***x dec 929 if c < 6942***q dec -922 if j >= 5103***x dec 254 if ug <= -1089***mp inc 781 if px >= 1697***kps dec 639 if djl != -1141***j dec -543 if rz == -372***jb dec -961 if y <= -892***djl inc 430 if o == 1237***q dec -64 if o == 1227***txk dec -438 if px >= 1702***wdc inc -117 if x > -3894***px dec -660 if b >= -1287***tup inc 18 if o <= 1230***jb inc 27 if vhu != -2883***vhu inc 554 if x != -3890***s inc -344 if xhe == 2343***px dec 208 if axi < -5347***px inc -859 if o <= 1233***rz inc 717 if q > -242***x dec 315 if y != -910***vhu inc 846 if s == -779***zeq dec -557 if x == -4205***xhe inc -897 if txk < 1621***y inc -130 if kq <= -2464***c dec 430 if djl == -1150***b dec -73 if kyh < -3363***o inc -337 if kyh == -3367***xhe inc 924 if l < 7417***tup dec -126 if x == -4205***j dec -967 if kps == 2054***zeq inc -908 if mp == 3559***j inc -501 if txk != 1619***djl inc -810 if y >= -1033***y dec 525 if djl <= -1960***l inc 389 if x <= -4199***gr inc 111 if jb > 1692***x inc -206 if b > -1200***o inc -928 if s <= -765***l dec -372 if txk > 1612***jb inc -937 if kq == -2470***kq dec -296 if gr < 1276***j dec -643 if rz > -378***kps dec 412 if zeq >= 399***o inc -224 if kq < -2172***y inc -572 if jb == 759***l inc -663 if j < 6760***xhe inc -284 if l <= 7531***kps dec 209 if y <= -2119***tup inc 216 if mp != 3574***px dec -421 if ug >= -1101***wdc inc 854 if ug != -1095***djl inc -860 if wdc > -3453***j dec -541 if ug < -1087***b dec -27 if q != -234***kyh inc -345 if y == -2128***o inc -84 if xhe > 1163***b inc -512 if s > -782***ug dec -772 if l >= 7516***wdc inc -718 if wdc >= -3453***tup inc 48 if rz == -375***c inc 372 if kyh <= -3703***tup dec 753 if b <= -1683***l inc -573 if kps <= 1434***kq inc -589 if axi == -5349***q dec -905 if x >= -4213***jb inc 716 if y >= -2137***q dec -864 if gr <= 1278***axi dec -402 if ug != -322***px dec -442 if j <= 7300';
+    
+    puzzle = puzzle.split('***');
+    
+    console.log(puzzle);
+    
+    var najvecja_st =0;
+        
+        
+    for(var i=0; i<puzzle.length; i++){
+        var zbirka = puzzle[i].split(' ');
+        puzzle[i] = zbirka;
+    }
+    var variables = {};
+    for(var i=0; i<puzzle.length; i++){
+        if(!variables[puzzle[i][0]]) variables[puzzle[i][0]] = 0;
+        if(!variables[puzzle[i][4]]) variables[puzzle[i][4]] = 0;
+
+        switch(puzzle[i][5]){
+            case '!=': if(variables[puzzle[i][4]] != puzzle[i][6]*1) {
+                if(puzzle[i][1] == 'inc'){
+                    variables[puzzle[i][0]] += puzzle[i][2]*1;
+                }
+                else{
+                    variables[puzzle[i][0]] -= puzzle[i][2]*1;
+                }
+            }
+                break;
+            case '==': if(variables[puzzle[i][4]] == puzzle[i][6]*1) {
+                if(puzzle[i][1] == 'inc'){
+                    variables[puzzle[i][0]] += puzzle[i][2]*1;
+                }
+                else{
+                    variables[puzzle[i][0]] -= puzzle[i][2]*1;
+                }
+            }
+                break;
+            case '<=': if(variables[puzzle[i][4]] <= puzzle[i][6]*1) {
+                if(puzzle[i][1] == 'inc'){
+                    variables[puzzle[i][0]] += puzzle[i][2]*1;
+                }
+                else{
+                    variables[puzzle[i][0]] -= puzzle[i][2]*1;
+                }
+            }
+                break;
+            case '>=': if(variables[puzzle[i][4]] >= puzzle[i][6]*1) {
+                if(puzzle[i][1] == 'inc'){
+                    variables[puzzle[i][0]] += puzzle[i][2]*1;
+                }
+                else{
+                    variables[puzzle[i][0]] -= puzzle[i][2]*1;
+                }
+            }
+                break;
+            case '<': if(variables[puzzle[i][4]] < puzzle[i][6]*1) {
+                if(puzzle[i][1] == 'inc'){
+                    variables[puzzle[i][0]] += puzzle[i][2]*1;
+                }
+                else{
+                    variables[puzzle[i][0]] -= puzzle[i][2]*1;
+                }
+            }
+                break;
+            case '>': if(variables[puzzle[i][4]] > puzzle[i][6]*1) {
+                if(puzzle[i][1] == 'inc'){
+                    variables[puzzle[i][0]] += puzzle[i][2]*1;
+                }
+                else{
+                    variables[puzzle[i][0]] -= puzzle[i][2]*1;
+                }
+            }
+                break;
+        }
+        if(variables[puzzle[i][0]] > najvecja_st) najvecja_st = variables[puzzle[i][0]];
+    }
+    console.log(variables, najvecja_st);
+    };
+    solve();
+    // Day 9
+    String.prototype.replaceAt=function(index, replacement) {
+        return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+    }
+    
+    function solve(){
+        var puzzle = '{{{{{},{<!!!>},<}<!e!>,<<!>!>},<>,{<"u!!!>,!!"!!!>!>,<}{!>,<u!!!>e>}},{{{<!!!>,<!>u!!,>},{}}}},{{<,!>},<!>},<ae!!<"""!>},<"}ii!>},<!>!!!>>,<o!!}!!!>o!>},<{,<<!!{{u{!!!>!>},<!>,<>},{},{<!!,i!!i"!>},<ea!!!>{!}!>!!i!!>}}},{{{{<i!!!>o"!!{">},{<!!!>ao,!!!>!u!!!>{<"oui!!"!>>}},{<}{!>},<a!>},<!!<"o,!!o!!!>"}!a>}}},{{{<!>>},{{<!!!!!>!!!>o!"!!!>!!!>},<i>}},{{<"!!<!!!>!>i!>,<a">}}},{{{{{{<e!!!>{>},{{{<!!>},{}},{}}}},{{{<}ai,!,i!>,<,aii}!>},<!!,!>},<!!!>},<}>}},<"a!i"{>}},{{<a!!,!<{e!!!>},<u!>,<!!!>"<{oe>,<"ie!>!!!><!>},<!!!"!!""{u>},{{<}!a!>},<!!a<!>},<!>!!!>}!!{o!>},<ia}o!>>}},{{<!>},<!>!!e!!a{!!i!!u{{!ao>}}},{{},{}}},{{{<!a}>},<e!>,<!>},<!>},<{},,!>,<>},{{<!!!>u!!"}!>},<i!>,<!!}>}},{<!>a{<i"!>!!"!!}!>","o!>},<!!"<!!>,<<!!!>!>},<!>},<>}},{{{<!!}!>"!>},<<!>},<"!>},<!>,i,,!>,<!">},{{{<!}}<o!>,<}!!!>!"e}!>},<i!!o}!>},<u!!e!>>}},{<>}}},{{}}}},{{},{{{{<!>,<i,e!!"!>,<"!!!>u!>!>"}>},<o>},{{{{<""!!{!!iu}}!>uoi!><!!{!>!<u>},<o!>,<a!>},<!>,<{,!>u>},<}!!">}}},{{<a{,!!!!!>i!!,<!>},<!!!><>,<!>""i!!">},{{<!>,<{i!>},<!>,<>,{}}}},{{},{{<}ei}!!"e",i!>,<o!!<"e}!!!<>}}}}},{{{},{{{{<!!"u!!!>{o!!a!!!>!!!"o>},{{<a},<<!>,<!>ii!!!>!!!>!>,<"u!>},<o,!>,<!!!>>}}},{<,>},{{},<<"{!}"{!!!>}"!>,"ae!>},<>}},{{<!>,<e!!!!!>o!!!>a!>,<}}}e!>!>e!>},<!!<u!e>,<ea"!!!>,eao<eoo>},{{<e"ioi!!e{u{e<e!!!>},<i"!!!>">},{{{<!>!>,<!!o!!,{a"o<!>,<e!!a<u!",a>},<!!!>""!>,<<!>,<u!>,<uo!e!>,<a!>,<>}},{<!>io!!<!!!>,!>,<,!>},<!!,oi!>>,{<!!"!!}!!,>}}},{{}}},{{{<!!!>"!e!!!>o{>},{<"e!!i<i!!}!!!!!>},<{>}},{<a!}ia>},{<!!o>,<aa}!!!!!>},<""!"!!!>>}},{{{<!>},<"!>,<{!"!>},<!!!>>,<!!!>ii!!eoo!>,<i!!e>},{{{<<i!>},<!!>},<""}<}!>!!!>,<{!>},<!<!!i"}u>}}},{{<i!!!>!e}!><!!!!<e!>!!u!!!!ie!!!!!>aa{>},{}},{{<""!!o!!"!>},<!!!>!!!!!i!o"a!>},<oeu!">},{{<,u!!,!>},<!!}!>!!}""aa>},{<a<iu!>},<u>}}}}},{},{{{{{<>,{<u!!!>!u{,}u!,!!!!!>!!",!>!>},<!!{>}},{<!>},<!<a!!!>,<{!!!><,e!<e!>},<a!uu{>}},{{},{}},{{{},{<a<!>u!!!>"!>},<e>,<!!"ea!<u!>,<,i!!>}},<!"!!!>}">}},{{<!>},<ou}a}>},{<}!>,<{uo!!!>!a!><!!!>e"!>},<aai>}}},{{<!!!!{"o!!!>},<{}e!>!>"!>},<{!!!>,<!!!>!!!>!!i{>}},{<"e>,{{<"!!!>a{!!"ouo{>},{<!!!>"!<!>},<"!}u!><o"!!ii{}!!"o>}}}}},{{{},{<!,!>,<!!u!>o}!>!>,<!>,<!a!e!!>,<!!"{,!>,<!>i<,!!!>>},{{{<!>},<i!!!i>,<!>{!i!e!>,<!>,<>},{<!!!<!!a!!>,{<o>}},{}},{<!!"!!!!"!e,!!!!"e!!!!,!!!>ua"!e!>u!u>}}},{{{},{{},{{<!!!!,!!!!!!!!!!!>,<e!!!!}}{a!>,<!!!!{>,{<!!i"},u!>},<o!>},<a"ie">}},<!>},<!!!>!>!>},<<""">}},{{}}},{{<i>,{{<}"!!!>!>,<u,!!{!!!>!"!!!>},<"o>}}},{<!!!>!>},<!>,<!o>}},{{{<oo!!!!oo!!!!!!o>},<"<!!!>>},{{}}}},{{},{<u!>},<!!!><,i!>,<!!"{">}}},{{<ae},a>},{<{"!>i,"!!!>a!!!>>},{<!!!>!"{<<<o>,{<"e",a>}}},{{{<{!!e<!!!>u,!>,<u>,{<<"<oee!>,<!!,<"!!!>!!!>{!,">,{<<!!!>ai!!!>},<u>}}}}}}}},{{{{{}},{<e,"u!!!!!!oa"oe}a<e,u>}},{{{<"{!"!!!>,o{{!i"u>,{<!!i!!!!!>ae!!!e!e!}{u>}},{},{{<,u""}>},{<{a"!>,<,a!eou!o!!",""}u,>}}},{{{<!!!!">,{}},{{<}<{a!>},<}<!!!>u!<a,!>!!a!>,<!!{">}},{<!!a!!!>,iaou!>},<oia!"!!!>},<!!!><!!!>u!>},<>,<!!e}{i,,u>}},{<!!!>uu!!eea!>},<"}!e!>},<!!o!!!!,>}},{{{<io!>,<}}e"!!!!!>,<!>""!>,<ii!!!>,<!>},<!>!>},<>},{<!!!>!>!{""!{u!>,<a,!!a>}},{<e""<!!!>o!!,i}!{<,!!!>!"o!!"u">}}},{{{{{<!!}!>!>,<u!!ae""o!!!!{!>>}},{{{{<i!>,"!>,<{,!!",!>!{!>!!!>,<o"!!!>>},{<!!!>,!!u>,{<"!>},<o!>,"!"!>,<u",!!!!o>}}}}}},{<eo!!u!>,!>,<!!!!}}>},{{},{<!{<>}}},{<!!{!!!!!""<!!!>"!!"u>,{<"ao!>},<!!!!"oe!!o!!u!>},<o}!>,<o>}}},{{{<!>!>,<!,a!>!a"}!!{<!>!>!>>},<ou>},{{}},{{{<!>!>},<!>{!!!>!>},<i,,!>},<o>},{{},{{<a!!!><""!>!>},<!e>},{}}}},{{}}}}},{{{{{{}}},{<!>,<}<,"a!,!a!!!>"!!">}},{{{{{<"u{a>}}}},<{!!!>!>,<!!!>!!<"u!>},<>},{{<">},{}}},{{{<"!}"""!{,}<ui}e!!!>!>{}">,{}},{{<!!i!!!>!!!>,<u!!!>}!!!>eoio>},{{<!>},<!e!>,<"!>,<!>,<!oo!!o"aiu!>},<>}}},{<u!!!>!>,<>,<o!u}>}},{},{{},{{{},{<a!!!>!!,!!<""!!!>,!>},<<"!!!!!!!!!!!>,>}},{<a>,{{<!>},<!!!e{!>},<,>}}}},{{{<<<i""!!!!!!}i!!!>,<"!>!"!!!>e!!!!e}!!!!>},{<",{!>o!>},<,,!!>}},{{<>},<>}}}},{{{{{<u{!!!>!!!>}}}i>,{{<"u<!!!>!!!>!!!!ea{!!!!!!!>u!!!>ie>}}},{<!!!>"!!!>,<i{!!!>>}}},{{{{{{}}},{{{{<{,{a!!!>!o!>,<"{>,{}}},{{{{<!!!!,>},{<e!>,<!!!>!!!e{"",}!,>}},{<!>}!>},<,!oo!>>},{{<!!<"!!!>!!,"!>},<i>},<!>!>},<!>,<ae!>e>}},{{<!!!>!!u!><o!>!!!>!!!>,<>},{<eii!i}!!!!u!{{>}},{{<,uaa!>},<e"!>,<"u!>,<!>!>,<!!>},{{<{}!>},<>}}}},{{},{}}},{<oo!>,<!!i>,<!>},<"}"}!"!!!!u!>},<!>,<!!!>},<eu!!!>>},{{<a!!!>,<!>},<!!}!!!!{!>},<}o!>,<!>},<!!!>},<"a{!!!!!o>,{}},{{{<!>"!>!>"!!!!!>,>}},{<!!<!u!!,>,{}}}}},{{{{{<!!!!u!!!>!>,<!{!!<"""i!!,!>},<,>,<!>,<o!>,<}a!!!>}a!!!!!>"!>a<!!>}},{{<!ea!!!!u!>!>,<!e!!o!>},<">},{<!{>}}},{{{<}","!!o}>}},{},{<a!!!!!>!!!>!>,<a!!o!!!>,<"u>,<{!i!!!>},<!!!>{<!>,<"!!!>{ii"iu!"!u!!!>>}},{{{<"!e!!{>}},{{{},{<i!!!!!!}!!!>u!!!>"!>a>}},{{{<""!!!!!>"uee!!!!!!o!>,<""!!",>},<{>},{{<!!!!iu}!!!{}!!"!>,<"!>!"oiuo>,<e">},{<!>},<!"!<{a!>!<>,<e"aaa!!!!!>a"!!!>,<!>!!}<>},{<!<}}!>},<a{!!!>},<!>},<!!!!e"i!>u>,<}!!!>!>,<a!<"!>>}},{{{{<}!>,<!>},<!>},<"e}},!!!>},<}!!!><"}<u!!!u>},<"!>},<"a!!!>>},{<,!!!><!>>}}}}},{}}},{<<!!i>,{<"!>!!i{u!}a!!!>,<!<!}!>},<!>e"!!!!!>,<!!o<>}},{{}}}},{{{<!!!>"!>,<!!!>!>,<u!>},<eaa>},{{<<!!!!!!u!>},<}a!<!>,<>}}},{<},"i!!!>!u!>},<<!>},<>,{<<<!>,<!ou!e!>},<>}}}},{{{{},<"io!}"!>},<!u>},{}},{{<!>},<,!>},<>,{{<!!!!ae!>},<!!"!!u!!u">},{<>}}}}},{{{{{{<"!>},<!!!io>},<!>,<"iiaoo<<"!>,<,!!!>e"">}},{{}},{}},{{<"{!>,<!>},<,"u!>},<o!>>},{<!>},<!>},<!!a!,!>},<"!!!>a!!,uu!>e"!>,<"!!!>>,<!>!>,"}!!!>{!>,<e!u!"o!!!!},ui,>},{{<"u!eo{!!!>!>},<"",!"a!!!!o}{e>},{<,<a{!>!o!"{>}}},{{{{<"!>,<{i!!!>},<!>,<o!>o>},{<ie!!!>"<,!!!>,!u"!!!!!!>}},<e{,!!!>!>,!!>},{{{},<{!!!>i>},{<!!<e>,{}},{{{{{<!>,<a{!>o!i{o!>},<!>{oo!!!!{>},{<a{!!!>u!!!>!>,<!>a"!!<i!>,<>}},{<i{!!!>!>aa}e{u!>,<">}}}}},{}},{{{{<{,<!u!>{!>,<>},<}u!,a{!ei{{o!i!><oo!>},<ea>},{<!}!!!>a!!"!>,<a,!!!>oeuo!!!>">}},{{{<!>,<>,{<u!"!>,<!>,<!!!!}a!!!>!!u"!>,<","!!!!e!!i!>,<!">}},{}},{}},{{{},<o,!!"e{eue!>!>!!!!i!>},<">},{{<u!>},<!o"!!<!>},<i!oui>,{{<",!!!>!!<!!"<a{e!>},<"!!!!,,""u>}}},{<!"!!,<u!>,<!!u,<i!!!!}>}},{<!>},<!!!!}u"!>,<{u!>!!<<a!!"<!ie}!>>,{}}},{{{{{<"!!ou""!>{,!>u"!>!!uo{{a>}}},{<!!u{!,{!i>}},{{{<ia!{!>},<!!!>>}},{{<!!!>!!e}}}{<!>},<!>!<a!!<!{{u""">},<ui!,o!"i}>},{{{<o!!!>!>!!!>"}!!!!,!!!>"a!>a!{!!>,{{<!a!>,<i{!>},<"!>!!!>}!>,<">}}},{<}!>,<>,<{!!!>,<}!!!!!>"!!!>!!!>!>,<!>,<uui!!,>}},{{<}""">},{}}}},{{<!!!>ouo!!!>"o}}"{!!,e!!o>}}}}},{{},{<u,>,<"!!!!!!}!!!>!!!!,uoe>}}}},{{{<!,"}o<u!><<">},{<a!!{!!i!!ou!>,<o"!!!>>}},{{<!>},<!>,<{!!!>!>"oaoa">},<!,,!!{!{<!>},<"u{au>}},{{<>},{<!!!><<!!!>!!!>!!!>!>,<!>{!oaa!!!!e>,<"!!!>!!u!!,!>},<i!>,<>},{<>}}},{{{<!!>,<!o!!ao!>},<!!!>!!i!!>},{<a!<}o",,!!!>,<!>,<<!>},<>,{<!!!!ao!>ua<!>ea,"aa!!!!!>>}},{{<a!}<{!!!>o!">},<"oia!>,<"<"{!i!!ea!!"!>,<!!ui"!!!>,<u>}},{{}},{{<}!!"ieo!!e!"e}!!!>>},<!>,<>}},{{{}}},{}}}},{{{{{{<ua"a"<!>""a!iu"!{!>},<!!>,{<!>>}},{{},<!>,<}!>},<aaiuu!>,<u!!!>!!!>i!>",>}},{{{}},{{<!!!>"!>a!!!>},<}!!e}!!!!}>},{<,ue,!>},<!ua}!!>}},{{<!!!>>},<a!!!!>}},{{},{{<!a!>a{!!!>}}>},{<!!!i!!!!!>!"!>},<!!!>},<!!ao!!!!<e>}},{{{<i!>!>!>},<!!oa!!!!}!!!>},<oi"<!>!>,<!!">},<"}!{!!!>{>},{<}!>,<o>}}},{{<<!>},<!>,<o>,{{}}},{},{{{<!>i{!!!>o!!!>!>!!aa!>!u!!o!>,<>},<!!oi}a}!!!>},<!!u>},{}}}},{{<au!!!>"u}!>},<"!!!>>},{{}}},{{<!>},<{e!!!><!>!i<>,{{<o!!"i{!}o<!>,<!!"!>!!!>!>},<!!<oo!!>},{{<!!!>!>},<ea"{",ua!>,<!>,<",{!!!>!!!>,<io>}}}},{<!!o!>},<!i!!}!!!>!>,<!!!!!!!!!aa!>!!!!!>>,{{<!>"!!!>a{}!!>}}},{{{<,!!!>!!u},!>},<!!!>,<!<}">},{<!!!,!!"ae!>i!>,<e}e"!>},<"">}}}}},{{{{{<"a,eo<<!>!!!u"u!>eo<o">,{{{<}">}}}},{<!>},<}!!!!{!!>}},{{<}<!>},<}<}i<!!!>!!!>!!!!!>u>}}},{{{{{{<!!>}}},{{<!!ai<!!!e!!!>}!!!>{!e>},{}}},{<{e!">},{{{<a>},<!!!>""!>!>,<eo!!>},{<!!!>,<!!e!!!!!>}!!!{e!>},<u>,{{<!!",>}}},{<<!!,!>},<!!e!>,<au{!>>,{<"<u{!>},<!!!!i!>},<{,!!!!!>!<<>}}}},{{<!!}!>},<<!!{!!eo!>,<{a!!!!!>},<>},{{<!!!>!!,!!i!!!!!>{!!!!!i!>ee!>},<}!>a""iu!!i>}},{<!>!>,<<!>,<>,{<}!>,<!!!!!>">}}}},{{{<"!!!>!e!!!>,<!>i!>o!!!>o!!u,!!!!!!!!!>oa"a>},{<{u>},{<!>,<,!!!>!!!>{o!!!>!!ioi!!!!!!}a{u>}}}},{{{{}},{<,!!u"!!!>a<ii"<!>!!<!!!!!>!>,<"!!e{>}},{{},{},{}}},{{}}},{{{{{{},{},{<u!!!>!!e!!!!,!!!>ui>,{<ou{"!>,<,eeoei"!!!>>}}},{{<!>},<{!!,!,eo"!!<!!<!>,<a>,{{<!>},<a,!>},<!>!!i!!}{o<>}}},{}},{{{<>},{}},<ooa<o!!!>!!!><"!>},<!oi"i!!>}}},{{<i"!!!>{!!!>!!!>,>,<!>,<<{!!"e!!!>!!u!>},}"ei!!!><"i>},{{<ia!>!!o}"!>},<!>!"a!>},<u"!!!>},<i{u">,<!!!>},<a!>},<!>!!!>!>},<"!o,!>,<e<!!{!>,<!!>},{<o<!>>}},{}},{},{{<!!!>!!}oo<"oo!><i!>e,o!!a,a>,{<!>},<>}},{{}},{{{<ie!>},<!e!!{!><e!>},<"!!!>"!{<>},{{{<!>,<e!>!>,<<}{e!!!!!!iu{!!!>!!<<">},<!!!>!!a<>},{}}},{{<o!>},<<!>},<"!!a{!!">,{}},{{<io!!ioi!>,<!!"ii!>},<o>,{}},<e!>eee!>},<>}},{{<!>,<{!!i>},{{{}},{{{<>}},<<"ueu!<!!!>!>,<>}}}}}},{{{{<!!<o!!!!!!<>},{<{,i}o!!}a!>,<!!iaa!>},<"<{e>,{{<">},<ae<,"!!!!!>u!!>}},{{},<,>}},{{<!>,<!>,!!!>u!!!>ie!>"!"!!!>!!!!!!!!!>>,<"o!!u}!>,<">},{{}}}}},{{{{<<!>!!!>u"!i!>},<a<o!>>}},{{{<}!!>},<aio"!!!>},<>},{<!!!!"{!!{!!"}!{i",o<!"!>"!>,<!u!>},<>,<,e!!"a""o>}},{<"!e<{<e!!i!>{>,<},ai!>},<>}},{{{<!>!>},<!!!>{ie!!!!">,{{},{<!>}o}ai}>}}},{{{},<i!>},<{ui!!!>u"!>,<oa>},{{<,!u!i<">,{<i!>},<u!{!!!}"!>,<,"!>},<!!!!!>!!a"!}!}e!!!>,<>}},{<,!i}i!!ue>}}},{{{},{{{<!>,<!>,,!}>}},{{<!>,<oui<i{!!uu!"o!>!!!>,!!!i!!>},{}},{{{{{<!>,<!!ie!<ia!>},<a"!!">}}},<i{i!>,i>},{<!!,a"!>,<!>},<ii<i!>,<!!o!"},!!au!!!>!!!>">,{}}}}}}},{{{<!>,<!>},<!!o!!<!!!>!>,<!!!>!>},<a>},{}},{<u<!!eee!!>,<a!>{!>},<!>},<!!!>i">}}},{{{},{<e>}}},{{{{{},{<!!o!>},<o!!uouao!!!>aa!>},<!>},<>}}},{{{}},{<!!!>e!!!>!!!>,<{!!!>{{"ae!>},<e>,<!!!>},<!"a!>,<i{>},{{{<!>},<}!"e<!!!>,<<}uuu>}},{{{<!>,<,}e!!!>>}}}}},{<!!"u">}},{{{<<"">},{<u<"!!{!!,i!>,<!>},<a!!!>!>},<!!!!!>>}},{<u!!!>,<e"e"!{!o<}!>!u!>,<<!>>,{{<!!oa{<a"!!"<!>!>,<a!!"!>},<>}}}},{{{{<"a"e,a,!ao{!"!>},<!>,<!!}!>},<i>},{<!!!>},<o"o>}},{{<o!!ai!!!>{">,<!<,{i!>},<!!aeo!!!>!"o!>{!>,<<>}}},{},{{{<{!!!i!>},<!>},<,>}},{{{<!!!!e}a!!!>},<!>!,u",{<aa!!e>}},{{}}},{{<u}a!>},<>,<!!{}"!!<>},{<!!!>},<!!!!"!a!>},<<>}}}},{{{<}e!!{"!!"!!!>!!i!>!>!>},<!{i>},{{{<i!>,<a!>,<!>},<a<"!!uu!>},<>}}}},{}}}},{{{<!>},<>,{<aue>,{<">}}},{<!>,<i!<!>,<e!!<i!!!>{io!!o!!!>ea>,{<oiu!},!!{}!"u"!>},<>}},{{<}uoi{"!!"a!>},<!!!>,<a!>,<,u"!a!!!>>,<!!!>oeoe!>,<!>},<>},{{<uo!>,<",<"e!!}!!!!"!>},<!!a!<>}},{<!!!!a!>u!>},<!>},<a"e!>,<o"!!!>!!!!!>>}}},{{{<!>},<!!!>},<i"!oo,<}a!!e!><!a!i!{>}},{{<oo{>}},{{{<!>},<oo{e!!!>,<>}},{<"!{u<i{i!!!>}a"u!e{!>},<>}}}}}},{{},{{{{},{{<u}<{"!!!!!>!!!>o!!!>,<!!o,"i>}},{{{{<}!"}!!ao!!ua,oe!!!>>},{<!!!,!>!>},<>}},{{}},{{{<>}}}},{}},{{<!<<!!!>u!>,<"a{o,u>,{<!>o!>},<!a<!!"!!!!!!!>!>,<o!>,<!>!>>}},{{},{<!u>,{<!!!>ue<ae}!!"e}!>}!>!!!>>}},{<eu"!>!{!!<>,<oo!!",ea!>},<i!>,<!>"!>!>,<{!>},<{!!>}}}},{{{<"!>>,{<!}!!!>},<"e"!!!>},<"o"!><u!>},<u<>}}},{{{{{<}!!!>a!>,<a!>}{!o!{>},{{}}},{}},{{}}},{<u!!!!!>}!!<!!,}ei!>},<!>!!!o!!!!!>!!,e>},{<u{{"!!"<!!,!"oiii>}}},{{{},{}},{{{<!>",e!!!>o{o!>,<!>}!!!>},<!>,<!>,<"o>}},{}}}},{{{{<u!!!!!}}a{!!!><}!a>,{<ou!<!><">}}},{<!i!!<,<,i<"{>,{<aeo<!!"!!!{!!{"!!!>!!!>,<!!!>!!!!!}e!>},<{>}},{{<<a!!"{,a!>,<!!!>!>,<!!!!!>oui!>},<{u,}>},{<e!!oou!!!>u!!!>!>,!>!!!!,!>,<!!!>},<">}}},{{{{<!!o!>,<""!>,<!<!!!>{>,{<"!!!!!>eu!>},<!>u!!}>}},{{<i!!!a"{oi!}{!!!>"u,!!!>},<>}}},{{{<!!{!!!>ea"!!"!>!!!>!!!>!>,<!a{i>,{{<!>,<!!}"io!>},<i}!>},<!!!e"{!>,<!!!>,<!o!>,<!>,<>,{<!!i!!>}},<aa!!!!"{>}}},{<o!>},<!!i!>,<}!<!!!>!}{}i,,!!o>,<!!!!"!!!>>},{{<!!!>"a!<"!>},<i!>,!>ea,!e{uue>},{<{!>,<i!>o<,i{}u,"<}>,{{<!>,<!!o,!>},<}u>}}}}},{{{}},{{<!>i>},{{<!>,<!>},<!>},<!>},<!>,ee!>,<!!ee!!!!!>!!!!{!>},<<!!!>e>},{<"!>},<u!"!>},<>}}},{}},{{{{},{{<,"a!,ai{"!!!uo!>!!}{>,<o}e!!!!!>"!!!!!>>}}},{{<!>},<!>,{}i"<>}}},{{{<!!<>},{{<!>,<{!!!!!>i!!}o{!!!!i>},<"!!"u!"}",{<ai<e!o<>}}},{{{{{}},{<!"<<!>},<>,<a!>},<}!>,<>}},{{<ui!iu,<!>},<!>},<,!<!a!>"a!!"!>,<!>>,{{<a!!!>,""}!!!>">,<{!,!>},<"!!!><!!!>,,!>},<">},{}}},{<,i!>},<u"iuu!!"!!>,{<!{!o!ae{!!!"!>"!"!!e!!!>!!<e!!oao!!!!o!">}},{{{<"!>i>,{<!>{"">}},{<<"ui<!>}}!!io<!!a!!!>{!!"a!>},<>,<u>}},{{{<!!!<">}},<<i!>},<"e!>},<>},{{<!!!>!>i,e>},{{},<!ao!>>},{{<!!}a{!o!>!!!!e{"!!ia!>},<o!>!>!>,<!,u>}}}}},{{<{!!!>!>},<!>},<>,<o!!!>},<!!<!!!e>},{{},{<o>,{{<{!!}!>}!o!>,<!!!>a!>,<!>,<u{!!!!o{!>},<!>,<u>,<<"ii"!!!!!>a,!!!>>},{<!!!>,<<!!!!!>>,{<!!<e<o"!!!>!}}<u!>},<ou"!>!!,}o>}}}}},{<"!>},<!!!>!!!>i!e!><o{!!o!!>,<!>},<>}},{{<{!!!>,<o!>{o!>},<o!>},<>,{}},{}}},{{{{<!!!>ue!!i{!!eu>},{{<u!>!!!>,<<eo!>,<">},{<e,!!<"au{!!"{,!>>}}},{{},{<!>{ue!>,<!{!!ei!>},<!>!>},<!!!>iiie!<>}},{{},<!!!>,<!!!>!<!>!!!><u,!}!>"{!>},<!!!!!>!!>}},{{{},{}},{<!!!!!!!>,<{<i!>u}>}},{{<a!i"!!o!>},<,!!!>!>au!>>},{<a!>,a!"!}a!!a>}}},{{{{},<!>>},{{{{<!oiaa<i"oe!!}a"e,iuaa>}}}}},{{{}},{<!>},<!>!>,<i!>},<,!>,<,e!!!!!>"o!!!>">,<a!!!!!>{"!>,<!!!><u!!!!!>>}},{{{{<o!!u}!>,<au}}o>}},{<!!!>a!>},<!>,<!ao!!"u!!}!!!>,<">}},{<i,"}!!!!eo}!!!>a!>,<<"!!e>,<!<"!!!>>}},{{{<u"!>,<"!!!i!>},<>}},{<"!i!!o{i!i!!!>>,{<!!{!>},iao!>},<o!!!>}{<!!!>},<>}}}}}}},{{{{<!>o!!!>"i!!!">},{{{{<!!!>u!!<a!!!>!>,<"!!uu">}}},{{{<{oo{{!>>}}}}},{{},{<o!!!>,!o!>,<!>},<!>},<!!{}!!!!<!!!>}o!>},<e!>">}},{{{},{<!>},<a}!>},<{e!>o!!<"!>},<!!>}},<"",!i!!!!{!!}"i!!ui>}},{{{<a"o!!!>!{!>},<<!!ua"!>!!<<>}},{{<!!a!!!>!!e,!!{!!!>!>},<a>},{<<!!u,!!!>},<"u!!!!"!>!!>}}},{{{{{{}},{<>}},{}},{{{<!!!>o!"ueo<!>},<i}!>,<e!!!>!!!>},<">,<"!>},<!>>},{{},{}},{{<!>,<!!<,!!!!{aei<>,{}}}},{{<!!!>{!!!!!>},<!!}{!>!!!>>,{<}!>!>"u>}}},{{}}}},{{{<i<!e<>},<!u!!!>,<,!!io!!i}"!!!>e<!>},<{"a{!!!u<>},{<!!aa!>},<e!>ou>}},{{<!""!>}!!{o!>,<!>,<"!>!!<>},{<{!!!>},<!>,<a!>},<!>,<i!!<!>},<!>,<!!"}!!u<!u!!i}!!>},{}}}},{{{{<!>!!!>>}}}},{{{<"!!!!!!"{o<!>"i>,{<a>}},{{<o!i>},{{},{{},<{!>,<}>}}}},{{<!!oae!>,<!!!>!!!>u!!o!>,<u!!<u!!<"<}>},{<!!!>i,!!!!e{!!,{{!!!>},<u<u!!a!!o>,<>}},{{{<o!!!>!"oa!<!!!>"!!!>>}},{{{{{}},<!!"u!>!o!>},<!<!a>},{{<"e!!!>,}e!!!>ii!!"!!!!,i>}}},{}},{{}}},{{{{{<!>},<!>,<eoi!>,<uauu}e!>>},{<e!>,<"a<{,!!!!!!e!e"e"!!!!!>!!!!!!!!,>}},{<}u">},{<i!!o!!u>,{<a,e<!>},<!!!oooo<"!!!>>}}}},{{},{{{{<i>,{<{o!!"<e!!!>"{!,"!!!>},<!>>}}}},{{{<i!!!!u!!>}},{}}},{{<e!"!!!>!>i{!>,"!!!!<"!!!>!!}<>,{}},{<{!>>}},{{{<{,!ui!!!,>,{<ua!>}},{{>}},{{<,"!>!>,}u>},{{{<>,{<ai>,<!!!">}},<!!!!!>!!,,!>},<>},<"}oe"i},!!e!>,<">}},{}},{<!>!!!>},<o,!>},<>}}}}}},{{<!!!>i!!e>},{{<!>,<!!!>}"!!}>},<{!!!>,<{i!{{!"o"}}>}},{{{<!!!>!>,<!!!!!>!>{,"!>},<>},{<!,!!!>!!!!!!!>>}},{<!!!>,<{{"!!!>!>,<!!{}!>,<!>!>!>,<e>},{{<!!u>},{<}!!<i!!!!!!i!!a!!!>u!{!!{!>!!!!!>,<!!<>},{{},{{}}}}}},{{{<!!"!>,<!!!>},<!>,<!>,<{!!!!<!>,<!!!>">},{{<!>e>},{<!>},<}o{!>"i"!!!!">}},{{<o}i"!!!>ee>},<}e!>,<u<"""!!!e{!>!>,<{"<i>}},{{<{uii!o>,<!>},<!>},<!}{!!!>e,!!ai!>!!!>!>{!!u!!,"">},{{<!!!>a<!!!eu!}o>,<!!,"o"a!>},<a{a!!u>},{}},{{{<u!>},<!!!>"!!!>e!>!>!>,<o>,{}},{{{<""e!>!!!>"}o!>},<uee!!"o"}">},<!!!>}!!e!!!!ou!>},<{{}!!!>!!!>,<a}"<>},{<!!!>!!{,,!a!!},"ui{>},{{<u>},{<aa{},o{oo!>},<<e{!!o>}}},{<!>,<}aa,>,{{<"!!!>!!}!!!>,<e!>,<!>},<{!"!!!!o"""eui>},<!!!i{!!!!!>}{!"{"!>!>!}"<!>,<>}}},{{<a"a!!iau}"!>},<e">,<a!",{!!<!>,<,i>},{{},{}},{{<>},{<ua!,{>}}}}},{{{<!>,<e>},{{}}},{{{<"!!,<!>},<!}ea!>}!>},<!!!"ii,a}{i!>,<>},{<a!>},<ea"{u!!!>!!!>>}},{{{{}},{<!>},<!!!>>}}},{{{}}}},{{<!!!>},<u!><!<!>,!>},<,}!>a,a!!!>"!>,<!!!>!>>},{<{,,,uo>}}},{{<i!>},<!!}ueu,uu!>,<>,{{{{{}}},<!>},<!ioi<!!oee!!e!!>},{<ei!!!!}!>,<"}!u{,!!">,<u!!!>{!"!,!{!!oo!!!>>}}},{{<}!eue,!}!!!>"}!!!!{e!">},<!>!!!><!!>}}},{{{{<,"!!<>,<<!>},<!!!>!!}!>!!!>}!i{i>},{{<!!!>i,,!!"aa!i""!!!!{<<,!!{!!!eo>,{}}},{<,u!"ouo>}},{{<}!>},<u>,{<}}a!!!!!>},<!>,<!>},<,!>,<!!!>,"i>}},{},{{<!!o>}}},{{<uoou!u!>},<!!!!{!{!>,<o}>,<!a!!!>a{"ei!!!>">},{{<!>,<!!e<!!!!!>!!!>,<u!!o!!!>}!!!<}>,<!>,<}"i}ie!!o{!>>}},{<<!!!!!!!>eee!>,<<>,<,,i!!!!!>!!!>>}}},{{{<a!>},<!!!>>,<,!>!!!i!!!!!><a!>},<">}},{{<!>,<i!!!!!>},<!"!i{io!!!!!>!!"!!!!,!>},<"">}}},{{},{{},{{<!e!>,<!!e}!!!>>},<u"!!!a!>,<o!!u,eea!!"!!">}}},{{{},<!>},<io!>,<>},{{<a"e!>!!!>ie}e<ao}!!!}!<>}},{{<"o!>},<!>!>>}}}},{{{<a!>!>,<e!>,<!!!>,<{!>},<!>!!u!!>}},{{{<u!>uuu}>}},{{<{!!!!!>!!!!,{!!!!!>!!!!>},<!!!!!>{ua!!,e!}io<i!>},<u!>{,",!!>}},{{},{<a!!,e<ou{oao!!!!}>,{<u!>,<<a!{{,!>,<}!>,<!!u{o!o<!!"!>,<>,<{!!u!!!>u!!<!>,<!!!>},<!!!!e!>}!"!!!>,!!,>}}}}}},{{{{{<ui!!o!!!>,<"o!a!>,<u}>},{<i"">}},{{{{{{<}!>}!>,<"e!!""}!!!>,<u>}},<!>},<!>},<!>},<!!!}!!!><!>,<,!>},<ao>},{<!>,<!!""!""oe},o!><,!!>,{}},{{{},{{{<!><<!!!ia{e!!!!!>"!>},<<>},{<"!!!>>}},<!!!!o!!!!!a!!i!!!>a">},{<uo!o!>,<{}{!!!>!>>,{<<ioa{a""!>},<!!!>!uu">}}}}},{{<au!>},<!i!>i,""",!o<!>">}},{}},{{<"!>,e""!!!>!!!>,<>,{<o{e{"ee!o!!a!!,!!o!!!>!>,<!!a>}}}},{{<!!!>!>"}!,eo,!!!,!!!>u!!!>!<!<ia>}}},{{{{{<!!!!!>>}}}}},{{},{{{<!!!!!>ae!!ue">},{{{{<}}!!>}},{{},<eo!!!!ee!}"!!!>,{o{!>!>,<{u!!""">}},<!!!{"eo},!!"oa!}ua>}},<a<,!i!!!>>},{{{}}}}},{{{{{<"!>!!!>!!ee!!u">}},{<i!!!>!!uu}e!>,<!>o!>},<}>,{{<!,!!>}}}},{<!!!!!>,<u}>,{<>}},{{<!!e!!!><!>,<<!!!>""!>},<>},{{<i!!!>{i"!!!>a!!!>"{>},<"<,,e}>}}},{},{{<<","!>,<a,!!i"!>},<u""!!ao!!!>,<>},{{<!>},<u!!!!}!}!!!e>},{<!>,<<>}},{}}}},{{{{{<}!>,<!}u!io>,{<!>},<!!!>u>}},{<"!>>}},{<,"i<!>,<"o!>},<!!{}>}},{{<eu!>},<<o}""iu!!!!!>!,,<!!eo!!!!!>>},{},{<!>,<}u!!<!<!a,ea,>,<!!"ou,"a!>!>}a{o>}},{{{<!>,<"!!!>i<!>!<!!",{,!>,<e!>}"!{o">,{<}!>,<!!!>!>,<!>u!!!>>}},{<!!!!!><oia!!!>},<!a!!!!!>{!!!>!>!ao!!,!>!>,<>}},{{{<!>,<!!oa!}!>},<ue!>},<!<{e!>o!!!!,!!!!!>a!<>,<o!>},<!!oo"a!!!o<!>>},{{}}},<!>},<!!"!>,<{!>!!!>,u!e!u"!>,<e<!}!>,<!!!>o>},{{}}},{{<!!i!>!>},<,!ia!!u!!!!!>},<aa!!!>o!!{{{>,<,e!>"!},!!a!>,<>},{{},{<<a"!!!!!!u<!!!u<a{!!{io!!!>u{i>}},{<,o!!!>},<!>},<iae!!!>!!o"!!!>!!!>,<<<{ao>,{<>}}}}},{{{{{<!{!>,<!>},<!!a!>,<>}}},{{{<!!o!>a!>},<""ei!>,<!!!>!!!!"a>},{<}u,a"!!u!!!>!>,<u>}},{<"!>},<!>,<!!!!!o!>!>},<!!!>i!!i!!u>,<!>,<>}},{{{{{{<!!""!!!>o!!{o"e!>},<o!!!!e}!>,<<,,>},<!!!>!!!>u,!>},<!>},<!>,<o<!!"u}!!!!u>},{<a!"<{a,!>,<!!!>},<u"o>,<!!""!!!!!>!>},<>},{{<<{,!>e!aoi!>!!o{!>,<!>},<a"!>,>},{<,i!!"{>}}},{<>,<<i!!!>i!!ii<i{!!"}!!>},{{{<,!>},<eo!"i>},<i<!!{<!!!><"ei!>,<>},<ui}>}},{<!!!!!!,i}!!!>"o{!>,<!!!>},<>,<{!o"e",!!"{u!}e,!>!>,}}>}},{{{<o!!>},{<!ouo!!e"u{>}},{{{{<!>,<!i,{!!!>"!!<""!>!>,<!{"!!!>{!!""{>,{<!<!!!>,<u,a<{!!!>"!!,!!e!!!!"!<!>!>},<!>>}},{{<!>!>u"!u!!!!!>},<{!>,<}}!!!>a!!e!"{i!!!!"{>}}}},{{}}},{{<!!!>!>},<i!!<!!,!!!<!>,<{!,}!!!!!>a"a"!!>},{<ae"<!>,<i!!!o}"a!>!!!!"ua!!">}}},{{{{{<!!!>>},<"!!!>},<a!!"e>},{<i!!!>eoe}e!!!>!!,"!!!>a{>}},{{<>,<<>},{<!!}e!!,eo},<o}>,{<{!>,<<{>}},{}}},{{<!>!!<,}e}u,!>,<<!!",,!!!>>},<"!>},<!>,<u!>,<o!!!>!>,<eai!>},<uu!>{,i>}}}},{{{<eea!!!>",a!>},<>,<!!!!!>ue<<!>!!!>!!!>>},{{},{<i!>},<!>,<"!!!!a,"!}>}},{<,u{!>},<ae,!>"u!!!!!>ai!!o>,{{<"e!!i!!!>}<"u!>,<!>,<eo>}}}},{{<u{,o!!!>!,!>},<!!e!!!>o!>"o!>>,<!>,<!!o>}},{{{<a!>,<{,u!>},<!>},<!,!e!!!>,!>,<!<>},<!!uo"o"!eia!!!>,!>,<a!>,<!!!>>},{<,!!!><<i!>,<!>!>},<>,{{}}}}},{{{<!!!!!>aau{<!,ii},!>u{"">}}},{},{{{{{<{u"!>,<!,!>},<<<!!!>!>,<>}}},{<,!o!!!{>}},{{<!>,<!!!>a"eu!!!>""!i>,{{{<!!i<ui>}}}},{{{},<!!!!!>!>,<!!!>e!!a>},<!>,<!!!!{!>"<!!!>e>},{{<ia{",!!!>,!!!>!>},<>},{<{e<!i{}!!io!!!!e!><i>,<!>},<}!>,<!><!!!{!>},<!}>}}},{{{},{<!>},<,e!>},<i,,"{a!">}},{<!"}{a!!i>,{<!>},<,u!!{a!>},<!!,,!>>}},{}},{{{<!>,<!>},<}!>,{}!>},<a"{,!!i!>,<!!!>,<}o>},<!!<a<!>,<a!!u,u>},{{},{{},{}}},{<!>,<!!!!!>!>},<{u!>,<"!!}!"u>}}}},{{{{},{{{{{{<<"a"!>,<>},<!>i,e!!!!{!<!>e}i!o"!!!!e!>},<!>e>},{}},{{}}}},{{{{{<<>}},{{{{{{{}}},<o!>},<a""{a!}!!!>u!!,!!o!,i!>},<!>},<!!!>>}},{{<"<!>a!>,<,!>{{"a!!!>"!!!>e!!!>>,{<a,,!>!!!>a!>},<!"a>}},{<a!>,<!!o!>,<!"!!!!!>},<}e!o,!>!!!>,<ia!!!>,<e>}},{<,!!!>!!"!!!>!>},<!!!!!>,<,"!!!!!>,<!>i!>a>,{{<!>"a"u!}a!>},<i!>},<!!!>!!!>},<<>}}}},{<!>},<"!>},<>,{{<e">,<!>},<!}u!>},<!!<!!i,!>},<!!!>,<!!!>!>,<"!!!>>},{<!!!>!>!!!>a">}}},{{<!>o">},{<!>"a"!!!>!!oeeo!>!>!>},<>},{{{<>},{{<o!i!!!!!>}e{!>},<!>},<i>}}}}}},{{},<>}},{{<!!oo<}"!>"!!!>u},!>},<>},{{<a,ee<!>"!ee!!!>u!>,<o!>},<!<}!{>,{{<!>ea!>,<{"!!!>a<!!"u"!>,<i!!!>!>},<>}}}},{}},{}}},{{<!>!>},<e!!a!>},<!>,<"e!!,u}!!oe>,{<!o!!!!!>},<!!<!>,<oao!!u<o{{!>},<<e<}>,<!a<oeu!>},<e,!!}a>}},{{}}},{{{<!>,!!""!>!!!>o!>"!>,<!!a"!>,<!!o{!!e>},{<!!!><,}o!!!!!>!>,<!a"o<"{!>,"!>!>,<>}},{{<{!>},<!!!!!!{!>,<""!>},<"!!!>!!!>!!e!!!!!>,<u!>,<"i{>},{}}}},{{{<o!!!>!!,!>,<u}!>},<!!!>},<!!!!!",eo!>},<,"<<>},<!>!!!>!!},!>>}},{{<!",!!oou"}!>},<!>,<!>!>},<}!>},<o!!!!a!>i>,{<<!!a<!>},<,{<!"!>},<>}}}},{{{{<!>,<>,{}}},{{{{{<!>},<<!e!!!!!>!>},<<,"!>,<a!!e>},{<!!!!!>"!!{{<>}}}},{{<!>},<!!!>"<!>,<{{!!!>,<!!}{!!!>!!!>"!eu!!<!!i>},{{<!><!>i!!!!}!!u!>},<<!!u!>,<i!!!!!>,<>,{<!>},<u!!!!}!!!!,,!>"!>}!!}<a!!!!"o!!!>,!!>}},{<"ai!>},<,"">,{<!>}"!!!>}!!!!e!>},<i!!!>,<>,<!!!!u!>,<!,!!!>!!!>!iaae!>i,o!>!!!>>}}},{{}}}},{{<!!!a!!au!>!>,<<{},<!>,<!!,}i!!}o}>},{{<oa<"!,!"a>}}},{{<!<"u!!>},{{<,">},{{{<!!}!>,<!>,<"{,iuoi!>,<{}{!!,">}},<!!ei!!e!!!!,"!!!!,!>,<!!!>e>}},{<!"}{!,!!!>!!!>"{!!!!,iu!>,<a{!>,<!!i>}}},{{{<!!!>!>},<!!"">},{{<!!{!!!>e!!"<>},{<!!"o,!!}!i>}}},{<<a!!i!!}!>!>,<,!!!>!!!"u<{!!a>,<>},{}},{{{{<,a}!",!>{>}}}}}},{{{{{<!oue}<!!"<i<<!>}}}i>},{{}}},{{{{}},{<a!<!{u<!>},<!>,<!<{,""!!!>{!!!>,<!>,<}a,>,{}},{{<ia!!}!!"a!i!!<>,{}},{{<!!<!o,!}!>,<!>,<{{!>},<>}},{<<!!}"!}!!!>e!!>}}},{<ei,a!!!>}ua!!!>!!!>>}}},{{{{},{{<!>,<"}!"!!e!>,<!!}o"u!!!>"i<>},{<!>,<{}i!!"!!e!!!a{oe!>},<{">}},{<,!}!>,<a!!a,""e>,{<"i"!>},<<,a!>},<io!>},<eieiei">}}},{{<>,{}}},{{<<<<i{{!><o!!!>!!!>o!!}!!>},{},{{{<!>},<i<ii>},{},{{<!><<oe<}",u!>}!!<!!o>},{<>}}},{},{<u!>"!>,<!u}!>},<i!>,<}>,{<!>,<u!!!!""!>,<">}}}}},{{<!><>,{<"}i!!{<{!>,<!!!>!!"!!"!>,<ui!>},<>,<!!!>,<}}!!!>"!!!>!>},<"!>,<!>,<>}}},{{{<"o>},{{<{!>},<<"o!!o!!!>,<"!!!>>}},{{<{uo}<,!>},<ee<{o<,!>},<<"i>,<!>,<"!!!>},<!}!!!>},<!>>},{},{}}},{<>},{{<}>,{<i{!>!<!!!!!e!!!>!>,<!>},<!>,<o<u>}}}},{{}}},{{{<a<!>},<<u!!,>},{<>,<}u!!o!!!!!i>}},{{{{{<<">,{}},{{{<a}<,}!!<,<>}},{{<e!!"o,"u>}},{{<!>,<,!>,<}"o>},{{<u!!!!!!"!>,<e!!"!>oeiai!!""i>},{<!>!!!!uu!!a>}}}},{{<!>!!!!!>!>!>,<,o!!!!!>{>},{{}}}},{{<!!!>!>},<,!!!!<<!!{!!>}},{{<o!>},<"!>,!><"!!!>},<"!!!>!!!!!>oo>},<!!!>}}!>},<e{}!>!>},<a>}}},{{{{<!!,,",!}!!<i<!i!,eo!a!!!>>,{{<u>}}},{{{{<!!e!!!>!!u!!e!"ei!>},<e<},{"">},<!!!>i!>a!>,<"i">},{}},{{},{<!!!!"i{"o!>},<o!}!!i!!!>a>},{{{<ie,!>},<<<{ue""!>},<!!<,a!>},<!>},<>}},<{!>,<>}}},{{<i!>},<a!!!>>,{<i,{o!a"<u"!>},<ii{"ue>,<!>},<<!!!>!!a!>}!!!>"i!!!>i!!!!!>!!!!ee!>},<!>,<}>}},{<"!>"ao!>,<!>},<{"!>},<,!>!>,<""}o>}}},{<!>a!>{<!!!!!>"!!!!<!>},<u<"">,{}},{<<!!}!!!>!>!>!>>}},{{{{<{o!"<a}>},<!>>},<ou!!!>,<!,!>,<>}},{{{<!>,<!>!!!>!!!>,<o!!!>!!!!a<<}>,{}},{<}!!}a!>,<!!!>!!iua}a>}},{{<!>},<!o!>oaa!>}>},{<!i!!!>oa!<!!e{eu<oe!>,<e!>!!!i<!>},<>}},{{<i>},<!>!>},<{!!!>!!{!!!>,<>}},{{<!!ioi!>},<o"}>},{<!e!>,<!!!>{eo!!!!!>!!,"!>},<{>,<,u"a!!!!!>!!!!!>oa>}}}},{{{{{{<!!!>},<!!!>}i!!!>>,{<!!{>}},{<<a<a"!>},<}}i!!!>ie!>!",!!">,{{{<!!,!!!>,<!uo!!!>,<iu>}}}}},{{}},{<}i!!!>!!!>},<!!!!!>},<e,!>,<oua<!!!>},<>,<!!!>,i>}},{{<>}}}}},{{{{},{<<u!>},<{o}!!!>e!>!>!u"!>,<ea<!>},<>}}},{{<{e{o}""e!i!!{ei!>},<>,{<!!i>}},{{{<!>,,u!>},<,ou}!>},<!!e!!!!!>>},{<!>,<!!u!>,<!!}!!"!!!!!!{!!,!!}!!,!!<e>}},{{}}}},{{{<a!>,<}i!>,<>}},{<!<e!eae>},{{<}""{!>},<u>,{{<<!!!!!!"!!!>},<!>},<{}">}}},{}}}}},{{},{{<i}!>!>i!>},<ai,!!}a!!!>u!>},<",>,<!!!>}!!"{!ee!e!oo!>!>,<!!!}{}">},{{{<!!u!>,<"!!e!!<e<!!>,{{<ou<ui"u!!!!}!>,<!}!">}}},{}}},{{{},{}},{<ai!!!>"!!!<!!!!!!a!!"!>,<!>!ii,!>},<"<!>},<>}}},{{{{{{<>},<}",!!!o<{!!!>!!u!}i<e!!<">},<}!>},<aoea"!>!>,<!!!!!!}<ou"}>},<!>},<i!>,<euu>},{<}e!!a>,<",>},{}}},{{{{<!!!>{!!!>,<}>,{<o!>,<u!!!<!>>}},{<!!!!!!!>ue<!e{,!>},<o<!>!>i>}}}}},{{{},{{{}},{{<aee>},<!>!!}{{"!!!>!!!>!<!ui"!,o<>},{{<o!!!!i!>!"!>e<e!>},<!>!>,<!!!!}"!!!"!>>},{<"}!!!>!>!!<>}}},{{<!{i>,<"!!!u!!eo!>,<!!!>o!!}!!i!!}iu!>>}}},{{{{<},!!!!!>"{!>},<o"!>,<e",,>},<{e{eu!>,<!!!>,<"!!!>!>,<e<>},{<u<!><!>},<!>!!!!!>>}},{<e!>},<"!!uoi{!>},<!>!"!>u!>,<!!o!},!>},<!>">,<<!>},<!>!!"!!!e>},{{}}}}}},{{{<u!>,<!{!{!>},<ao,!!e!!{<!>,<i">},{<,!!,{{>,{<,e}",!>,<!!{,e}!!{!>},<{!>,<!!!>>}},{}},{{{{{{<e>},{}},{{<o"u!!{{"!!"!!e"ia>}}},{<>},{{{{<!{!eauie<<<!!!,!!a>},{<<!>u!!!>e"<!{}!{e!!,!}!>!>},<o>}},{{<!!!>i!>},<!>>}}}}},{{{{},<!>!>!!!!}a!>},<{{}e,i"o!>,<!!!!!>},<">},{{}}},{{<>},{{<!!!>e!!}a"}"!>{eo{o!!!>!!!!!!>},{<!>},<{""}!>},<!>},<,!",oiu>,{<!<!!!!!>e,!<a!>},<>}}}},{{}}},{{{},<"o}}"!>},<!!a}i}"!!!>>},{{{{{<>,{}}}},<o"ea!"!>},<}>}}},{{},{{<io!!!>!>a}!!!!!"u{!>!!!!e">},{{{<ue{}<""a},{!!!!!>!ue!!!>!!!>!!>,<""u!!!>ee<!!!>!}!{,!!!!>}},{{{{<"{!!!>},<eo!"o<>}}},<!>!>"eo>}}},{{<!>,!!i"!!!>,<{o{">},<!>},<!>!!!!<""!!!>i>}}},{{{{{{{<!>,<{!>,<e!!"!>a<!>},<>,<!u!!u{<a>},<!!>}}},{{<!!!!!>a>}}},{{{}},{<!!,iu!}!!""}"i!>!!"o!>},<!>,>}}},{{{{}}},{{},{},{{{<}"u!!!>u!!o>},<!e!u>},{{{<!>,<"!e!!e","!!!>!>,<!!a!>,<!!!!!>!>},<!<"ua{!!}>},<e!>},<"<!!!>},<!!!>,<,e"!>},<!><>}}}},{{<i!e!!!>!!!!,!>!>,<>,<!>i!!u!>,<<>},{{{<!>,<!>},<!>},<!{!>i!!!!!>i!!!}!!eue">},{<!!!>},<!ie"!<>}},{{},<<ue"u>}}}},{{{<a!>">,{}},{<!!!!!!"a>},{<<!>},<i!>},<!!}u}!!{a!>,<!>},<>,<!>,<!!!!!>!!!>"!!!>}}"o{!!>}},{<,}""a>,<""!>,<!!,>},{}}},{{{<"!!!>!>!>},<,!!!>},<e"!!a>},{<}u<!>,<a!!!>,!!u!>},<u",!>""!>!!>,<i!>ia!>,<<!!<!i!>u!>,<ee}>}},{{<!>},<!!">}}}}}}},{}}';
+        
+        var index = puzzle.indexOf('!');
+        while(index >= 0){
+            index = puzzle.indexOf('!');
+            puzzle = puzzle.substr(0, index) + puzzle.substr(index+2);
+        }
+        console.log(puzzle);
+        var index = puzzle.indexOf('<');
+        var drugi_del_naloge = 0;
+        while(index >= 0){
+            index = puzzle.indexOf('<');
+            var index_koncni = puzzle.indexOf('>');
+            puzzle = puzzle.substr(0,index) + puzzle.substr(index_koncni+1);
+            
+            drugi_del_naloge += (index_koncni-index)-1;
+        }
+        puzzle = puzzle.split(',').join('').split('');
+        
+        var dimenzija = 1;
+        var score = 0;
+        for(var i=0; i<puzzle.length; i++){
+            if(puzzle[i] == '{'){
+                dimenzija++;
+            }
+            if(puzzle[i] == '}'){
+                score += dimenzija;
+                dimenzija--;
+            }
+            if(dimenzija == 2){
+                console.log();
+            };
+        }
+        
+        console.log(puzzle);
+        console.log(dimenzija);
+        console.log(score);
+        console.log(drugi_del_naloge);
+    }
+    solve();
+    // Day 11
+    
+    function solve(){
+        var puzzle = 's,s,sw,se,s,nw,nw,ne,n,ne,n,n,n,n,n,n,n,ne,n,ne,ne,se,ne,n,ne,n,n,ne,se,sw,se,s,se,se,se,se,s,se,se,s,se,se,nw,se,se,se,s,s,nw,s,s,se,nw,s,n,s,nw,s,s,s,s,s,s,s,s,s,s,s,sw,s,s,s,s,s,sw,sw,s,sw,s,nw,sw,sw,s,sw,ne,sw,sw,s,se,sw,sw,sw,sw,sw,sw,sw,nw,sw,sw,sw,se,sw,nw,nw,sw,sw,sw,s,sw,nw,se,nw,se,nw,sw,nw,nw,se,n,sw,s,s,s,nw,sw,sw,nw,se,nw,sw,sw,sw,nw,sw,sw,nw,nw,nw,nw,ne,n,nw,nw,ne,nw,nw,nw,nw,nw,se,nw,nw,n,nw,nw,nw,sw,n,nw,nw,nw,nw,n,s,nw,ne,nw,s,nw,nw,nw,n,nw,nw,nw,nw,nw,nw,s,sw,n,n,nw,nw,n,n,nw,nw,n,nw,n,n,nw,n,s,n,nw,ne,n,nw,n,nw,n,n,n,n,se,s,n,s,n,s,n,n,n,nw,n,s,n,n,n,n,n,ne,n,n,n,n,s,n,n,n,n,sw,n,n,n,nw,n,n,n,n,nw,se,n,ne,n,n,ne,n,ne,ne,n,n,n,n,ne,n,n,nw,n,n,n,n,ne,se,se,ne,ne,ne,n,ne,n,ne,ne,nw,ne,ne,n,n,n,ne,ne,ne,n,ne,nw,n,s,ne,ne,ne,ne,ne,n,s,ne,ne,ne,n,ne,ne,ne,sw,ne,ne,ne,s,n,ne,ne,n,ne,ne,ne,ne,ne,se,ne,ne,se,ne,ne,ne,ne,se,ne,se,ne,nw,nw,sw,s,n,ne,ne,ne,ne,ne,sw,ne,ne,ne,sw,ne,ne,ne,ne,sw,se,ne,ne,ne,ne,se,s,se,s,nw,ne,ne,n,se,ne,ne,ne,sw,ne,s,s,nw,se,nw,ne,s,ne,se,ne,n,ne,n,s,n,ne,ne,s,ne,se,se,ne,sw,nw,s,n,nw,n,se,ne,se,se,sw,ne,ne,sw,se,se,se,se,sw,ne,se,s,ne,ne,n,se,ne,sw,ne,ne,se,se,nw,se,ne,ne,nw,sw,se,s,s,se,se,se,s,se,nw,se,ne,se,se,se,se,se,se,se,sw,nw,se,se,se,se,se,se,sw,se,sw,ne,se,se,se,se,se,se,se,se,s,se,se,se,se,se,se,ne,se,se,s,sw,s,se,se,se,se,se,se,se,s,se,sw,se,se,n,s,se,s,ne,se,se,se,s,se,s,se,se,ne,se,se,sw,s,se,se,se,se,nw,se,n,ne,s,s,nw,se,se,s,se,n,se,se,s,se,se,s,se,se,ne,se,se,se,s,s,sw,s,s,se,s,se,s,se,s,se,se,se,s,se,s,nw,s,s,se,se,se,se,sw,sw,s,se,s,se,se,s,n,se,se,se,se,s,se,se,s,se,se,se,sw,s,s,s,se,se,s,s,se,s,s,se,s,s,n,s,nw,s,n,s,sw,s,nw,s,s,se,se,sw,s,s,s,sw,se,s,n,s,se,n,s,se,se,se,s,s,s,se,ne,s,se,n,se,s,se,se,s,ne,sw,se,s,s,se,s,s,s,s,s,s,s,s,se,s,nw,s,s,s,s,s,s,s,s,s,s,s,ne,ne,s,s,s,s,s,s,s,s,s,ne,ne,s,s,s,s,s,s,s,s,nw,s,s,se,sw,s,sw,s,s,nw,s,s,s,s,s,s,s,s,s,n,ne,se,s,s,s,s,n,se,s,sw,s,sw,sw,sw,s,s,sw,s,s,s,nw,sw,s,s,s,s,s,ne,sw,s,s,sw,s,s,s,s,s,s,sw,s,s,se,s,s,sw,n,sw,s,s,sw,s,s,s,s,s,sw,s,ne,s,s,s,s,sw,ne,s,ne,n,sw,s,s,s,sw,s,sw,nw,s,s,ne,sw,sw,nw,s,s,sw,sw,s,ne,s,s,sw,se,s,s,sw,s,s,sw,s,sw,sw,s,s,s,s,sw,sw,sw,s,n,ne,s,ne,s,sw,s,se,s,sw,sw,s,sw,sw,sw,sw,s,s,s,s,se,s,sw,sw,sw,sw,n,s,sw,s,s,sw,sw,s,s,n,sw,s,sw,sw,ne,sw,sw,s,sw,sw,sw,sw,sw,s,s,sw,se,sw,sw,sw,sw,s,s,sw,s,sw,sw,nw,sw,sw,se,sw,s,s,nw,nw,s,s,sw,sw,s,n,s,sw,sw,se,s,sw,sw,ne,sw,sw,sw,sw,sw,ne,sw,s,sw,sw,n,sw,sw,sw,sw,s,sw,sw,sw,sw,sw,n,nw,s,sw,s,s,n,ne,sw,sw,sw,sw,n,sw,se,sw,sw,s,se,sw,sw,sw,sw,sw,sw,s,ne,ne,ne,sw,sw,sw,ne,s,sw,sw,sw,sw,nw,s,sw,sw,s,s,sw,sw,n,nw,nw,sw,sw,sw,se,nw,nw,sw,s,sw,sw,sw,sw,sw,sw,sw,sw,sw,n,sw,sw,sw,nw,nw,se,sw,sw,sw,sw,sw,ne,sw,nw,sw,sw,sw,sw,sw,sw,sw,sw,sw,sw,sw,sw,sw,nw,s,sw,sw,se,sw,s,sw,sw,nw,nw,nw,sw,sw,nw,sw,se,ne,sw,sw,sw,sw,ne,sw,sw,nw,sw,se,nw,sw,sw,sw,sw,sw,sw,sw,sw,sw,sw,sw,n,nw,sw,sw,sw,s,sw,sw,nw,n,s,sw,n,nw,nw,sw,sw,nw,sw,sw,se,sw,sw,nw,sw,sw,s,sw,nw,sw,nw,sw,nw,nw,nw,sw,nw,sw,sw,sw,sw,sw,sw,sw,sw,sw,s,sw,nw,nw,ne,n,nw,sw,sw,nw,sw,sw,nw,nw,nw,sw,sw,sw,ne,s,sw,nw,nw,sw,nw,sw,s,nw,n,nw,sw,sw,nw,nw,sw,nw,nw,n,sw,nw,sw,nw,sw,n,sw,nw,sw,sw,sw,sw,n,sw,n,nw,nw,s,sw,se,sw,sw,nw,n,sw,sw,sw,n,sw,nw,sw,ne,nw,sw,sw,s,n,nw,sw,nw,nw,nw,sw,sw,sw,nw,nw,ne,sw,s,sw,nw,n,sw,sw,sw,nw,ne,ne,sw,nw,nw,sw,s,s,sw,sw,nw,ne,sw,nw,sw,nw,nw,sw,sw,sw,sw,nw,nw,s,se,nw,sw,nw,ne,s,nw,nw,ne,sw,nw,nw,n,nw,nw,sw,sw,sw,nw,nw,nw,sw,nw,nw,n,sw,sw,nw,s,n,sw,nw,nw,sw,nw,n,nw,nw,nw,nw,nw,nw,sw,sw,n,n,sw,sw,nw,nw,nw,nw,ne,nw,nw,nw,sw,nw,nw,nw,nw,ne,nw,nw,nw,nw,n,nw,nw,nw,s,nw,nw,sw,nw,s,nw,ne,ne,nw,nw,sw,nw,nw,nw,nw,sw,nw,se,sw,nw,sw,nw,nw,ne,nw,n,nw,nw,sw,nw,nw,nw,sw,nw,ne,s,nw,nw,sw,s,nw,sw,sw,nw,nw,nw,sw,s,nw,nw,nw,nw,se,nw,s,nw,nw,nw,se,ne,ne,nw,nw,nw,nw,nw,sw,nw,ne,ne,nw,nw,nw,nw,nw,nw,nw,nw,nw,sw,nw,nw,nw,ne,nw,nw,s,nw,nw,ne,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,sw,nw,nw,nw,nw,nw,nw,nw,ne,nw,n,nw,nw,ne,n,nw,sw,nw,n,nw,n,sw,nw,ne,s,se,n,ne,se,nw,ne,nw,ne,nw,ne,nw,nw,nw,n,nw,nw,nw,nw,nw,nw,nw,ne,nw,s,se,nw,n,n,nw,ne,nw,nw,nw,nw,ne,nw,nw,s,nw,nw,nw,nw,nw,n,nw,nw,nw,nw,nw,n,nw,nw,s,nw,nw,nw,nw,nw,sw,nw,nw,nw,nw,nw,n,nw,nw,nw,nw,nw,sw,n,nw,nw,nw,nw,nw,nw,nw,s,nw,se,n,n,n,nw,se,nw,nw,s,s,nw,nw,n,nw,nw,s,nw,nw,nw,se,nw,nw,nw,se,nw,nw,nw,nw,se,nw,nw,nw,nw,nw,n,nw,n,ne,nw,nw,nw,se,ne,nw,nw,nw,n,nw,nw,ne,n,n,nw,nw,sw,nw,nw,nw,nw,se,nw,n,s,nw,nw,n,n,nw,se,n,nw,nw,nw,n,nw,nw,nw,n,nw,se,n,se,sw,s,n,s,nw,nw,nw,nw,n,n,s,nw,nw,se,nw,nw,se,nw,n,n,nw,n,se,nw,n,n,nw,n,nw,n,nw,nw,n,nw,n,s,nw,nw,nw,nw,ne,ne,se,sw,nw,n,n,nw,s,n,nw,nw,n,n,nw,n,nw,nw,nw,nw,nw,n,nw,n,n,sw,n,se,nw,n,n,nw,n,nw,nw,n,s,sw,nw,ne,nw,n,sw,nw,nw,n,nw,sw,s,nw,n,n,nw,se,n,nw,n,ne,n,nw,nw,n,nw,nw,n,nw,n,nw,nw,nw,n,se,sw,nw,nw,nw,sw,nw,nw,nw,nw,se,n,n,ne,n,nw,nw,n,nw,nw,n,sw,n,se,nw,nw,n,n,n,nw,n,nw,n,nw,n,ne,n,n,nw,n,n,n,nw,se,sw,n,sw,n,nw,nw,n,n,n,se,nw,sw,ne,n,se,nw,nw,n,n,n,n,n,n,nw,n,n,nw,sw,nw,n,sw,n,n,se,sw,n,n,n,nw,sw,nw,n,n,n,n,nw,n,n,nw,n,s,n,n,sw,n,nw,ne,s,nw,ne,n,n,n,ne,s,n,n,n,n,n,n,se,nw,nw,n,n,nw,n,n,s,se,n,nw,n,n,n,n,n,n,nw,n,n,n,nw,nw,nw,n,n,n,nw,nw,sw,n,se,n,s,n,n,n,n,n,n,ne,n,se,n,n,n,se,n,nw,n,nw,n,n,n,n,n,n,n,nw,n,n,n,n,n,n,ne,n,n,nw,n,n,sw,n,nw,n,n,sw,n,n,n,nw,se,n,n,n,nw,n,s,n,n,n,n,n,n,n,s,n,n,n,n,nw,n,n,sw,sw,nw,n,nw,nw,sw,n,n,n,n,n,n,n,n,n,n,n,s,n,n,n,n,nw,n,n,n,n,n,n,n,s,n,nw,n,sw,nw,ne,n,nw,n,sw,n,n,n,n,n,ne,n,nw,n,n,n,n,n,n,n,ne,n,n,n,n,ne,n,n,n,n,ne,n,n,n,n,ne,n,n,s,n,n,se,n,n,n,n,n,n,n,nw,n,ne,nw,sw,ne,nw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,ne,n,n,se,n,ne,n,ne,n,n,n,n,ne,n,ne,se,s,ne,nw,se,n,n,n,n,se,n,n,ne,s,n,nw,n,nw,nw,n,n,n,n,n,n,n,n,n,s,n,n,n,s,n,nw,n,n,n,n,n,n,n,n,n,n,n,n,ne,ne,n,sw,n,se,n,n,n,n,n,n,n,se,n,ne,n,ne,n,n,n,n,n,sw,n,n,s,nw,n,n,n,ne,ne,n,n,n,ne,n,n,se,n,n,n,n,ne,n,n,n,s,n,se,ne,n,n,n,n,n,n,n,n,s,ne,s,nw,n,ne,s,ne,n,n,n,n,ne,n,n,n,n,n,n,n,n,n,ne,n,se,ne,n,ne,ne,ne,ne,se,n,n,ne,n,n,n,n,nw,ne,sw,ne,n,n,ne,se,n,n,n,n,se,n,n,n,ne,n,se,ne,ne,n,s,nw,n,ne,n,n,nw,n,n,ne,n,ne,n,sw,n,se,n,ne,nw,ne,ne,n,n,n,ne,n,ne,nw,n,s,n,n,n,n,ne,n,n,ne,n,nw,n,n,n,ne,n,s,n,n,n,n,n,ne,ne,n,sw,n,ne,n,n,sw,ne,n,ne,ne,n,n,ne,ne,ne,n,ne,ne,ne,n,ne,sw,n,n,ne,ne,ne,se,n,ne,ne,ne,n,nw,n,ne,n,n,n,ne,n,n,n,n,n,ne,ne,n,ne,s,nw,ne,n,ne,ne,ne,n,n,n,n,nw,n,n,ne,ne,ne,n,ne,n,ne,ne,n,ne,ne,nw,ne,nw,n,n,ne,se,ne,se,ne,n,nw,n,n,s,n,se,ne,ne,n,ne,n,ne,s,n,n,sw,ne,ne,se,n,ne,n,n,n,n,sw,ne,ne,nw,n,n,ne,ne,ne,n,ne,n,sw,ne,ne,ne,ne,n,ne,se,ne,sw,n,n,n,ne,ne,sw,ne,ne,ne,n,ne,ne,n,ne,se,ne,s,nw,n,sw,n,ne,n,n,n,n,ne,n,sw,ne,ne,nw,n,ne,se,ne,ne,ne,ne,n,ne,ne,n,ne,n,ne,ne,ne,n,s,s,ne,ne,ne,s,ne,ne,ne,sw,n,n,ne,n,s,ne,n,n,nw,n,se,sw,ne,ne,ne,s,n,n,ne,ne,n,ne,ne,nw,ne,ne,ne,s,se,ne,ne,ne,n,ne,nw,n,ne,ne,sw,n,n,ne,ne,ne,n,ne,ne,se,ne,ne,n,ne,ne,ne,sw,s,n,n,n,se,n,s,ne,ne,ne,sw,ne,ne,se,ne,ne,ne,ne,ne,n,s,se,ne,ne,ne,n,ne,sw,se,s,ne,n,ne,ne,n,n,n,ne,n,ne,ne,se,ne,ne,n,ne,ne,ne,ne,ne,s,ne,ne,ne,nw,ne,ne,ne,ne,ne,n,ne,s,ne,ne,ne,n,ne,sw,n,n,n,ne,ne,n,ne,s,n,n,n,ne,ne,n,ne,ne,ne,sw,se,sw,ne,ne,s,ne,nw,ne,nw,se,nw,n,ne,se,n,ne,ne,ne,ne,ne,s,ne,ne,ne,ne,ne,n,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,se,ne,ne,ne,sw,ne,ne,ne,ne,n,ne,s,ne,s,ne,ne,n,ne,se,ne,ne,nw,n,ne,ne,ne,s,ne,sw,ne,n,ne,ne,n,ne,ne,ne,ne,ne,ne,n,ne,ne,ne,ne,ne,se,n,ne,ne,ne,ne,sw,ne,n,ne,se,ne,ne,ne,se,se,ne,sw,n,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,sw,ne,ne,ne,sw,n,n,ne,ne,n,ne,ne,ne,sw,ne,n,ne,ne,ne,se,ne,ne,nw,nw,sw,ne,ne,ne,ne,sw,ne,se,ne,n,ne,ne,ne,nw,ne,ne,ne,ne,ne,ne,sw,ne,ne,nw,ne,ne,ne,ne,ne,ne,ne,ne,sw,ne,ne,s,sw,ne,ne,s,sw,sw,ne,ne,ne,nw,ne,n,se,ne,ne,ne,ne,n,ne,nw,ne,ne,n,se,ne,ne,ne,ne,sw,ne,ne,s,ne,s,ne,ne,ne,ne,ne,ne,ne,nw,ne,ne,ne,se,ne,ne,ne,ne,se,ne,ne,sw,ne,s,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,sw,n,ne,ne,nw,se,ne,ne,ne,ne,se,ne,sw,ne,ne,n,se,ne,ne,se,ne,sw,nw,ne,ne,ne,ne,ne,ne,s,ne,se,sw,ne,s,ne,se,se,se,ne,ne,s,ne,ne,s,ne,se,ne,nw,s,ne,se,ne,ne,ne,sw,ne,se,ne,ne,ne,sw,ne,ne,ne,ne,nw,ne,ne,nw,ne,ne,s,ne,ne,se,ne,ne,nw,ne,ne,se,se,se,ne,se,ne,se,se,ne,ne,s,ne,ne,ne,ne,ne,ne,ne,ne,ne,n,ne,ne,ne,ne,ne,ne,ne,s,se,ne,sw,ne,ne,se,ne,ne,ne,ne,s,ne,se,ne,ne,se,n,n,ne,se,s,ne,s,ne,se,nw,ne,se,ne,ne,se,ne,se,se,ne,ne,se,ne,ne,ne,n,se,ne,ne,ne,ne,s,se,se,n,ne,se,se,ne,ne,se,ne,se,se,ne,ne,sw,ne,ne,ne,ne,ne,ne,nw,se,ne,se,ne,se,ne,s,ne,ne,sw,ne,ne,ne,ne,ne,s,se,ne,ne,s,se,ne,ne,ne,nw,ne,ne,ne,se,ne,ne,ne,ne,se,ne,ne,ne,se,ne,ne,se,n,s,ne,ne,ne,se,s,n,se,se,ne,sw,ne,ne,n,ne,se,n,se,n,s,n,s,ne,se,ne,ne,ne,ne,n,ne,se,sw,se,ne,se,nw,ne,ne,ne,se,se,ne,ne,ne,ne,ne,ne,ne,ne,nw,ne,n,s,ne,ne,ne,ne,ne,se,se,se,se,sw,s,n,ne,s,ne,ne,sw,se,se,ne,ne,ne,ne,ne,ne,se,se,s,ne,se,ne,nw,n,ne,se,se,ne,se,ne,ne,se,se,se,ne,ne,sw,se,nw,se,nw,se,se,se,se,ne,n,n,ne,se,se,ne,ne,se,ne,ne,se,ne,sw,ne,se,ne,n,se,nw,sw,ne,ne,se,ne,se,ne,ne,se,ne,se,ne,ne,ne,se,ne,se,se,n,nw,ne,ne,ne,ne,sw,n,ne,ne,ne,nw,ne,se,se,ne,ne,s,nw,n,ne,ne,ne,ne,ne,ne,ne,se,ne,sw,se,ne,s,n,ne,ne,se,ne,se,se,ne,se,ne,se,se,ne,se,se,se,ne,ne,ne,ne,se,ne,ne,nw,ne,ne,se,ne,s,se,ne,se,ne,ne,ne,ne,n,se,ne,se,se,ne,ne,ne,nw,ne,se,se,nw,ne,se,se,ne,sw,ne,ne,ne,n,ne,ne,ne,n,se,ne,se,ne,n,n,se,ne,se,se,se,ne,se,se,sw,se,ne,se,ne,sw,sw,ne,ne,ne,s,n,ne,ne,nw,ne,n,se,se,se,se,ne,nw,ne,ne,ne,se,ne,se,n,n,se,n,se,se,se,se,se,ne,sw,ne,se,ne,se,se,se,ne,sw,se,s,se,se,ne,se,se,se,n,ne,se,se,ne,ne,ne,ne,se,se,ne,se,se,ne,se,ne,ne,se,se,nw,se,se,ne,se,sw,se,ne,n,ne,se,se,se,nw,se,se,se,ne,se,ne,se,se,ne,se,se,ne,ne,se,se,sw,ne,se,se,sw,se,se,s,ne,ne,se,ne,s,ne,se,se,ne,se,nw,n,se,se,s,se,ne,se,ne,ne,sw,ne,ne,n,se,s,n,ne,se,se,ne,nw,ne,ne,se,se,ne,sw,ne,ne,ne,se,sw,ne,se,se,ne,n,ne,se,nw,se,se,se,ne,se,ne,ne,ne,s,ne,nw,ne,ne,ne,se,se,se,nw,se,ne,se,se,se,ne,se,ne,se,se,se,ne,se,se,se,n,se,ne,ne,se,se,se,se,sw,ne,se,se,se,ne,se,nw,n,ne,ne,ne,sw,n,se,n,se,se,n,ne,se,se,ne,se,ne,se,nw,se,se,se,s,sw,ne,se,sw,se,se,se,ne,ne,se,ne,se,se,se,se,ne,se,se,ne,se,se,ne,se,ne,se,se,se,ne,se,ne,ne,se,s,ne,ne,nw,se,ne,n,ne,se,se,ne,se,n,ne,ne,se,ne,se,se,se,ne,se,se,ne,ne,nw,ne,s,se,se,se,se,se,sw,nw,n,se,se,s,se,se,se,nw,se,n,nw,se,ne,ne,se,nw,se,se,se,se,se,se,ne,se,se,se,se,ne,se,se,ne,se,se,se,se,ne,se,se,se,se,ne,ne,nw,se,se,se,se,se,se,s,se,se,se,n,se,ne,ne,ne,se,se,se,se,ne,se,se,ne,se,se,se,se,se,se,se,sw,se,ne,ne,s,se,se,ne,se,se,se,ne,ne,se,se,se,se,se,se,se,s,sw,se,ne,se,se,se,se,se,se,se,n,se,sw,se,se,se,ne,se,se,se,se,se,s,ne,nw,se,se,se,se,se,sw,se,ne,sw,se,ne,se,se,ne,se,ne,n,ne,se,se,ne,se,ne,nw,nw,se,se,se,se,se,se,se,se,se,se,sw,se,se,se,se,se,nw,se,n,se,se,ne,se,se,nw,se,se,se,se,se,ne,nw,nw,se,se,se,se,ne,se,se,se,ne,ne,se,se,se,se,se,se,se,se,se,se,se,sw,s,se,se,ne,nw,se,se,se,se,se,se,sw,sw,se,ne,sw,nw,se,se,se,se,se,n,se,se,ne,se,se,se,nw,se,ne,se,se,se,s,se,se,n,se,se,ne,se,s,se,ne,se,se,se,nw,se,se,n,se,s,n,se,se,se,nw,se,s,sw,se,ne,se,se,se,nw,se,sw,se,se,sw,s,se,n,ne,sw,se,n,nw,se,ne,se,se,se,se,se,ne,se,se,se,se,se,se,se,se,n,se,se,se,ne,se,se,se,sw,se,nw,se,se,ne,se,se,se,se,n,ne,se,se,se,n,se,se,se,se,se,se,se,s,s,se,se,se,s,ne,se,se,se,se,se,se,se,se,se,se,se,se,se,n,n,se,se,se,se,se,se,se,se,se,s,sw,se,se,se,n,nw,se,se,se,se,ne,ne,se,n,se,se,sw,ne,sw,se,se,ne,se,se,se,se,se,se,se,se,se,n,se,nw,se,se,se,sw,s,se,se,se,se,se,se,se,se,ne,s,se,se,se,nw,s,se,n,se,se,se,s,sw,se,se,se,se,nw,ne,se,se,se,ne,s,se,sw,se,se,se,se,se,se,s,se,s,se,sw,se,ne,s,se,se,nw,se,se,nw,n,se,se,se,nw,nw,se,se,se,se,se,nw,s,se,se,ne,se,se,se,se,se,se,se,sw,se,se,se,se,se,se,nw,se,se,s,se,se,se,se,s,s,se,se,se,s,se,se,se,s,s,n,se,se,se,se,n,n,se,sw,nw,se,s,se,nw,se,s,nw,nw,se,s,se,se,se,se,se,se,sw,nw,se,se,s,se,se,se,se,se,se,n,n,ne,se,s,s,se,se,se,se,se,se,s,se,se,s,se,se,n,se,se,s,se,s,se,s,se,sw,se,se,sw,se,ne,se,sw,se,se,se,s,nw,se,ne,n,se,se,nw,se,ne,se,se,se,s,se,se,nw,se,s,se,se,se,nw,se,se,sw,s,se,s,se,se,nw,s,se,se,s,se,se,s,se,se,se,se,se,sw,s,se,se,s,sw,nw,ne,nw,se,nw,se,s,se,se,se,se,se,s,se,se,se,se,sw,s,sw,se,se,se,s,sw,sw,s,n,se,s,se,nw,se,se,se,ne,se,se,se,se,s,se,se,s,nw,s,se,s,nw,se,se,se,se,se,n,s,se,ne,n,se,se,nw,se,s,se,n,se,nw,s,s,s,se,nw,s,s,se,s,se,se,nw,s,se,s,se,se,se,se,n,se,se,s,se,se,se,se,s,s,se,s,se,se,s,se,s,n,se,n,se,se,s,se,s,se,se,s,s,se,se,s,se,se,se,se,s,s,s,se,s,nw,s,se,se,se,ne,nw,se,se,se,se,se,se,n,se,se,se,se,se,se,nw,se,se,se,s,s,nw,se,ne,se,s,se,ne,se,se,nw,se,se,se,sw,n,se,sw,se,se,nw,ne,s,se,sw,se,s,s,s,se,s,se,n,sw,sw,se,se,se,ne,se,s,se,sw,n,se,se,se,s,s,se,s,se,n,s,ne,se,se,s,se,se,s,sw,s,se,se,ne,s,n,se,se,se,s,s,s,se,se,s,s,ne,se,s,se,nw,se,s,se,se,s,s,s,se,n,se,se,ne,se,se,s,sw,se,s,ne,se,se,se,s,s,se,se,se,se,se,se,se,s,ne,se,s,se,s,s,nw,nw,s,s,nw,s,se,se,ne,se,se,se,n,s,s,s,s,se,se,s,s,s,nw,sw,se,s,s,n,se,s,s,s,s,n,s,se,s,s,se,sw,nw,nw,se,se,se,s,sw,se,se,se,s,se,se,s,s,s,se,ne,s,se,s,s,se,s,ne,se,se,se,se,se,se,ne,se,ne,s,se,se,se,se,se,s,s,s,n,se,nw,nw,s,se,sw,se,se,s,se,se,nw,s,s,s,ne,nw,se,se,se,n,ne,se,s,se,ne,se,ne,sw,ne,se,s,sw,se,se,se,s,s,ne,s,se,se,sw,s,s,s,s,se,se,s,s,se,s,se,s,s,nw,s,s,s,s,nw,nw,se,s,s,sw,s,se,nw,s,se,s,se,s,se,n,sw,n,ne,s,s,s,se,se,nw,s,n,se,s,s,s,se,s,s,s,sw,se,se,se,se,se,se,sw,s,nw,se,n,s,se,sw,nw,se,se,se,se,s,ne,se,ne,s,s,se,se,se,s,s,s,s,n,se,sw,n,s,nw,s,se,s,se,se,se,s,se,n,s,se,nw,se,s,s,se,se,se,s,s,n,s,se,s,s,s,se,se,se,s,s,s,s,se,se,s,se,s,s,s,s,s,s,s,s,nw,nw,se,n,sw,s,s,ne,s,nw,s,se,s,s,sw,s,se,nw,se,s,s,s,s,s,s,s,se,se,s,se,ne,s,se,se,se,s,s,s,se,ne,s,ne,s,s,se,s,s,ne,s,s,se,s,s,s,s,s,se,n,sw,n,s,se,se,s,s,nw,s,sw,se,n,s,se,s,s,sw,s,s,s,s,s,nw,s,nw,se,se,s,s,nw,se,s,s,sw,sw,s,se,se,s,s,s,se,s,se,s,s,s,se,s,ne,s,s,se,s,s,se,se,s,s,s,n,s,s,s,s,se,s,s,se,s,s,se,s,s,s,nw,se,s,s,se,se,se,nw,s,se,ne,s,se,s,n,nw,se,sw,se,se,s,se,s,se,s,sw,s,se,se,se,nw,s,s,s,s,sw,s,s,s,n,s,sw,s,s,se,se,se,s,se,s,s,s,se,s,se,se,nw,s,s,se,ne,s,se,s,se,se,se,s,s,s,s,se,s,s,s,s,se,s,s,s,s,se,se,se,sw,s,se,s,s,nw,s,s,se,s,se,s,se,s,sw,s,ne,s,s,ne,s,sw,s,s,ne,n,s,se,se,s,s,s,s,se,se,s,s,se,se,s,nw,s,s,n,s,ne,se,n,s,s,s,s,s,sw,s,n,n,s,s,sw,s,sw,n,se,s,s,s,s,nw,se,s,s,s,s,s,s,se,s,s,sw,s,s,s,se,se,ne,s,s,s,ne,se,se,s,s,se,n,n,se,n,sw,s,sw,se,nw,n,s,n,s,nw,sw,s,se,se,s,s,s,s,s,s,se,s,s,se,s,s,s,s,s,sw,se,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,nw,se,s,se,s,s,s,s,s,s,s,s,se,nw,se,s,s,s,se,nw,s,s,ne,s,s,se,se,sw,s,ne,n,s,s,se,n,ne,se,s,s,s,s,nw,s,ne,s,s,n,s,s,s,s,s,se,s,s,s,s,se,s,s,s,s,n,s,se,s,n,s,s,sw,s,s,s,s,s,se,s,ne,s,sw,n,s,n,se,nw,nw,s,sw,ne,n,sw,n,sw,s,n,s,se,s,se,s,s,s,s,nw,se,s,s,s,se,sw,s,se,s,s,s,s,s,s,s,s,s,s,se,ne,nw,s,s,s,s,s,se,s,ne,sw,se,se,sw,sw,s,se,ne,s,nw,ne,n,s,s,s,s,s,ne,s,s,s,s,se,s,se,s,s,s,sw,s,s,se,s,s,s,s,n,se,s,ne,s,s,s,s,se,sw,se,s,s,s,s,s,se,s,n,n,s,s,sw,s,s,s,s,ne,s,sw,s,s,s,s,s,sw,s,s,n,s,n,s,s,s,n,se,s,s,s,s,s,s,s,s,s,s,s,s,ne,sw,s,s,ne,nw,se,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,sw,s,s,s,nw,s,s,se,se,s,n,s,se,s,s,s,se,s,nw,s,s,s,s,se,s,s,s,ne,s,s,s,se,s,s,s,s,s,s,s,n,s,s,s,s,s,ne,s,s,s,s,sw,s,s,s,s,s,s,s,s,s,s,ne,se,sw,s,sw,s,s,s,se,s,s,s,s,se,s,s,ne,s,s,s,s,se,ne,se,n,n,n,n,n,n,nw,nw,sw,sw,nw,ne,sw,ne,sw,nw,sw,ne,s,sw,sw,sw,sw,s,sw,sw,sw,sw,nw,s,s,s,nw,s,s,s,se,s,se,s,se,n,se,s,se,s,nw,sw,se,se,s,se,se,se,se,se,se,se,se,nw,se,se,se,se,se,ne,se,ne,s,se,se,se,se,se,ne,ne,ne,ne,ne,ne,se,ne,ne,ne,ne,ne,ne,s,ne,nw,ne,sw,ne,ne,ne,ne,ne,ne,ne,se,n,ne,ne,se,ne,ne,n,se,ne,ne,sw,ne,ne,n,ne,n,ne,n,n,n,sw,n,ne,n,ne,ne,se,ne,n,n,ne,n,n,s,n,n,ne,n,s,n,n,n,s,n,ne,n,n,n,n,n,se,nw,nw,n,n,nw,n,se,n,sw,s,n,nw,nw,se,nw,nw,nw,nw,n,n,se,n,n,n,nw,nw,n,nw,ne,n,nw,n,nw,sw,nw,n,n,n,ne,se,nw,n,nw,n,n,nw,n,nw,n,nw,n,nw,nw,nw,nw,nw,nw,sw,nw,nw,nw,nw,se,sw,sw,nw,se,nw,s,nw,nw,nw,nw,nw,nw,nw,s,n,nw,nw,nw,sw,nw,se,nw,nw,nw,nw,sw,sw,nw,s,sw,nw,s,nw,nw,sw,nw,sw,sw,nw,sw,se,nw,nw,nw,nw,nw,sw,sw,nw,se,sw,sw,nw,sw,nw,se,sw,nw,nw,nw,n,nw,sw,nw,ne,nw,nw,s,nw,nw,nw,sw,nw,sw,nw,sw,sw,sw,sw,n,sw,nw,s,sw,nw,ne,sw,n,s,sw,sw,sw,sw,ne,sw,sw,sw,nw,sw,s,sw,sw,nw,sw,sw,sw,sw,sw,sw,sw,sw,sw,se,n,sw,s,sw,sw,n,sw,sw,s,s,sw,sw,sw,sw,sw,sw,sw,s,s,sw,sw,sw,ne,sw,sw,s,sw,s,nw,sw,sw,se,se,sw,sw,sw,s,s,s,sw,nw,sw,nw,s,sw,sw,sw,sw,sw,sw,s,sw,s,sw,sw,sw,s,sw,s,sw,s,sw,s,sw,s,sw,s,sw,sw,s,s,s,sw,n,sw,s,n,s,s,s,sw,s,n,s,sw,sw,sw,sw,s,s,s,s,s,s,s,s,sw,sw,s,sw,se,s,s,s,sw,s,s,sw,s,ne,s,s,s,s,s,s,s,s,s,n,se,s,s,nw,s,s,s,se,s,s,s,s,s,s,s,s,s,s,nw,se,s,s,s,sw,s,s,s,s,s,s,s,ne,n,s,se,s,s,s,s,s,s,se,se,nw,nw,s,s,s,s,s,se,sw,s,s,se,s,s,s,s,s,s,s,s,s,n,s,s,s,se,s,s,s,s,s,s,se,s,s,n,s,s,se,s,s,s,se,s,s,nw,s,s,s,n,s,s,se,s,se,s,n,ne,s,s,s,s,se,ne,n,s,se,s,se,s,s,se,s,s,s,s,s,se,s,sw,s,se,se,s,se,s,s,ne,s,ne,ne,se,s,ne,se,s,ne,s,se,ne,se,se,se,sw,s,se,se,se,se,se,n,s,s,se,s,se,s,s,se,se,s,s,se,se,nw,se,ne,s,s,se,se,se,se,se,s,se,ne,se,se,s,ne,se,sw,se,se,se,se,se,nw,se,se,se,se,se,se,se,s,ne,n,sw,ne,se,se,se,se,se,ne,se,se,se,se,se,se,se,se,se,n,se,s,s,se,se,sw,nw,s,se,se,ne,se,se,ne,s,se,se,se,se,se,se,se,se,n,se,se,se,se,se,se,ne,se,ne,nw,se,se,ne,nw,nw,se,se,se,se,sw,se,se,sw,n,se,se,sw,se,se,se,se,nw,se,se,se,se,se,nw,sw,ne,ne,ne,se,ne,ne,nw,se,se,nw,se,se,se,se,se,ne,se,s,se,se,s,ne,se,ne,se,se,se,ne,s,se,ne,ne,ne,ne,se,n,se,se,se,se,ne,se,n,ne,se,se,se,ne,sw,nw,nw,ne,se,ne,se,se,se,n,se,ne,se,se,se,se,ne,se,ne,n,se,se,ne,nw,ne,ne,se,se,n,se,se,s,se,sw,ne,ne,ne,se,se,se,ne,ne,se,n,ne,ne,se,ne,ne,ne,se,ne,sw,n,ne,s,se,se,se,sw,ne,se,se,se,sw,ne,se,ne,ne,ne,sw,ne,ne,s,ne,s,ne,se,ne,ne,se,se,se,nw,ne,ne,ne,se,ne,se,se,ne,ne,ne,se,sw,ne,ne,ne,ne,se,ne,sw,ne,sw,ne,n,nw,sw,ne,ne,ne,sw,ne,se,sw,n,ne,ne,se,n,se,ne,n,ne,se,ne,nw,ne,ne,s,n,se,ne,nw,ne,se,ne,ne,ne,se,ne,se,se,ne,ne,ne,se,se,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,se,se,nw,ne,ne,ne,ne,ne,ne,ne,se,se,ne,ne,ne,se,ne,ne,ne,ne,ne,ne,ne,ne,nw,n,n,ne,nw,ne,ne,sw,se,ne,s,ne,nw,ne,nw,ne,ne,ne,ne,ne,ne,ne,n,n,ne,n,ne,ne,s,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,ne,se,n,n,ne,s,ne,ne,ne,nw,se,ne,nw,nw,ne,n,n,ne,ne,nw,ne,n,ne,sw,n,ne,ne,ne,ne,ne,ne,ne,ne,ne,n,n,ne,ne,ne,ne,ne,n,n,ne,ne,se,sw,ne,n,ne,n,ne,ne,sw,ne,ne,n,ne,ne,se,sw,ne,ne,ne,s,n,n,s,ne,n,se,ne,ne,sw,s,ne,nw,n,n,ne,nw,ne,n,n,s,s,n,ne,ne,n,n,nw,ne,n,ne,ne,ne,ne,n,s,n,se,sw,se,ne,ne,ne,n,ne,ne,ne,n,nw,ne,n,n,ne,nw,ne,ne,sw,n,n,se,ne,n,ne,nw,se,ne,ne,ne,n,ne,ne,n,ne,ne,ne,ne,n,ne,ne,s,n,s,nw,n,n,nw,ne,ne,ne,s,n,s,ne,ne,ne,n,se,ne,ne,nw,n,n,n,ne,s,sw,n,ne,n,n,sw,n,ne,n,ne,n,sw,ne,ne,ne,sw,n,ne,ne,sw,ne,ne,n,n,se,ne,ne,s,ne,ne,n,nw,s,n,n,ne,nw,sw,ne,n,ne,ne,n,ne,n,se,n,ne,sw,sw,n,n,n,ne,ne,n,ne,n,s,ne,se,ne,nw,n,n,n,n,se,nw,ne,n,n,n,n,nw,nw,ne,n,se,ne,n,n,n,ne,n,ne,ne,ne,sw,n,s,n,n,n,ne,se,n,n,ne,ne,ne,sw,ne,ne,n,n,n,n,n,n,ne,ne,n,s,n,n,n,n,ne,ne,ne,n,n,se,nw,n,n,n,n,s,n,ne,n,n,n,n,n,n,n,n,sw,n,n,ne,n,n,n,s,ne,nw,n,nw,sw,n,n,n,n,s,n,n,ne,n,n,n,n,n,n,n,s,s,n,n,n,ne,n,s,ne,n,se,n,n,n,sw,n,n,n,ne,n,n,n,n,sw,se,n,sw,n,n,n,sw,ne,s,n,n,sw,s,se,n,n,n,n,ne,n,n,n,n,se,n,n,n,n,n,n,se,n,sw,n,n,n,nw,s,sw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,sw,n,n,se,n,nw,se,n,sw,n,n,n,n,n,n,nw,n,n,n,n,n,n,n,n,n,sw,n,nw,ne,n,n,n,n,n,n,n,nw,n,n,sw,n,n,n,n,n,n,n,n,ne,n,s,n,n,n,n,ne,n,s,ne,n,n,n,nw,n,n,n,n,n,se,nw,n,nw,sw,n,n,ne,n,n,n,n,nw,n,n,n,nw,n,n,nw,n,n,n,sw,ne,n,n,s,n,n,n,nw,n,ne,n,nw,n,n,nw,nw,n,nw,nw,n,n,n,nw,sw,n,n,nw,sw,sw,n,nw,n,s,nw,n,s,nw,nw,nw,nw,n,se,n,n,nw,sw,nw,n,nw,n,ne,n,n,nw,nw,n,n,nw,nw,ne,nw,se,nw,nw,sw,n,n,n,sw,sw,n,n,n,n,nw,n,nw,nw,n,nw,n,nw,s,n,n,nw,nw,n,n,nw,n,sw,nw,nw,n,n,nw,nw,s,n,n,n,n,s,nw,n,n,n,n,n,nw,n,n,nw,n,nw,n,n,n,nw,n,n,nw,ne,nw,nw,n,nw,nw,n,n,nw,n,nw,ne,n,nw,n,n,nw,nw,nw,ne,nw,nw,n,n,n,se,ne,n,nw,n,n,n,n,nw,nw,n,nw,n,n,s,n,n,n,n,nw,n,nw,nw,se,n,nw,n,n,nw,nw,nw,nw,n,n,n,s,nw,nw,nw,ne,s,nw,nw,nw,n,nw,nw,sw,nw,n,nw,nw,n,nw,nw,n,nw,sw,n,n,n,n,nw,nw,nw,n,n,n,n,nw,n,n,ne,n,nw,nw,nw,ne,ne,n,n,nw,nw,ne,n,nw,nw,nw,nw,n,n,n,nw,nw,n,n,n,ne,nw,nw,nw,se,n,n,nw,n,nw,n,nw,nw,n,s,nw,n,nw,nw,nw,nw,nw,ne,nw,nw,n,nw,n,n,n,nw,n,n,ne,nw,n,n,nw,sw,nw,nw,nw,nw,nw,nw,nw,nw,s,nw,se,n,nw,nw,nw,nw,nw,nw,s,nw,n,nw,n,nw,nw,nw,nw,nw,se,s,nw,se,nw,n,ne,nw,nw,nw,n,nw,nw,nw,nw,nw,nw,n,ne,nw,se,n,nw,nw,nw,nw,sw,n,nw,nw,n,nw,n,nw,nw,ne,n,nw,n,ne,se,n,sw,nw,ne,nw,sw,nw,ne,n,nw,ne,se,nw,nw,nw,nw,nw,ne,nw,n,nw,s,nw,nw,nw,ne,nw,nw,nw,nw,s,nw,n,sw,s,nw,se,nw,ne,nw,n,nw,sw,nw,n,nw,nw,sw,nw,nw,nw,nw,n,nw,nw,nw,nw,nw,nw,nw,nw,se,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,n,s,s,nw,nw,nw,se,nw,nw,nw,nw,sw,nw,nw,n,nw,n,sw,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,nw,n,nw,s,nw,nw,nw,nw,nw,nw,nw,nw,n,nw,sw,nw,nw,nw,nw,nw,s,nw,sw,nw,nw,nw,se,nw,nw,sw,nw,nw,nw,nw,nw,nw,n,nw,nw,nw,n,nw,sw,n,nw,nw,se,nw,sw,se,sw,nw,sw,n,nw,nw,nw,ne,nw,nw,nw,se,nw,ne,ne,nw,nw,nw,nw,nw,s,nw,ne,n,nw,ne,nw,sw,nw,nw,sw,nw,se,nw,nw,ne,nw,ne,nw,sw,sw,nw,nw,nw,nw,nw,sw,nw,nw,nw,se,sw,sw,nw,s,sw,nw,nw,nw,nw,ne,nw,ne,nw,nw,sw,nw,nw,nw,sw,nw,nw,nw,ne,sw,s,nw,ne,nw,nw,se,se,n,nw,nw,sw,nw,nw,nw,nw,nw,sw,nw,nw,nw,nw,n,nw,sw,nw,s,nw,sw,nw,nw,nw,sw,nw,nw,se,nw,n,nw,nw,ne,sw,nw,ne,nw,se,s,nw,nw,n,n,nw,nw,nw,nw,ne,se,sw,nw,nw,nw,nw,se,nw,nw,nw,sw,nw,nw,s,nw,nw,nw,nw,nw,sw,nw,nw,nw,nw,sw,nw,sw,nw,nw,nw,ne,nw,sw,nw,sw,nw,sw,nw,nw,nw,sw,ne,sw,nw,sw,nw,se,nw,se,nw,nw,n,sw,nw,nw,nw,nw,sw,sw,nw,sw,nw,nw,nw,nw,nw,sw,sw,nw,nw,nw,sw,nw,nw,nw,nw,ne,nw,n,nw,sw,sw,nw,nw,nw,nw,nw,sw,nw,sw,nw,sw,sw,nw,nw,sw,sw,nw,nw,nw,ne,sw,ne,sw,sw,nw,nw,nw,nw,nw,nw,nw,sw,se,nw,nw,sw,sw,nw,nw,s,nw,nw,sw,nw,nw,nw,n,sw,nw,sw,sw,n,nw,nw,nw,sw,sw,nw,s,nw,nw,nw,sw,nw,n,nw,nw,nw,nw,n,nw,nw,nw,sw,nw,nw,nw,se,nw,sw,nw,sw,sw,sw,nw,ne,s,sw,ne,nw,nw,s,nw,sw,nw,s,nw,sw,sw,sw,s,nw,se,nw,nw,nw,sw,sw,sw,n,nw,sw,nw,nw,nw,nw,nw,nw,sw,n,nw,nw,nw,s,nw,nw,nw,nw,sw,sw,sw,nw,nw,sw,sw,nw,nw,sw,nw,sw,nw,sw,sw,sw,sw,sw,nw,sw,s,nw,nw,sw,sw,sw,sw,nw,sw,sw,nw,sw,ne,nw,sw,nw,nw,sw,nw,se,nw,n,sw,nw,s,nw,ne,nw,se,sw,sw,sw,n,ne,sw,nw,sw,nw,sw,se,s,sw,sw,nw,sw,sw,nw,nw,sw,nw,sw,nw,sw,nw,sw,sw,sw,ne,sw,nw,sw,nw,nw,sw,nw,n,nw,sw,n,nw,nw,sw,sw,se,nw,nw,sw,nw,sw,sw,sw,sw,nw,se,sw,sw,nw,nw,sw,sw,sw,nw,sw,nw,nw,nw,sw,n,nw,sw,n,nw,s,nw,nw,sw,s,sw,sw,nw,sw,sw,sw,nw,ne,sw,ne,sw,s,sw,sw,nw,sw,nw,sw,sw,nw,nw,nw,sw,sw,ne,sw,n,sw,sw,sw,n,sw,sw,nw,sw,n,n,sw,sw,sw,nw,s,sw,sw,sw,sw,nw,nw,sw,nw,sw,sw,s,sw,nw,sw,sw,sw,s,sw,sw,n,nw,sw,n,sw,sw,s,nw,se,sw,sw,sw,sw,sw,nw,sw,sw,sw,sw,sw,nw,sw,sw,sw,sw,sw,sw,sw,sw,sw,nw,nw,sw,sw,sw,s,ne,se,nw,sw,sw,sw,nw,s,nw,nw,sw,sw,s,sw,sw,se,sw,sw,sw,sw,sw,sw,sw,sw,sw,nw,sw,nw,nw,nw,nw,nw,nw,s,nw,sw,sw,sw,sw,sw,n,sw,se,sw,sw,s,sw,sw,sw,sw,sw,s,s,sw,s,ne,sw,sw,s,sw,sw,nw,sw,sw,sw,sw,ne,se,sw,sw,sw,sw,n,sw,sw,sw,sw,s,nw,se,nw,nw,sw,sw,nw,se,nw,se,sw,sw,sw,nw,s,sw,sw,sw,sw,sw,sw,sw,sw,sw,ne,se,nw,nw,sw,sw,sw,n,s,sw,nw,nw,se,sw,ne,sw,n,s,sw,sw,nw,sw,sw,sw,sw,sw,ne,sw,sw,se,sw,sw,sw,sw,nw,sw,sw,ne,sw,nw,sw,s,sw,sw,sw,sw,sw,sw,sw,sw,se,sw,se,sw,sw,sw,sw,sw,nw,sw,sw,sw,sw,sw,se,sw,sw,se,sw,sw,ne';
+        
+        puzzle = puzzle.split(',');
+        
+        var n=0, ne=0, nw=0, s=0, se=0, sw=0, oddaljenost = 0, koordinate_najvecje_vsote = {n:0, ne:0, nw:0, s:0, se:0, sw:0}, text='';
+        
+        for(var i=0; i<puzzle.length; i++){
+            switch(puzzle[i]){
+                case 'n':  n++; break;
+                case 'ne': ne++; break;
+                case 'nw': nw++; break;
+                case 's':  s++; break;
+                case 'se': se++; break;
+                case 'sw': sw++; break;
+            }
+            // drugi del
+            var n_s = Math.abs(n-s);
+            var ne_sw = Math.abs(ne-sw);
+            var nw_se = Math.abs(nw-se);
+            
+            if(n_s < ne_sw && n_s< nw_se) {
+                if(n_s%2 == 1) n_s--;
+                var vsota = n_s*2 + (ne_sw-n_s) + (nw_se-n_s);
+            }
+            else{
+                var vsota = n_s + ne_sw + nw_se;
+            }
+            
+            
+            var odd = Math.ceil(vsota);
+            if(odd > oddaljenost) oddaljenost = odd;
+            
+            text += 'Korak v smeri: ' + puzzle[i] + ' Trenutna oddaljenost: ' + odd;
+            text += puzzle[i] + ' Največja oddaljenost: ' + oddaljenost + '<br><br>';
+            
+        }
+        
+        document.getElementById('html').innerHTML += 'n : ' + n + '<br>';
+        document.getElementById('html').innerHTML += 'ne: ' + ne + '<br>';
+        document.getElementById('html').innerHTML += 'nw: ' + nw + '<br>';
+        document.getElementById('html').innerHTML += 's : ' + s + '<br>';
+        document.getElementById('html').innerHTML += 'se: ' + se + '<br>';
+        document.getElementById('html').innerHTML += 'sw: ' + sw + '<br>';
+        
+        
+        document.getElementById('html').innerHTML += '<br>';
+        document.getElementById('html').innerHTML += '<br>';
+        
+        document.getElementById('html').innerHTML += 'n - s = N :' + (n-s) + '<br>';
+        document.getElementById('html').innerHTML += 'ne - sw = NE :' + (ne-sw) + '<br>';
+        document.getElementById('html').innerHTML += 'se - nw = SE : ' + (se-nw) + '<br>';
+        
+        document.getElementById('html').innerHTML += '<br>';
+        document.getElementById('html').innerHTML += '<br>';
+        
+        document.getElementById('html').innerHTML += 'n-s + ne-se + se-nw: ' + ((n-s) + (ne-se) + (se-nw)) + '<br>';
+        
+        document.getElementById('html').innerHTML += '<br>';
+        document.getElementById('html').innerHTML += '<br>';
+        
+        // drugi del
+        document.getElementById('html').innerHTML += text;
+        
+    };
+    solve();
+    // Day 12 # NAJSLABŠA KODA MOJEGA ŽIVLJENJA xD ampak deluje pa, počasno sicer, pa vseeno =D
+    
+    function solve(){
+        var puzzle = '0 <-> 82*1 <-> 41, 1402*2 <-> 454, 1690*3 <-> 533, 1726*4 <-> 82*5 <-> 202, 1769*6 <-> 682, 789, 1295*7 <-> 1243, 1500*8 <-> 1630*9 <-> 847, 1922*10 <-> 446*11 <-> 98, 172, 859, 1303*12 <-> 1748*13 <-> 334*14 <-> 850, 1537, 1627, 1747*15 <-> 194, 722, 1091, 1290*16 <-> 537, 965, 1642*17 <-> 371*18 <-> 422, 436, 1795*19 <-> 487, 872, 1845*20 <-> 423, 561, 1313, 1984*21 <-> 62, 760*22 <-> 62, 126, 586, 1472*23 <-> 1057, 1809, 1938*24 <-> 24, 986*25 <-> 1758*26 <-> 1780*27 <-> 622, 748*28 <-> 1048, 1617*29 <-> 451, 751, 866, 1885*30 <-> 501*31 <-> 134, 218, 1993*32 <-> 629*33 <-> 1774*34 <-> 1011, 1151*35 <-> 1432*36 <-> 202*37 <-> 664, 1021, 1159*38 <-> 103, 1123, 1228*39 <-> 1816*40 <-> 896*41 <-> 1, 1905*42 <-> 224, 824, 1453*43 <-> 1926*44 <-> 703*45 <-> 438*46 <-> 251, 1886*47 <-> 709*48 <-> 425, 1557, 1944*49 <-> 1245*50 <-> 1294*51 <-> 51, 115, 894, 1624*52 <-> 629, 882*53 <-> 112, 1007, 1665*54 <-> 766, 1169, 1349*55 <-> 55*56 <-> 56, 1250*57 <-> 150*58 <-> 168, 396, 639, 651*59 <-> 436*60 <-> 315, 1556*61 <-> 1681*62 <-> 21, 22*63 <-> 385, 970, 979*64 <-> 314, 1613*65 <-> 84, 189, 1167*66 <-> 777, 1097, 1551*67 <-> 1380*68 <-> 384, 500, 1490*69 <-> 882, 1373, 1982*70 <-> 264, 1149*71 <-> 731, 1104, 1897*72 <-> 442, 1118, 1126, 1392*73 <-> 1241, 1762*74 <-> 102*75 <-> 75, 1153, 1226*76 <-> 901*77 <-> 794*78 <-> 432*79 <-> 79, 1042, 1086, 1471*80 <-> 303, 621, 989, 1985, 1992*81 <-> 118*82 <-> 0, 4, 848, 1240*83 <-> 845, 1338*84 <-> 65, 973*85 <-> 85, 1352*86 <-> 378, 1671*87 <-> 87, 587*88 <-> 243, 1384*89 <-> 1214, 1498*90 <-> 477, 1626, 1788*91 <-> 1036*92 <-> 409*93 <-> 724, 819*94 <-> 869, 1100*95 <-> 1394, 1523*96 <-> 1213*97 <-> 757*98 <-> 11, 742, 1556*99 <-> 508*100 <-> 997*101 <-> 1338*102 <-> 74, 305, 1883*103 <-> 38, 809, 1701*104 <-> 104*105 <-> 675, 993*106 <-> 1082, 1167, 1600*107 <-> 473, 1096*108 <-> 762, 951*109 <-> 1464, 1489*110 <-> 662, 682, 1536*111 <-> 457, 1797*112 <-> 53, 920*113 <-> 405, 1927*114 <-> 1252, 1538*115 <-> 51*116 <-> 219, 507*117 <-> 1562*118 <-> 81, 1815*119 <-> 524, 1014, 1344*120 <-> 1141*121 <-> 1179, 1418, 1924*122 <-> 684*123 <-> 1105*124 <-> 1554*125 <-> 674*126 <-> 22, 1106, 1360*127 <-> 302, 996, 1449*128 <-> 137, 786*129 <-> 492*130 <-> 505, 1783*131 <-> 945*132 <-> 1892*133 <-> 133, 1362*134 <-> 31, 555, 1184*135 <-> 603, 705, 1699, 1821*136 <-> 1940*137 <-> 128, 504*138 <-> 1536, 1956*139 <-> 192, 800, 1643, 1859*140 <-> 1119, 1464*141 <-> 905, 1576*142 <-> 891, 1512*143 <-> 157, 905*144 <-> 439*145 <-> 1464*146 <-> 1263*147 <-> 147*148 <-> 215*149 <-> 188*150 <-> 57, 819*151 <-> 151*152 <-> 209, 359*153 <-> 424, 452, 1473*154 <-> 1206, 1879*155 <-> 1560*156 <-> 821*157 <-> 143, 616, 1507*158 <-> 492, 641*159 <-> 599, 1340*160 <-> 1790*161 <-> 545*162 <-> 750*163 <-> 163*164 <-> 817, 1059*165 <-> 755*166 <-> 927, 1380*167 <-> 420, 470, 1533, 1843*168 <-> 58, 860, 1727, 1817*169 <-> 227, 1970*170 <-> 670, 809*171 <-> 661, 737, 1426, 1716*172 <-> 11*173 <-> 184, 1756*174 <-> 1398, 1464, 1844*175 <-> 292, 619*176 <-> 1571*177 <-> 1187, 1293, 1570*178 <-> 1370, 1491, 1813*179 <-> 796, 1381*180 <-> 309, 988*181 <-> 278, 324*182 <-> 699, 1563*183 <-> 411*184 <-> 173, 1172*185 <-> 1507*186 <-> 1156*187 <-> 1211*188 <-> 149, 594, 726, 1612*189 <-> 65, 1482*190 <-> 1392, 1953*191 <-> 1184*192 <-> 139*193 <-> 1728*194 <-> 15*195 <-> 1113, 1573*196 <-> 593*197 <-> 398, 1874, 1942*198 <-> 584, 1412*199 <-> 199, 1573, 1837*200 <-> 1932*201 <-> 678, 825*202 <-> 5, 36, 511, 1257, 1961*203 <-> 1003, 1480*204 <-> 1764*205 <-> 319*206 <-> 396*207 <-> 272*208 <-> 904, 1267*209 <-> 152, 535, 1515, 1873*210 <-> 380, 1132, 1794*211 <-> 483*212 <-> 307*213 <-> 713, 1337*214 <-> 1117*215 <-> 148, 869, 1619*216 <-> 365*217 <-> 1447, 1628*218 <-> 31*219 <-> 116, 383*220 <-> 220, 382*221 <-> 391, 648*222 <-> 746, 1338*223 <-> 1174*224 <-> 42, 336*225 <-> 790, 1476*226 <-> 719, 1943*227 <-> 169*228 <-> 433, 1144*229 <-> 258, 800*230 <-> 1920*231 <-> 1849*232 <-> 1888*233 <-> 233, 1317*234 <-> 575, 1158*235 <-> 335, 596, 1918*236 <-> 327, 608, 1191*237 <-> 628, 1214, 1448*238 <-> 238*239 <-> 383, 1039, 1952*240 <-> 1023, 1203*241 <-> 263*242 <-> 242*243 <-> 88*244 <-> 397, 1912*245 <-> 608*246 <-> 417, 785, 900, 921, 1488*247 <-> 592, 1846*248 <-> 248, 770*249 <-> 249, 1635*250 <-> 1940*251 <-> 46*252 <-> 520, 1972*253 <-> 1847*254 <-> 323*255 <-> 750, 1391*256 <-> 747*257 <-> 502, 1003*258 <-> 229, 1749*259 <-> 259*260 <-> 1916*261 <-> 1268, 1694, 1975*262 <-> 262*263 <-> 241, 1213, 1950*264 <-> 70*265 <-> 299, 538*266 <-> 406*267 <-> 1609*268 <-> 1561*269 <-> 492, 1694*270 <-> 550, 1427, 1779*271 <-> 675, 1179, 1294*272 <-> 207, 603, 1485*273 <-> 459, 556, 767, 992, 1656, 1983*274 <-> 1002*275 <-> 1859*276 <-> 934, 1980*277 <-> 1325*278 <-> 181, 1804*279 <-> 403*280 <-> 1705, 1778*281 <-> 281*282 <-> 1509*283 <-> 600, 764*284 <-> 284, 506, 953, 1770*285 <-> 815*286 <-> 560, 1176*287 <-> 495, 775*288 <-> 1315*289 <-> 442, 923*290 <-> 1524, 1789*291 <-> 516, 550*292 <-> 175, 1136, 1180*293 <-> 1855*294 <-> 350, 490, 1658*295 <-> 1525*296 <-> 983*297 <-> 1709*298 <-> 1100*299 <-> 265, 655, 1114*300 <-> 716, 902*301 <-> 1496, 1995*302 <-> 127, 376*303 <-> 80, 659, 1136, 1229, 1606*304 <-> 996*305 <-> 102, 1309, 1728*306 <-> 306*307 <-> 212, 342, 1067*308 <-> 880, 1999*309 <-> 180, 813*310 <-> 768*311 <-> 311*312 <-> 943, 1355, 1865*313 <-> 313*314 <-> 64, 585, 1717*315 <-> 60*316 <-> 425*317 <-> 526, 1484*318 <-> 1574*319 <-> 205, 1767*320 <-> 601, 605*321 <-> 1829, 1977*322 <-> 325, 1109*323 <-> 254, 861, 910, 1130*324 <-> 181, 466*325 <-> 322, 766*326 <-> 423, 1989*327 <-> 236, 1354*328 <-> 1912*329 <-> 957, 1180*330 <-> 1175, 1350, 1645*331 <-> 1101, 1390*332 <-> 444, 1785*333 <-> 685, 1678*334 <-> 13, 890*335 <-> 235, 1737*336 <-> 224, 552*337 <-> 337, 913*338 <-> 479*339 <-> 339*340 <-> 1676*341 <-> 1444*342 <-> 307*343 <-> 343, 1271, 1820*344 <-> 1502, 1658, 1864*345 <-> 765, 1009, 1324, 1613*346 <-> 621, 729*347 <-> 1923*348 <-> 1385*349 <-> 1000*350 <-> 294*351 <-> 423, 878*352 <-> 1327*353 <-> 600, 1781*354 <-> 1231, 1969*355 <-> 1560*356 <-> 984, 1217*357 <-> 1678*358 <-> 754, 1989*359 <-> 152*360 <-> 886*361 <-> 1099, 1614*362 <-> 1584*363 <-> 1688*364 <-> 364*365 <-> 216, 617*366 <-> 475, 816*367 <-> 886, 1315*368 <-> 368*369 <-> 887*370 <-> 1129, 1466*371 <-> 17, 748, 1205*372 <-> 1739*373 <-> 1009*374 <-> 1045, 1502, 1833*375 <-> 557, 1505*376 <-> 302, 1217*377 <-> 494, 619, 690, 732*378 <-> 86, 1535*379 <-> 379, 1563*380 <-> 210, 1816*381 <-> 578, 722*382 <-> 220*383 <-> 219, 239*384 <-> 68*385 <-> 63, 1043*386 <-> 1108, 1570*387 <-> 1548*388 <-> 619*389 <-> 389*390 <-> 413, 786, 1769, 1906*391 <-> 221, 396, 733*392 <-> 714, 1770*393 <-> 408, 1006*394 <-> 1174, 1469*395 <-> 958*396 <-> 58, 206, 391, 1610*397 <-> 244*398 <-> 197, 1649*399 <-> 647, 972*400 <-> 1985*401 <-> 1632*402 <-> 807*403 <-> 279, 852, 1624, 1981*404 <-> 1149*405 <-> 113*406 <-> 266, 1336*407 <-> 818*408 <-> 393*409 <-> 92, 1491*410 <-> 836*411 <-> 183, 963, 1308*412 <-> 1542*413 <-> 390*414 <-> 1602*415 <-> 1419*416 <-> 1137, 1288, 1494*417 <-> 246*418 <-> 503, 525, 1005, 1447*419 <-> 607, 1310*420 <-> 167, 1078, 1404*421 <-> 650*422 <-> 18, 829*423 <-> 20, 326, 351*424 <-> 153, 1759*425 <-> 48, 316, 1211, 1279, 1366*426 <-> 709, 1799, 1913*427 <-> 693, 1568*428 <-> 1199, 1914*429 <-> 1790*430 <-> 469*431 <-> 1730*432 <-> 78, 677*433 <-> 228, 543, 842*434 <-> 1216, 1562*435 <-> 554*436 <-> 18, 59, 804, 918*437 <-> 1065, 1274, 1560*438 <-> 45, 1647*439 <-> 144, 1327*440 <-> 816, 1768, 1893*441 <-> 930*442 <-> 72, 289, 1555, 1778*443 <-> 791, 1964*444 <-> 332, 717, 1715*445 <-> 445, 1335, 1944*446 <-> 10, 961*447 <-> 499, 1067, 1363*448 <-> 1150, 1229*449 <-> 573, 972, 1670*450 <-> 964, 1731*451 <-> 29, 815, 1148*452 <-> 153, 1221*453 <-> 1012, 1525*454 <-> 2, 891, 1708*455 <-> 877*456 <-> 1850*457 <-> 111, 544, 640*458 <-> 458*459 <-> 273, 495, 792*460 <-> 1201, 1319*461 <-> 461, 598, 1513*462 <-> 1166, 1495*463 <-> 542, 708, 1209*464 <-> 770*465 <-> 1847*466 <-> 324, 1052*467 <-> 708, 915*468 <-> 1501, 1715*469 <-> 430, 576, 1369*470 <-> 167, 1618*471 <-> 1875*472 <-> 1212*473 <-> 107, 1426*474 <-> 484, 665*475 <-> 366, 1262*476 <-> 476, 1380*477 <-> 90*478 <-> 1688, 1811, 1894, 1949*479 <-> 338, 1429, 1836*480 <-> 1394*481 <-> 1391*482 <-> 1477*483 <-> 211, 736*484 <-> 474, 1815*485 <-> 1034*486 <-> 1682*487 <-> 19, 1722, 1773*488 <-> 567, 1066, 1873*489 <-> 581, 1962*490 <-> 294*491 <-> 760*492 <-> 129, 158, 269, 1099*493 <-> 1250*494 <-> 377*495 <-> 287, 459*496 <-> 1051*497 <-> 513, 633, 1189, 1454*498 <-> 1080, 1530*499 <-> 447, 647*500 <-> 68, 1329, 1719*501 <-> 30, 1563, 1700*502 <-> 257*503 <-> 418, 1521*504 <-> 137*505 <-> 130*506 <-> 284, 1830*507 <-> 116, 507*508 <-> 99, 508, 709, 877*509 <-> 693*510 <-> 1648*511 <-> 202, 1127, 1510*512 <-> 720*513 <-> 497*514 <-> 752, 1430*515 <-> 1503*516 <-> 291, 1284, 1891*517 <-> 994*518 <-> 1406*519 <-> 1287*520 <-> 252*521 <-> 1253, 1292, 1530*522 <-> 904*523 <-> 1628*524 <-> 119, 778, 1034, 1145*525 <-> 418, 1264*526 <-> 317, 971*527 <-> 1566*528 <-> 695, 1841*529 <-> 732*530 <-> 1972*531 <-> 1036*532 <-> 784*533 <-> 3, 533, 961, 1018*534 <-> 981, 1147, 1326*535 <-> 209*536 <-> 1343, 1410, 1750*537 <-> 16*538 <-> 265, 795*539 <-> 1055, 1430*540 <-> 855*541 <-> 896, 1170*542 <-> 463, 652, 1302, 1833*543 <-> 433*544 <-> 457, 890*545 <-> 161, 791*546 <-> 857, 1267*547 <-> 1979*548 <-> 580, 1988*549 <-> 1256*550 <-> 270, 291, 586*551 <-> 646*552 <-> 336*553 <-> 930, 1754*554 <-> 435, 1758, 1816*555 <-> 134*556 <-> 273*557 <-> 375*558 <-> 745*559 <-> 809*560 <-> 286*561 <-> 20*562 <-> 1766*563 <-> 563*564 <-> 564, 658*565 <-> 1492*566 <-> 775*567 <-> 488*568 <-> 1636, 1730*569 <-> 579, 678, 740*570 <-> 1362*571 <-> 846, 1230*572 <-> 1063, 1821*573 <-> 449*574 <-> 1946, 1961*575 <-> 234, 674*576 <-> 469, 1152, 1890*577 <-> 938, 1072, 1237, 1386*578 <-> 381*579 <-> 569*580 <-> 548, 944, 1464*581 <-> 489*582 <-> 635*583 <-> 1378, 1891*584 <-> 198, 1102*585 <-> 314, 1803*586 <-> 22, 550, 630, 1674*587 <-> 87, 1025*588 <-> 1562, 1588*589 <-> 1175, 1666*590 <-> 809, 1912*591 <-> 1363, 1581*592 <-> 247, 686*593 <-> 196, 912*594 <-> 188, 728, 1376*595 <-> 595*596 <-> 235, 1500, 1758*597 <-> 1159*598 <-> 461*599 <-> 159, 599, 1377*600 <-> 283, 353*601 <-> 320, 1514, 1792*602 <-> 815*603 <-> 135, 272, 955, 1583, 1848*604 <-> 1878*605 <-> 320, 1100, 1585*606 <-> 1590*607 <-> 419, 1798*608 <-> 236, 245*609 <-> 1298, 1743*610 <-> 1676*611 <-> 830*612 <-> 1479, 1942*613 <-> 1899*614 <-> 1633*615 <-> 962, 1348, 1827*616 <-> 157*617 <-> 365, 624, 756, 1017, 1278, 1894*618 <-> 709*619 <-> 175, 377, 388*620 <-> 720, 1414, 1809*621 <-> 80, 346*622 <-> 27, 1244, 1473, 1714*623 <-> 972*624 <-> 617, 1272, 1743*625 <-> 670, 1458*626 <-> 1260, 1580, 1615*627 <-> 1223, 1984*628 <-> 237*629 <-> 32, 52, 1398*630 <-> 586*631 <-> 1881*632 <-> 802*633 <-> 497, 1231*634 <-> 1816*635 <-> 582, 1927*636 <-> 1435*637 <-> 926*638 <-> 804*639 <-> 58, 1904, 1965*640 <-> 457, 999*641 <-> 158*642 <-> 1561*643 <-> 959*644 <-> 644*645 <-> 1589*646 <-> 551, 1733*647 <-> 399, 499*648 <-> 221, 1416*649 <-> 1481*650 <-> 421, 1536*651 <-> 58*652 <-> 542, 1409*653 <-> 708, 1051*654 <-> 805, 1474, 1948*655 <-> 299, 1679*656 <-> 1011*657 <-> 1137, 1887*658 <-> 564*659 <-> 303*660 <-> 996, 1875*661 <-> 171*662 <-> 110, 939, 1522, 1634*663 <-> 911*664 <-> 37*665 <-> 474, 1911*666 <-> 808*667 <-> 1208, 1831*668 <-> 926, 1219, 1302*669 <-> 797, 1041, 1599*670 <-> 170, 625*671 <-> 671*672 <-> 1845*673 <-> 1682*674 <-> 125, 575, 1112, 1519, 1967*675 <-> 105, 271, 1825*676 <-> 1648*677 <-> 432, 677, 1079*678 <-> 201, 569, 1088, 1693*679 <-> 1118*680 <-> 780, 1089*681 <-> 681*682 <-> 6, 110*683 <-> 683*684 <-> 122, 1180*685 <-> 333, 1101, 1672*686 <-> 592*687 <-> 984, 1423, 1800*688 <-> 1498*689 <-> 1013*690 <-> 377*691 <-> 1091*692 <-> 726*693 <-> 427, 509, 1854*694 <-> 1795*695 <-> 528, 1031*696 <-> 1557*697 <-> 869*698 <-> 698, 1480*699 <-> 182, 1595*700 <-> 1210*701 <-> 1381, 1955*702 <-> 1039*703 <-> 44, 741*704 <-> 1901*705 <-> 135, 1695*706 <-> 1532*707 <-> 812, 1085*708 <-> 463, 467, 653*709 <-> 47, 426, 508, 618*710 <-> 794, 1215*711 <-> 1476, 1514*712 <-> 824, 1000*713 <-> 213*714 <-> 392, 1444*715 <-> 753, 1956*716 <-> 300*717 <-> 444, 1209, 1872*718 <-> 1886*719 <-> 226*720 <-> 512, 620, 1243*721 <-> 981, 1177*722 <-> 15, 381, 1311, 1708, 1869*723 <-> 1582*724 <-> 93, 1689*725 <-> 1151*726 <-> 188, 692*727 <-> 1646, 1750*728 <-> 594, 1125*729 <-> 346, 1102*730 <-> 1300*731 <-> 71, 1523, 1839*732 <-> 377, 529*733 <-> 391, 1111*734 <-> 734*735 <-> 1120*736 <-> 483, 1478*737 <-> 171, 1141, 1680*738 <-> 1782*739 <-> 990, 1227*740 <-> 569, 758, 1340*741 <-> 703, 741*742 <-> 98, 785, 1586*743 <-> 839, 1288*744 <-> 1401, 1571*745 <-> 558, 1137, 1308*746 <-> 222, 746*747 <-> 256, 1246, 1359, 1626*748 <-> 27, 371, 1391*749 <-> 819*750 <-> 162, 255, 1316*751 <-> 29*752 <-> 514*753 <-> 715, 1087*754 <-> 358, 1566*755 <-> 165, 1652*756 <-> 617*757 <-> 97, 928, 1905*758 <-> 740, 1342*759 <-> 1675, 1882*760 <-> 21, 491*761 <-> 1912*762 <-> 108, 809*763 <-> 1553*764 <-> 283*765 <-> 345, 1025*766 <-> 54, 325, 1545, 1908*767 <-> 273, 1605, 1718*768 <-> 310, 1298*769 <-> 1316*770 <-> 248, 464, 1300*771 <-> 771*772 <-> 826*773 <-> 1779*774 <-> 800, 1516*775 <-> 287, 566*776 <-> 1190*777 <-> 66, 1367*778 <-> 524*779 <-> 1504, 1782*780 <-> 680, 1299*781 <-> 1866*782 <-> 950, 1395*783 <-> 1814*784 <-> 532, 1921*785 <-> 246, 742*786 <-> 128, 390*787 <-> 787*788 <-> 1772, 1876, 1943*789 <-> 6*790 <-> 225, 1117, 1384*791 <-> 443, 545, 1822*792 <-> 459, 1810*793 <-> 1026*794 <-> 77, 710*795 <-> 538, 795*796 <-> 179, 851, 1462, 1619*797 <-> 669, 1093*798 <-> 1789*799 <-> 1088, 1269, 1999*800 <-> 139, 229, 774, 1218*801 <-> 1110*802 <-> 632, 802*803 <-> 1359*804 <-> 436, 638*805 <-> 654*806 <-> 1605*807 <-> 402, 1353*808 <-> 666, 934, 1248, 1888*809 <-> 103, 170, 559, 590, 762, 1139*810 <-> 1352*811 <-> 1766, 1937*812 <-> 707, 1410, 1618*813 <-> 309, 813*814 <-> 1461, 1696, 1725*815 <-> 285, 451, 602*816 <-> 366, 440, 1034*817 <-> 164, 1157*818 <-> 407, 1341, 1699*819 <-> 93, 150, 749, 1353, 1453*820 <-> 1051*821 <-> 156, 1807*822 <-> 1951*823 <-> 856*824 <-> 42, 712, 1260*825 <-> 201*826 <-> 772, 856, 897*827 <-> 827, 1550*828 <-> 937, 1933, 1947*829 <-> 422, 831*830 <-> 611, 1049, 1314*831 <-> 829, 1141*832 <-> 907*833 <-> 1754*834 <-> 1418*835 <-> 1509*836 <-> 410, 1005*837 <-> 837, 1160*838 <-> 995, 1154*839 <-> 743, 1637*840 <-> 854*841 <-> 1221*842 <-> 433, 1611, 1848*843 <-> 1978*844 <-> 1575*845 <-> 83*846 <-> 571, 987, 1683*847 <-> 9, 847*848 <-> 82, 848, 1016, 1237*849 <-> 1266*850 <-> 14, 936*851 <-> 796, 983*852 <-> 403*853 <-> 984*854 <-> 840, 854*855 <-> 540, 1762*856 <-> 823, 826, 856, 1195*857 <-> 546, 1098*858 <-> 858, 1752, 1771*859 <-> 11*860 <-> 168*861 <-> 323*862 <-> 1716, 1772*863 <-> 1754*864 <-> 1261, 1724, 1762, 1903*865 <-> 895, 1073, 1205*866 <-> 29, 1781, 1845*867 <-> 1457, 1598, 1993*868 <-> 868, 1723*869 <-> 94, 215, 697, 903*870 <-> 945*871 <-> 1215, 1668*872 <-> 19*873 <-> 1028*874 <-> 954, 1932*875 <-> 1686, 1718*876 <-> 1358, 1888, 1947*877 <-> 455, 508*878 <-> 351*879 <-> 1737*880 <-> 308*881 <-> 881, 1526*882 <-> 52, 69*883 <-> 928*884 <-> 885, 1507*885 <-> 884*886 <-> 360, 367, 1029, 1116*887 <-> 369, 1747*888 <-> 1530*889 <-> 1460, 1478, 1745*890 <-> 334, 544, 890, 1004*891 <-> 142, 454, 1299*892 <-> 1095*893 <-> 1149, 1469, 1594*894 <-> 51, 1819, 1987*895 <-> 865*896 <-> 40, 541, 896*897 <-> 826*898 <-> 898, 1199*899 <-> 1592*900 <-> 246*901 <-> 76, 1626*902 <-> 300, 918*903 <-> 869*904 <-> 208, 522*905 <-> 141, 143*906 <-> 1064, 1650*907 <-> 832, 1751, 1982*908 <-> 908, 1866*909 <-> 1222*910 <-> 323, 1638*911 <-> 663, 1165*912 <-> 593, 1765*913 <-> 337*914 <-> 1218, 1458, 1931*915 <-> 467, 1486*916 <-> 1650*917 <-> 1881*918 <-> 436, 902, 1046*919 <-> 1350, 1919*920 <-> 112, 1551*921 <-> 246, 1028, 1620*922 <-> 960, 1650*923 <-> 289, 1977*924 <-> 924, 1991*925 <-> 925, 1957*926 <-> 637, 668, 1393*927 <-> 166, 1420*928 <-> 757, 883*929 <-> 1569, 1575*930 <-> 441, 553, 1179*931 <-> 1891*932 <-> 972*933 <-> 1851*934 <-> 276, 808*935 <-> 1404*936 <-> 850*937 <-> 828, 1808*938 <-> 577*939 <-> 662*940 <-> 1437*941 <-> 1076*942 <-> 1123*943 <-> 312, 1008*944 <-> 580*945 <-> 131, 870, 945, 1929*946 <-> 1200*947 <-> 947, 966*948 <-> 1221, 1498*949 <-> 949, 1069*950 <-> 782, 1263*951 <-> 108, 1729*952 <-> 1997*953 <-> 284*954 <-> 874*955 <-> 603*956 <-> 969*957 <-> 329, 1633*958 <-> 395, 958*959 <-> 643, 1634*960 <-> 922*961 <-> 446, 533, 1521*962 <-> 615, 1870*963 <-> 411*964 <-> 450, 1179*965 <-> 16, 1699*966 <-> 947, 1702*967 <-> 1588*968 <-> 1140, 1550, 1996*969 <-> 956, 1158*970 <-> 63*971 <-> 526, 1375*972 <-> 399, 449, 623, 932*973 <-> 84, 1133, 1249, 1834*974 <-> 1775*975 <-> 975*976 <-> 1822*977 <-> 1978*978 <-> 1451*979 <-> 63, 1186, 1564*980 <-> 1984*981 <-> 534, 721, 1430, 1532*982 <-> 1094, 1605, 1698*983 <-> 296, 851, 1604, 1867*984 <-> 356, 687, 853, 1881*985 <-> 985, 1425*986 <-> 24*987 <-> 846*988 <-> 180*989 <-> 80, 1520, 1622*990 <-> 739, 1339*991 <-> 1767*992 <-> 273*993 <-> 105*994 <-> 517, 1629*995 <-> 838, 1945*996 <-> 127, 304, 660*997 <-> 100, 1275, 1909*998 <-> 1492*999 <-> 640*1000 <-> 349, 712*1001 <-> 1193, 1286, 1348*1002 <-> 274, 1002, 1337, 1970*1003 <-> 203, 257*1004 <-> 890*1005 <-> 418, 836*1006 <-> 393, 1955*1007 <-> 53*1008 <-> 943*1009 <-> 345, 373*1010 <-> 1242*1011 <-> 34, 656, 1445*1012 <-> 453, 1012*1013 <-> 689, 1999*1014 <-> 119, 1014, 1431*1015 <-> 1671*1016 <-> 848*1017 <-> 617, 1807*1018 <-> 533*1019 <-> 1037*1020 <-> 1579*1021 <-> 37*1022 <-> 1022*1023 <-> 240, 1823*1024 <-> 1024*1025 <-> 587, 765*1026 <-> 793, 1026*1027 <-> 1265*1028 <-> 873, 921, 1736*1029 <-> 886, 1235*1030 <-> 1207*1031 <-> 695, 1618*1032 <-> 1139*1033 <-> 1987*1034 <-> 485, 524, 816, 1167*1035 <-> 1220, 1892*1036 <-> 91, 531, 1761*1037 <-> 1019, 1467, 1801*1038 <-> 1082*1039 <-> 239, 702*1040 <-> 1199*1041 <-> 669, 1544, 1547, 1664*1042 <-> 79, 1835*1043 <-> 385, 1159, 1507*1044 <-> 1753, 1938*1045 <-> 374, 1175*1046 <-> 918, 1071, 1280*1047 <-> 1328, 1879*1048 <-> 28, 1081, 1331, 1381*1049 <-> 830, 1060*1050 <-> 1166*1051 <-> 496, 653, 820*1052 <-> 466, 1356, 1395*1053 <-> 1598*1054 <-> 1054*1055 <-> 539*1056 <-> 1548, 1987*1057 <-> 23*1058 <-> 1888*1059 <-> 164, 1423, 1493*1060 <-> 1049, 1473*1061 <-> 1276, 1638, 1763*1062 <-> 1360, 1829*1063 <-> 572*1064 <-> 906*1065 <-> 437, 1707, 1826*1066 <-> 488*1067 <-> 307, 447, 1299*1068 <-> 1068, 1485*1069 <-> 949*1070 <-> 1070*1071 <-> 1046*1072 <-> 577, 1469*1073 <-> 865*1074 <-> 1161, 1927*1075 <-> 1075*1076 <-> 941, 1790*1077 <-> 1971*1078 <-> 420*1079 <-> 677*1080 <-> 498*1081 <-> 1048*1082 <-> 106, 1038, 1587*1083 <-> 1657, 1964*1084 <-> 1125*1085 <-> 707, 1664*1086 <-> 79, 1155*1087 <-> 753*1088 <-> 678, 799*1089 <-> 680, 1162, 1317, 1654*1090 <-> 1344, 1934*1091 <-> 15, 691, 1561, 1653, 1895, 1932*1092 <-> 1927*1093 <-> 797, 1265*1094 <-> 982, 1094, 1184*1095 <-> 892, 1868, 1956*1096 <-> 107*1097 <-> 66, 1601*1098 <-> 857*1099 <-> 361, 492, 1199, 1930*1100 <-> 94, 298, 605, 1966*1101 <-> 331, 685, 1757*1102 <-> 584, 729, 1791*1103 <-> 1103*1104 <-> 71*1105 <-> 123, 1818*1106 <-> 126*1107 <-> 1107*1108 <-> 386, 1824*1109 <-> 322, 1668*1110 <-> 801, 1355, 1397, 1898*1111 <-> 733, 1790*1112 <-> 674*1113 <-> 195*1114 <-> 299*1115 <-> 1345*1116 <-> 886, 1178*1117 <-> 214, 790*1118 <-> 72, 679*1119 <-> 140*1120 <-> 735, 1120*1121 <-> 1121*1122 <-> 1497*1123 <-> 38, 942*1124 <-> 1627*1125 <-> 728, 1084, 1125*1126 <-> 72*1127 <-> 511, 1349*1128 <-> 1923*1129 <-> 370*1130 <-> 323*1131 <-> 1320, 1677, 1732*1132 <-> 210*1133 <-> 973*1134 <-> 1522, 1554*1135 <-> 1135*1136 <-> 292, 303*1137 <-> 416, 657, 745*1138 <-> 1282*1139 <-> 809, 1032*1140 <-> 968, 1220*1141 <-> 120, 737, 831*1142 <-> 1699*1143 <-> 1453*1144 <-> 228*1145 <-> 524*1146 <-> 1526*1147 <-> 534*1148 <-> 451*1149 <-> 70, 404, 893*1150 <-> 448, 1364, 1551*1151 <-> 34, 725, 1773*1152 <-> 576, 1685*1153 <-> 75*1154 <-> 838, 1761*1155 <-> 1086*1156 <-> 186, 1289, 1481*1157 <-> 817*1158 <-> 234, 969*1159 <-> 37, 597, 1043, 1920*1160 <-> 837*1161 <-> 1074, 1472*1162 <-> 1089*1163 <-> 1390*1164 <-> 1438, 1760*1165 <-> 911, 1442, 1571*1166 <-> 462, 1050, 1304, 1511*1167 <-> 65, 106, 1034*1168 <-> 1322, 1645*1169 <-> 54*1170 <-> 541, 1939*1171 <-> 1547*1172 <-> 184*1173 <-> 1466*1174 <-> 223, 394, 1245, 1951*1175 <-> 330, 589, 1045, 1742*1176 <-> 286, 1316, 1388*1177 <-> 721*1178 <-> 1116, 1463*1179 <-> 121, 271, 930, 964*1180 <-> 292, 329, 684*1181 <-> 1702*1182 <-> 1182, 1529*1183 <-> 1679*1184 <-> 134, 191, 1094, 1270*1185 <-> 1365, 1736*1186 <-> 979, 1251, 1301, 1560*1187 <-> 177, 1238, 1863*1188 <-> 1189, 1932*1189 <-> 497, 1188*1190 <-> 776, 1279*1191 <-> 236*1192 <-> 1398*1193 <-> 1001*1194 <-> 1194, 1838*1195 <-> 856*1196 <-> 1198, 1986*1197 <-> 1380*1198 <-> 1196, 1198, 1459*1199 <-> 428, 898, 1040, 1099*1200 <-> 946, 1556, 1583*1201 <-> 460*1202 <-> 1407*1203 <-> 240, 1958*1204 <-> 1753*1205 <-> 371, 865, 1703*1206 <-> 154*1207 <-> 1030, 1882*1208 <-> 667, 1533, 1685*1209 <-> 463, 717*1210 <-> 700, 1306, 1766*1211 <-> 187, 425, 1755*1212 <-> 472, 1851*1213 <-> 96, 263, 1213*1214 <-> 89, 237*1215 <-> 710, 871, 1552*1216 <-> 434*1217 <-> 356, 376*1218 <-> 800, 914*1219 <-> 668, 1730*1220 <-> 1035, 1140*1221 <-> 452, 841, 948*1222 <-> 909, 1491*1223 <-> 627, 1452*1224 <-> 1224, 1408, 1436, 1734*1225 <-> 1693*1226 <-> 75*1227 <-> 739, 1479, 1889*1228 <-> 38*1229 <-> 303, 448*1230 <-> 571*1231 <-> 354, 633*1232 <-> 1918*1233 <-> 1233*1234 <-> 1721*1235 <-> 1029*1236 <-> 1236*1237 <-> 577, 848*1238 <-> 1187, 1676*1239 <-> 1239, 1426*1240 <-> 82*1241 <-> 73*1242 <-> 1010, 1558, 1841, 1872, 1951*1243 <-> 7, 720*1244 <-> 622, 1503*1245 <-> 49, 1174*1246 <-> 747*1247 <-> 1511, 1743*1248 <-> 808, 1321*1249 <-> 973*1250 <-> 56, 493, 1973*1251 <-> 1186*1252 <-> 114, 1428*1253 <-> 521, 1510*1254 <-> 1677*1255 <-> 1377*1256 <-> 549, 1256*1257 <-> 202*1258 <-> 1258*1259 <-> 1901*1260 <-> 626, 824*1261 <-> 864, 1977*1262 <-> 475*1263 <-> 146, 950, 1295, 1424*1264 <-> 525*1265 <-> 1027, 1093*1266 <-> 849, 1275, 1385*1267 <-> 208, 546, 1716, 1940*1268 <-> 261*1269 <-> 799*1270 <-> 1184*1271 <-> 343*1272 <-> 624*1273 <-> 1336, 1667, 1737, 1756*1274 <-> 437*1275 <-> 997, 1266, 1275*1276 <-> 1061, 1729*1277 <-> 1324*1278 <-> 617, 1541*1279 <-> 425, 1190*1280 <-> 1046, 1891*1281 <-> 1695*1282 <-> 1138, 1815*1283 <-> 1283*1284 <-> 516*1285 <-> 1679*1286 <-> 1001, 1415, 1767*1287 <-> 519, 1629, 1871, 1960*1288 <-> 416, 743*1289 <-> 1156, 1465, 1693*1290 <-> 15*1291 <-> 1433*1292 <-> 521, 1925*1293 <-> 177*1294 <-> 50, 271, 1852*1295 <-> 6, 1263*1296 <-> 1679*1297 <-> 1615, 1973*1298 <-> 609, 768*1299 <-> 780, 891, 1067, 1509, 1880*1300 <-> 730, 770*1301 <-> 1186*1302 <-> 542, 668*1303 <-> 11*1304 <-> 1166, 1717*1305 <-> 1305*1306 <-> 1210*1307 <-> 1442*1308 <-> 411, 745*1309 <-> 305*1310 <-> 419*1311 <-> 722*1312 <-> 1596, 1854*1313 <-> 20, 1894*1314 <-> 830*1315 <-> 288, 367, 1617*1316 <-> 750, 769, 1176*1317 <-> 233, 1089*1318 <-> 1671*1319 <-> 460, 1364, 1379*1320 <-> 1131*1321 <-> 1248*1322 <-> 1168, 1400*1323 <-> 1449*1324 <-> 345, 1277, 1441*1325 <-> 277, 1640, 1895*1326 <-> 534, 1673*1327 <-> 352, 439, 1327, 1411, 1776*1328 <-> 1047*1329 <-> 500*1330 <-> 1832*1331 <-> 1048, 1450*1332 <-> 1682, 1829, 1857*1333 <-> 1433, 1813*1334 <-> 1397*1335 <-> 445, 1491*1336 <-> 406, 1273*1337 <-> 213, 1002*1338 <-> 83, 101, 222, 1926*1339 <-> 990*1340 <-> 159, 740*1341 <-> 818*1342 <-> 758*1343 <-> 536, 1735*1344 <-> 119, 1090*1345 <-> 1115, 1345*1346 <-> 1494*1347 <-> 1373, 1569*1348 <-> 615, 1001, 1506*1349 <-> 54, 1127, 1728*1350 <-> 330, 919*1351 <-> 1488, 1870*1352 <-> 85, 810*1353 <-> 807, 819*1354 <-> 327, 1354*1355 <-> 312, 1110*1356 <-> 1052, 1368*1357 <-> 1888*1358 <-> 876*1359 <-> 747, 803*1360 <-> 126, 1062, 1954*1361 <-> 1361, 1403*1362 <-> 133, 570*1363 <-> 447, 591*1364 <-> 1150, 1319*1365 <-> 1185*1366 <-> 425*1367 <-> 777, 1712*1368 <-> 1356, 1419*1369 <-> 469*1370 <-> 178*1371 <-> 1658*1372 <-> 1372, 1451, 1871*1373 <-> 69, 1347*1374 <-> 1492*1375 <-> 971, 1586, 1978*1376 <-> 594, 1630*1377 <-> 599, 1255*1378 <-> 583, 1517*1379 <-> 1319*1380 <-> 67, 166, 476, 1197, 1709*1381 <-> 179, 701, 1048*1382 <-> 1382*1383 <-> 1752*1384 <-> 88, 790, 1632, 1746, 1775*1385 <-> 348, 1266*1386 <-> 577*1387 <-> 1387*1388 <-> 1176*1389 <-> 1995*1390 <-> 331, 1163*1391 <-> 255, 481, 748*1392 <-> 72, 190*1393 <-> 926*1394 <-> 95, 480, 1616, 1663*1395 <-> 782, 1052*1396 <-> 1450*1397 <-> 1110, 1334*1398 <-> 174, 629, 1192*1399 <-> 1995*1400 <-> 1322*1401 <-> 744*1402 <-> 1, 1402*1403 <-> 1361*1404 <-> 420, 935*1405 <-> 1677*1406 <-> 518, 1406*1407 <-> 1202, 1826*1408 <-> 1224*1409 <-> 652, 1461*1410 <-> 536, 812*1411 <-> 1327, 1418*1412 <-> 198*1413 <-> 1655, 1974*1414 <-> 620*1415 <-> 1286*1416 <-> 648*1417 <-> 1417, 1437, 1884*1418 <-> 121, 834, 1411*1419 <-> 415, 1368, 1456*1420 <-> 927, 1534*1421 <-> 1755*1422 <-> 1422*1423 <-> 687, 1059, 1768*1424 <-> 1263, 1499, 1968*1425 <-> 985*1426 <-> 171, 473, 1239*1427 <-> 270*1428 <-> 1252*1429 <-> 479*1430 <-> 514, 539, 981, 1621*1431 <-> 1014*1432 <-> 35, 1704, 1990*1433 <-> 1291, 1333*1434 <-> 1904*1435 <-> 636, 1435*1436 <-> 1224, 1963*1437 <-> 940, 1417*1438 <-> 1164*1439 <-> 1868*1440 <-> 1752*1441 <-> 1324*1442 <-> 1165, 1307, 1701, 1850, 1875*1443 <-> 1443, 1692*1444 <-> 341, 714*1445 <-> 1011, 1590*1446 <-> 1446*1447 <-> 217, 418*1448 <-> 237, 1625, 1789*1449 <-> 127, 1323*1450 <-> 1331, 1396*1451 <-> 978, 1372*1452 <-> 1223, 1711*1453 <-> 42, 819, 1143*1454 <-> 497*1455 <-> 1743, 1849*1456 <-> 1419*1457 <-> 867*1458 <-> 625, 914*1459 <-> 1198*1460 <-> 889*1461 <-> 814, 1409*1462 <-> 796*1463 <-> 1178*1464 <-> 109, 140, 145, 174, 580, 1467*1465 <-> 1289*1466 <-> 370, 1173, 1863*1467 <-> 1037, 1464*1468 <-> 1468*1469 <-> 394, 893, 1072*1470 <-> 1758*1471 <-> 79*1472 <-> 22, 1161, 1721*1473 <-> 153, 622, 1060*1474 <-> 654, 1744*1475 <-> 1919*1476 <-> 225, 711, 1662, 1684, 1856*1477 <-> 482, 1528*1478 <-> 736, 889*1479 <-> 612, 1227, 1774*1480 <-> 203, 698*1481 <-> 649, 1156, 1846*1482 <-> 189, 1962*1483 <-> 1483*1484 <-> 317*1485 <-> 272, 1068*1486 <-> 915*1487 <-> 1816*1488 <-> 246, 1351*1489 <-> 109, 1489*1490 <-> 68*1491 <-> 178, 409, 1222, 1335*1492 <-> 565, 998, 1374, 1492*1493 <-> 1059*1494 <-> 416, 1346, 1848*1495 <-> 462*1496 <-> 301, 1660*1497 <-> 1122, 1577*1498 <-> 89, 688, 948*1499 <-> 1424*1500 <-> 7, 596*1501 <-> 468*1502 <-> 344, 374, 1631*1503 <-> 515, 1244, 1524*1504 <-> 779*1505 <-> 375, 1980*1506 <-> 1348*1507 <-> 157, 185, 884, 1043*1508 <-> 1511*1509 <-> 282, 835, 1299*1510 <-> 511, 1253*1511 <-> 1166, 1247, 1508*1512 <-> 142*1513 <-> 461*1514 <-> 601, 711, 1553*1515 <-> 209, 1739*1516 <-> 774*1517 <-> 1378*1518 <-> 1518*1519 <-> 674, 1519*1520 <-> 989*1521 <-> 503, 961*1522 <-> 662, 1134, 1998*1523 <-> 95, 731, 1783*1524 <-> 290, 1503, 1741*1525 <-> 295, 453*1526 <-> 881, 1146*1527 <-> 1741*1528 <-> 1477, 1824*1529 <-> 1182*1530 <-> 498, 521, 888*1531 <-> 1660*1532 <-> 706, 981, 1532*1533 <-> 167, 1208*1534 <-> 1420*1535 <-> 378*1536 <-> 110, 138, 650, 1897, 1901*1537 <-> 14*1538 <-> 114, 1552*1539 <-> 1640*1540 <-> 1540, 1896*1541 <-> 1278*1542 <-> 412, 1944*1543 <-> 1543*1544 <-> 1041*1545 <-> 766, 1640*1546 <-> 1546*1547 <-> 1041, 1171*1548 <-> 387, 1056, 1567*1549 <-> 1878*1550 <-> 827, 968*1551 <-> 66, 920, 1150*1552 <-> 1215, 1538*1553 <-> 763, 1514*1554 <-> 124, 1134*1555 <-> 442*1556 <-> 60, 98, 1200*1557 <-> 48, 696*1558 <-> 1242*1559 <-> 1668*1560 <-> 155, 355, 437, 1186*1561 <-> 268, 642, 1091, 1976*1562 <-> 117, 434, 588, 1579*1563 <-> 182, 379, 501*1564 <-> 979*1565 <-> 1565*1566 <-> 527, 754*1567 <-> 1548*1568 <-> 427, 1997*1569 <-> 929, 1347, 1579*1570 <-> 177, 386*1571 <-> 176, 744, 1165*1572 <-> 1572*1573 <-> 195, 199*1574 <-> 318, 1912*1575 <-> 844, 929*1576 <-> 141, 1652*1577 <-> 1497, 1998*1578 <-> 1776*1579 <-> 1020, 1562, 1569*1580 <-> 626*1581 <-> 591, 1591*1582 <-> 723, 1972*1583 <-> 603, 1200*1584 <-> 362, 1639*1585 <-> 605*1586 <-> 742, 1375, 1945*1587 <-> 1082*1588 <-> 588, 967*1589 <-> 645, 1919*1590 <-> 606, 1445*1591 <-> 1581, 1641*1592 <-> 899, 1592*1593 <-> 1868*1594 <-> 893, 1878*1595 <-> 699*1596 <-> 1312, 1627, 1974*1597 <-> 1720, 1961*1598 <-> 867, 1053, 1719*1599 <-> 669*1600 <-> 106*1601 <-> 1097, 1681*1602 <-> 414, 1687*1603 <-> 1605*1604 <-> 983*1605 <-> 767, 806, 982, 1603*1606 <-> 303*1607 <-> 1607, 1847*1608 <-> 1975*1609 <-> 267, 1778*1610 <-> 396*1611 <-> 842*1612 <-> 188, 1877*1613 <-> 64, 345*1614 <-> 361*1615 <-> 626, 1297*1616 <-> 1394*1617 <-> 28, 1315*1618 <-> 470, 812, 1031*1619 <-> 215, 796*1620 <-> 921*1621 <-> 1430, 1764*1622 <-> 989*1623 <-> 1761*1624 <-> 51, 403*1625 <-> 1448*1626 <-> 90, 747, 901, 1943, 1985*1627 <-> 14, 1124, 1596*1628 <-> 217, 523*1629 <-> 994, 1287*1630 <-> 8, 1376*1631 <-> 1502*1632 <-> 401, 1384, 1697*1633 <-> 614, 957*1634 <-> 662, 959*1635 <-> 249, 1793*1636 <-> 568*1637 <-> 839*1638 <-> 910, 1061*1639 <-> 1584, 1730*1640 <-> 1325, 1539, 1545*1641 <-> 1591*1642 <-> 16*1643 <-> 139*1644 <-> 1644, 1900*1645 <-> 330, 1168*1646 <-> 727*1647 <-> 438, 1647*1648 <-> 510, 676, 1722*1649 <-> 398*1650 <-> 906, 916, 922, 1914*1651 <-> 1769*1652 <-> 755, 1576*1653 <-> 1091*1654 <-> 1089*1655 <-> 1413*1656 <-> 273*1657 <-> 1083*1658 <-> 294, 344, 1371, 1740*1659 <-> 1688, 1805*1660 <-> 1496, 1531, 1948*1661 <-> 1749*1662 <-> 1476, 1979*1663 <-> 1394*1664 <-> 1041, 1085*1665 <-> 53*1666 <-> 589*1667 <-> 1273, 1853*1668 <-> 871, 1109, 1559*1669 <-> 1931*1670 <-> 449, 1832*1671 <-> 86, 1015, 1318, 1671*1672 <-> 685, 1861*1673 <-> 1326, 1747*1674 <-> 586, 1812*1675 <-> 759*1676 <-> 340, 610, 1238, 1676*1677 <-> 1131, 1254, 1405, 1784*1678 <-> 333, 357*1679 <-> 655, 1183, 1285, 1296, 1745*1680 <-> 737*1681 <-> 61, 1601*1682 <-> 486, 673, 1332*1683 <-> 846, 1766, 1773*1684 <-> 1476*1685 <-> 1152, 1208*1686 <-> 875*1687 <-> 1602, 1687*1688 <-> 363, 478, 1659, 1860*1689 <-> 724*1690 <-> 2*1691 <-> 1691*1692 <-> 1443, 1707*1693 <-> 678, 1225, 1289*1694 <-> 261, 269*1695 <-> 705, 1281*1696 <-> 814*1697 <-> 1632*1698 <-> 982*1699 <-> 135, 818, 965, 1142*1700 <-> 501*1701 <-> 103, 1442*1702 <-> 966, 1181*1703 <-> 1205, 1958*1704 <-> 1432*1705 <-> 280*1706 <-> 1706*1707 <-> 1065, 1692*1708 <-> 454, 722*1709 <-> 297, 1380*1710 <-> 1710*1711 <-> 1452*1712 <-> 1367*1713 <-> 1713*1714 <-> 622, 1817*1715 <-> 444, 468*1716 <-> 171, 862, 1267*1717 <-> 314, 1304, 1873*1718 <-> 767, 875, 1738*1719 <-> 500, 1598*1720 <-> 1597*1721 <-> 1234, 1472*1722 <-> 487, 1648*1723 <-> 868*1724 <-> 864, 1757*1725 <-> 814*1726 <-> 3*1727 <-> 168*1728 <-> 193, 305, 1349*1729 <-> 951, 1276*1730 <-> 431, 568, 1219, 1639*1731 <-> 450*1732 <-> 1131*1733 <-> 646, 1733*1734 <-> 1224*1735 <-> 1343*1736 <-> 1028, 1185*1737 <-> 335, 879, 1273*1738 <-> 1718*1739 <-> 372, 1515*1740 <-> 1658*1741 <-> 1524, 1527, 1818*1742 <-> 1175*1743 <-> 609, 624, 1247, 1455*1744 <-> 1474*1745 <-> 889, 1679*1746 <-> 1384*1747 <-> 14, 887, 1673*1748 <-> 12, 1748*1749 <-> 258, 1661, 1907, 1921*1750 <-> 536, 727*1751 <-> 907*1752 <-> 858, 1383, 1440*1753 <-> 1044, 1204*1754 <-> 553, 833, 863*1755 <-> 1211, 1421*1756 <-> 173, 1273*1757 <-> 1101, 1724*1758 <-> 25, 554, 596, 1470*1759 <-> 424*1760 <-> 1164, 1793*1761 <-> 1036, 1154, 1623*1762 <-> 73, 855, 864*1763 <-> 1061*1764 <-> 204, 1621*1765 <-> 912, 1765*1766 <-> 562, 811, 1210, 1683*1767 <-> 319, 991, 1286*1768 <-> 440, 1423*1769 <-> 5, 390, 1651*1770 <-> 284, 392*1771 <-> 858*1772 <-> 788, 862*1773 <-> 487, 1151, 1683, 1773*1774 <-> 33, 1479*1775 <-> 974, 1384, 1775, 1935*1776 <-> 1327, 1578*1777 <-> 1958*1778 <-> 280, 442, 1609*1779 <-> 270, 773*1780 <-> 26, 1983*1781 <-> 353, 866*1782 <-> 738, 779, 1991*1783 <-> 130, 1523*1784 <-> 1677, 1784*1785 <-> 332*1786 <-> 1947*1787 <-> 1814, 1845*1788 <-> 90*1789 <-> 290, 798, 1448*1790 <-> 160, 429, 1076, 1111, 1998*1791 <-> 1102*1792 <-> 601*1793 <-> 1635, 1760*1794 <-> 210, 1972*1795 <-> 18, 694*1796 <-> 1889, 1915*1797 <-> 111*1798 <-> 607, 1798*1799 <-> 426*1800 <-> 687*1801 <-> 1037*1802 <-> 1821*1803 <-> 585*1804 <-> 278*1805 <-> 1659*1806 <-> 1806*1807 <-> 821, 1017*1808 <-> 937*1809 <-> 23, 620*1810 <-> 792*1811 <-> 478, 1865*1812 <-> 1674*1813 <-> 178, 1333*1814 <-> 783, 1787*1815 <-> 118, 484, 1282*1816 <-> 39, 380, 554, 634, 1487*1817 <-> 168, 1714*1818 <-> 1105, 1741, 1910, 1948, 1972*1819 <-> 894*1820 <-> 343*1821 <-> 135, 572, 1802*1822 <-> 791, 976*1823 <-> 1023*1824 <-> 1108, 1528*1825 <-> 675*1826 <-> 1065, 1407, 1936*1827 <-> 615*1828 <-> 1828*1829 <-> 321, 1062, 1332*1830 <-> 506*1831 <-> 667*1832 <-> 1330, 1670*1833 <-> 374, 542*1834 <-> 973*1835 <-> 1042*1836 <-> 479, 1836*1837 <-> 199*1838 <-> 1194*1839 <-> 731*1840 <-> 1840*1841 <-> 528, 1242*1842 <-> 1895*1843 <-> 167*1844 <-> 174, 1964*1845 <-> 19, 672, 866, 1787*1846 <-> 247, 1481*1847 <-> 253, 465, 1607*1848 <-> 603, 842, 1494*1849 <-> 231, 1455*1850 <-> 456, 1442*1851 <-> 933, 1212*1852 <-> 1294*1853 <-> 1667*1854 <-> 693, 1312*1855 <-> 293, 1925*1856 <-> 1476*1857 <-> 1332*1858 <-> 1858*1859 <-> 139, 275*1860 <-> 1688, 1994*1861 <-> 1672*1862 <-> 1938*1863 <-> 1187, 1466*1864 <-> 344*1865 <-> 312, 1811*1866 <-> 781, 908*1867 <-> 983*1868 <-> 1095, 1439, 1593*1869 <-> 722*1870 <-> 962, 1351, 1899*1871 <-> 1287, 1372*1872 <-> 717, 1242*1873 <-> 209, 488, 1717*1874 <-> 197*1875 <-> 471, 660, 1442*1876 <-> 788*1877 <-> 1612*1878 <-> 604, 1549, 1594*1879 <-> 154, 1047, 1949*1880 <-> 1299*1881 <-> 631, 917, 984*1882 <-> 759, 1207, 1882*1883 <-> 102*1884 <-> 1417*1885 <-> 29*1886 <-> 46, 718, 1886*1887 <-> 657*1888 <-> 232, 808, 876, 1058, 1357, 1989*1889 <-> 1227, 1796, 1889*1890 <-> 576*1891 <-> 516, 583, 931, 1280*1892 <-> 132, 1035*1893 <-> 440*1894 <-> 478, 617, 1313*1895 <-> 1091, 1325, 1842*1896 <-> 1540*1897 <-> 71, 1536*1898 <-> 1110*1899 <-> 613, 1870*1900 <-> 1644*1901 <-> 704, 1259, 1536*1902 <-> 1902*1903 <-> 864*1904 <-> 639, 1434*1905 <-> 41, 757*1906 <-> 390*1907 <-> 1749*1908 <-> 766*1909 <-> 997*1910 <-> 1818*1911 <-> 665, 1911*1912 <-> 244, 328, 590, 761, 1574*1913 <-> 426*1914 <-> 428, 1650, 1941*1915 <-> 1796*1916 <-> 260, 1924*1917 <-> 1917*1918 <-> 235, 1232*1919 <-> 919, 1475, 1589*1920 <-> 230, 1159*1921 <-> 784, 1749*1922 <-> 9, 1928*1923 <-> 347, 1128, 1923*1924 <-> 121, 1916*1925 <-> 1292, 1855*1926 <-> 43, 1338*1927 <-> 113, 635, 1074, 1092*1928 <-> 1922*1929 <-> 945*1930 <-> 1099*1931 <-> 914, 1669*1932 <-> 200, 874, 1091, 1188*1933 <-> 828*1934 <-> 1090*1935 <-> 1775*1936 <-> 1826*1937 <-> 811*1938 <-> 23, 1044, 1862*1939 <-> 1170*1940 <-> 136, 250, 1267*1941 <-> 1914*1942 <-> 197, 612*1943 <-> 226, 788, 1626*1944 <-> 48, 445, 1542*1945 <-> 995, 1586*1946 <-> 574*1947 <-> 828, 876, 1786*1948 <-> 654, 1660, 1818*1949 <-> 478, 1879*1950 <-> 263*1951 <-> 822, 1174, 1242*1952 <-> 239*1953 <-> 190*1954 <-> 1360*1955 <-> 701, 1006*1956 <-> 138, 715, 1095*1957 <-> 925*1958 <-> 1203, 1703, 1777*1959 <-> 1959*1960 <-> 1287*1961 <-> 202, 574, 1597*1962 <-> 489, 1482*1963 <-> 1436*1964 <-> 443, 1083, 1844*1965 <-> 639*1966 <-> 1100*1967 <-> 674*1968 <-> 1424*1969 <-> 354*1970 <-> 169, 1002*1971 <-> 1077, 1971*1972 <-> 252, 530, 1582, 1794, 1818*1973 <-> 1250, 1297*1974 <-> 1413, 1596*1975 <-> 261, 1608*1976 <-> 1561*1977 <-> 321, 923, 1261*1978 <-> 843, 977, 1375*1979 <-> 547, 1662*1980 <-> 276, 1505*1981 <-> 403*1982 <-> 69, 907*1983 <-> 273, 1780*1984 <-> 20, 627, 980*1985 <-> 80, 400, 1626*1986 <-> 1196*1987 <-> 894, 1033, 1056*1988 <-> 548*1989 <-> 326, 358, 1888*1990 <-> 1432, 1990*1991 <-> 924, 1782*1992 <-> 80*1993 <-> 31, 867*1994 <-> 1860*1995 <-> 301, 1389, 1399*1996 <-> 968*1997 <-> 952, 1568*1998 <-> 1522, 1577, 1790*1999 <-> 308, 799, 1013';
+        
+        puzzle = puzzle.split('*');
+        for(var i=0; i<puzzle.length; i++){
+            puzzle[i] = puzzle[i].split('<->').join();
+            puzzle[i] = puzzle[i].split(',');
+            for(var j=0; j<puzzle[i].length; j++)
+                puzzle[i][j] = puzzle[i][j]*1;
+        }
+        
+        var zaporedja = {
+            0: []
+        };
+        for(var i=0; i<puzzle.length; i++){
+            var novo_zaporedje = true;
+            if(i == 576){
+                var a = 0;
+            }
+            loop1:
+            for (var key in zaporedja) {
+                loop2:
+                for(var k=0; k<zaporedja[key].length; k++){
+                    if(puzzle[i][0] == zaporedja[key][k]){
+                        for(var j=1; j<puzzle[i].length; j++){
+                            zaporedja[key].push(puzzle[i][j]);
+                        }
+                        novo_zaporedje = false;
+                        k = zaporedja[key].length;
+                    }
+                }
+            }
+            if(novo_zaporedje){
+                zaporedja[puzzle[i][0]] = [];
+                for(var j=1; j<puzzle[i].length; j++){
+                    zaporedja[puzzle[i][0]].push(puzzle[i][j]);
+                }
+            }
+        }
+        
+        for(var key in zaporedja){
+            for(var i=0; i<zaporedja[key]; i++){
+                for(var j=0; j<puzzle[zaporedja[key]].length; j++){
+                    zaporedja[key].push(puzzle[zaporedja[key]][j]);
+                }
+            }
+        }
+
+        
+        for(var key in zaporedja){
+            zaporedja[key] = zaporedja[key].sort(function sortNumber(a,b) {return a - b;});
+        }
+        
+        var result = [];
+        for(var i=0; i<zaporedja["0"].length; i++){
+            var imam_ga = false;
+            for(var j=0; j<result.length; j++){
+                if(result[j] == zaporedja["0"][i]) imam_ga = true;
+            }
+            if(!imam_ga){
+                result.push(zaporedja["0"][i]);
+            }
+        }
+        
+        var j=0;
+        for(var key in zaporedja) j++;
+        
+        console.log(puzzle);
+        console.log(zaporedja);
+        console.log(j);
+        console.log(result);
+        console.log(result.length);
+    }
+    solve();
+    
+    
+    
+    */// Day 13
+    
+   function solve(){
+        var zacetek = Date.now();
+        var scanner = [
+            3,2,4,null,4,null,5,null,6,null,8,null,8,null,6,null,6,null,9,null,8,null,6,null,10,null,12,null,8,null,
+            8,null,14,null,12,null,8,null,12,null,12,null,12,null,
+            12,null,12,null,14,null,12,null,12,null,10,null,14,null,12,null,
+            14,null,14,null,14,null,14,null,14,null,14,null,14,null,20,null,null,null,
+            14,null,14,null,null,null,null,null,null,null,null,null,17,null,null,null,null,null,18
+        ];
+        
+        var prehojeni = [];
+        var delay = 0;
+        var stevec = 0;
+        for(var depth=0; depth<scanner.length; depth++){
+            var delayed_depth = depth + delay;
+            if((delayed_depth%2==1 || scanner[depth] == null) && depth!=scanner.length-1){
+                prehojeni.push(scanner[depth]);
+                if(depth == scanner.length-1) console.log(delay);
+            }
+            
+            else if(delayed_depth % (scanner[depth]*2-2) == 0){
+                prehojeni.push(scanner[depth]);
+                delay++;
+                
+                // upoštevaj prehojeno pot
+                var i=0;
+                while( i<prehojeni.length ){
+                    if((delay+i) % (prehojeni[i]*2-2) == 0){
+                        delay++;
+                        i=-1;
+                    }
+                    i++;
+                }
+                
+                
+                // reset
+                depth=-1;
+                prehojeni = [];
+                
+                //varovalka
+                stevec++;
+                if(stevec > 1000) break;
+            }
+            
+            else if(depth == scanner.length-1) console.log(delay);
+            
+            else{
+                prehojeni.push(scanner[depth]);
+            }
+        }
+        
+        document.getElementById('html').innerHTML += delay;
+        
+        console.log('Čas izvajanja kode: '+ ((Date.now()-zacetek)) + 'ms')
+        console.log('Števec: '+ stevec)
+    }
+    solve();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
