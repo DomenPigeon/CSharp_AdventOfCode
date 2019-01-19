@@ -1,0 +1,6 @@
+D:\DomenTeam Dropbox\Domen Golob\Prosti čas\Hobiji\C#\AdventOfCode\2018\Day20\obj\Debug\Day20.csprojAssemblyReference.cache
+D:\DomenTeam Dropbox\Domen Golob\Prosti čas\Hobiji\C#\AdventOfCode\2018\Day20\obj\Debug\Day20.csproj.CoreCompileInputs.cache
+D:\DomenTeam Dropbox\Domen Golob\Prosti čas\Hobiji\C#\AdventOfCode\2018\Day20\bin\Debug\Day20.exe
+D:\DomenTeam Dropbox\Domen Golob\Prosti čas\Hobiji\C#\AdventOfCode\2018\Day20\bin\Debug\Day20.pdb
+D:\DomenTeam Dropbox\Domen Golob\Prosti čas\Hobiji\C#\AdventOfCode\2018\Day20\obj\Debug\Day20.exe
+D:\DomenTeam Dropbox\Domen Golob\Prosti čas\Hobiji\C#\AdventOfCode\2018\Day20\obj\Debug\Day20.pdb
