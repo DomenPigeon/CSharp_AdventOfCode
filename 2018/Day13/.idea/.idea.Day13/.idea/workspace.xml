@@ -4,112 +4,22 @@
     <bookmark url="file://$PROJECT_DIR$/Day13/Program.cs" line="100" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4d1d0e0-c4c7-4e51-91df-494b6125c2cc" name="Default" comment="" />
+    <list default="true" id="e4d1d0e0-c4c7-4e51-91df-494b6125c2cc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Day13/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Day13/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Day13/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Day13/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13/obj/Debug/Day13.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/obj/Debug/Day13.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Day13/Program.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="115" column="66" selection-start-line="115" selection-start-column="66" selection-end-line="115" selection-end-column="66" />
-              <folding>
-                <marker date="1547589306116" expanded="true" signature="6:212" ph="..." />
-                <marker date="1547589306116" expanded="true" signature="241:282" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="302:1796" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="375:580" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="904:1184" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="1226:1506" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="1541:1794" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="1815:10466" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="1844:10464" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="1893:2308" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="2139:2258" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="2390:3524" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="2484:3487" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="2576:3473" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="2618:2794" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="2840:3015" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="3061:3234" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="3280:3455" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="3662:4280" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="3741:4246" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="4481:5870" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="4603:5492" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="4681:4939" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="5140:5398" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="5532:5730" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="5941:6099" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="6161:6309" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="6391:8571" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="6428:7490" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="6492:6665" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="6734:6907" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="6973:7149" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="7217:7393" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="7490:8511" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="7572:7751" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="7820:7999" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="8065:8247" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="8315:8497" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="8626:8800" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="8881:9214" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="8975:9177" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="9065:9123" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="9299:9693" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="9456:9653" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="9763:10079" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="9924:10016" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="10156:10458" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="10224:10448" ph="{...}" />
-                <marker date="1547589306116" expanded="true" signature="10307:10375" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List`1.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/9c/0dcd06b9/List`1.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="493" column="42" selection-start-line="493" selection-start-column="42" selection-end-line="493" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEnumerable.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/4c/be0bea6e/IEnumerable.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IEnumerator.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/a8/c64fedb7/IEnumerator.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Day13/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9A3A281B-C42C-4899-A227-FFF9F7E48054/27/a93bdeff/SystemInformation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/9c/0dcd06b9/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/a8/c64fedb7/IEnumerator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/4c/be0bea6e/IEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2979110A-DCF4-4908-8C79-E7203BD2BF18/12/3d5cf65f/List`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -118,48 +28,10 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="SolutionExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Day13 (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Day13 (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Day13" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1Uo7VQh5oOGDVrimAvXXtUHJhXm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
@@ -184,12 +56,16 @@
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Day13/Day13.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="Console" />
       <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.1" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -209,138 +85,37 @@
       <workItem from="1545396780706" duration="354000" />
       <workItem from="1545865013419" duration="26000" />
       <workItem from="1547587702230" duration="1603000" />
+      <workItem from="1576011129864" duration="547000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24248000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
-      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.23027718" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Unit Tests" order="7" weight="0.32897604" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4738562" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32897604" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32897604" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32897604" />
-      <window_info anchor="bottom" id="Find" order="1" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="11" />
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Day13/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Day13/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="125" column="74" selection-start-line="125" selection-start-column="60" selection-end-line="125" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Day13/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1722">
-          <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
-          <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Day13/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9A3A281B-C42C-4899-A227-FFF9F7E48054/27/a93bdeff/SystemInformation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="499" column="23" selection-start-line="499" selection-start-column="23" selection-end-line="499" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2979110A-DCF4-4908-8C79-E7203BD2BF18/12/3d5cf65f/List`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="367" column="13" selection-start-line="367" selection-start-column="13" selection-end-line="367" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Day13/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="115" column="66" selection-start-line="115" selection-start-column="66" selection-end-line="115" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/a8/c64fedb7/IEnumerator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/4c/be0bea6e/IEnumerable.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42073FCF-9EFD-4A92-A6F0-A4CC94099FE3/9c/0dcd06b9/List`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="493" column="42" selection-start-line="493" selection-start-column="42" selection-end-line="493" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
