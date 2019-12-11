@@ -5,7 +5,7 @@ using Console = AdventLibrary.Console;
 namespace Day01 {
     internal class Program {
         public static void Main(string[] args) {
-            var input = ParseInput.ToArray("input").ToDoubles();
+            var input = ParseInput.ToArray("../../input").ToDoubles();
             for (var i = 0; i < input.Length; i++) {
                 var fuelForMass = Math.Floor(input[i] / 3) - 2;
                 var allFuel = fuelForMass;
