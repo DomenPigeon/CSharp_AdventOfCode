@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace AdventLibrary {
     public static class ParseInput {
@@ -30,39 +31,33 @@ namespace AdventLibrary {
             }
         }
 
-        public static string[] ToArray(string path) {
-            if (File.Exists(path)) {
-                return File.ReadAllLines(path);
+        public static string[][] ToJaggedArray(string path, char separator = ' ') {
+            var lines = ToArray(path);
+
+            var jaggedArray = new string[lines.Length][];
+
+            for (var i = 0; i < lines.Length; i++) {
+                var cells = lines[i].Split(separator);
+                jaggedArray[i] = new string[cells.Length];
+                for (var j = 0; j < cells.Length; j++) {
+                    jaggedArray[i][j] = cells[j].Trim();
+                }
             }
 
-            return null;
+            return jaggedArray;
         }
 
-        public static int[] ToInts(this string[] strings) {
-            var ints = new int[strings.Length];
-            for (var i = 0; i < strings.Length; i++) {
-                ints[i] = int.Parse(strings[i]);
+        public static string[] ToArray(string pathOrInput, char separator = ' ') {
+            var array = new List<string>();
+            var lines = File.Exists(pathOrInput) ? File.ReadAllLines(pathOrInput) : pathOrInput.Split(separator);
+
+            foreach (var line in lines) {
+                foreach (var cell in line.Split(separator)) {
+                    array.Add(cell);
+                }
             }
 
-            return ints;
-        }
-        
-        public static float[] ToFloats(this string[] strings) {
-            var ints = new float[strings.Length];
-            for (var i = 0; i < strings.Length; i++) {
-                ints[i] = float.Parse(strings[i]);
-            }
-
-            return ints;
-        }
-        
-        public static double[] ToDoubles(this string[] strings) {
-            var ints = new double[strings.Length];
-            for (var i = 0; i < strings.Length; i++) {
-                ints[i] = double.Parse(strings[i]);
-            }
-
-            return ints;
+            return array.ToArray();
         }
     }
 }

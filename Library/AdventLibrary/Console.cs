@@ -5,6 +5,7 @@ namespace AdventLibrary {
         public static void WriteLine(object message) {
             System.Console.WriteLine(message);
         }
+
         public static void WriteLine(string message) {
             System.Console.WriteLine(message);
         }
@@ -13,12 +14,18 @@ namespace AdventLibrary {
             System.Console.WriteLine(messages);
         }
 
+        public static void WriteLine1D<T>(T[] list, int cellWidth = 5) {
+            foreach (var cell in list) {
+                System.Console.Write(FixStringWidth(cell, cellWidth));
+            }
+        }
+
         public static void WriteLine2D<T>(T[,] list, int cellWidth = 3) {
             for (int i = 0; i < list.GetLength(1); i++) {
-                System.Console.Write($"y{i, -7}");
+                System.Console.Write($"y{i,-7}");
                 for (int j = 0; j < list.GetLength(0); j++) {
-                    if(list[j, i] == null) continue;
-                    System.Console.Write(FormatCell(list[j, i].ToString()));
+                    if (list[j, i] == null) continue;
+                    System.Console.Write(FixStringWidth(list[j, i], cellWidth));
                 }
 
                 System.Console.Write('\n');
@@ -26,21 +33,24 @@ namespace AdventLibrary {
 
             System.Console.WriteLine();
             System.Console.WriteLine();
-            System.Console.Write($"{" ", -8}");
+            System.Console.Write($"{" ",-8}");
             for (int i = 0; i < list.GetLength(0); i++) {
-                System.Console.Write(FormatCell($"x{i}"));
+                System.Console.Write(FixStringWidth($"x{i}", cellWidth));
             }
 
-            string FormatCell(string cell, char separator = ' ') {
-                if (cell.Length >= cellWidth) return cell;
+            
+        }
+        
+        private static string FixStringWidth(object stringObject, int cellWidth = 5, char separator = ' ') {
+            var @string = stringObject.ToString();
+            if (@string.Length >= cellWidth) return @string;
 
-                var formattedCell = new StringBuilder(cell);
-                while (formattedCell.Length < cellWidth) {
-                    formattedCell.Append(separator);
-                }
-
-                return formattedCell.ToString();
+            var formattedCell = new StringBuilder(@string);
+            while (formattedCell.Length < cellWidth) {
+                formattedCell.Append(separator);
             }
+
+            return formattedCell.ToString();
         }
     }
 }
