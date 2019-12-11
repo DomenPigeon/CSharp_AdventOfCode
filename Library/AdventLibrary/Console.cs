@@ -2,6 +2,9 @@ using System.Text;
 
 namespace AdventLibrary {
     public static class Console {
+        public static void WriteLine(object message) {
+            System.Console.WriteLine(message);
+        }
         public static void WriteLine(string message) {
             System.Console.WriteLine(message);
         }
