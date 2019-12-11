@@ -1,0 +1,5 @@
+D:\Desktop\CSharp_AdventOfCode\Library\AdventLibrary\bin\Release\AdventLibrary.dll
+D:\Desktop\CSharp_AdventOfCode\Library\AdventLibrary\bin\Release\AdventLibrary.pdb
+D:\Desktop\CSharp_AdventOfCode\Library\AdventLibrary\obj\Release\AdventLibrary.csprojAssemblyReference.cache
+D:\Desktop\CSharp_AdventOfCode\Library\AdventLibrary\obj\Release\AdventLibrary.dll
+D:\Desktop\CSharp_AdventOfCode\Library\AdventLibrary\obj\Release\AdventLibrary.pdb

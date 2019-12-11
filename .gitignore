@@ -1,8 +1,2 @@
 .idea/
 *./idea./
-
-[Bb]in/
-**/[Bb]in/
-
-[Oo]bj/
-**/[Oo]bj/
