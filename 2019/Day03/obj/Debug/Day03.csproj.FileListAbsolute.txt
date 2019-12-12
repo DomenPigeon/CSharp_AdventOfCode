@@ -6,3 +6,4 @@ D:\Desktop\CSharp_AdventOfCode\2019\Day03\obj\Debug\Day03.csprojAssemblyReferenc
 D:\Desktop\CSharp_AdventOfCode\2019\Day03\obj\Debug\Day03.csproj.CopyComplete
 D:\Desktop\CSharp_AdventOfCode\2019\Day03\obj\Debug\Day03.exe
 D:\Desktop\CSharp_AdventOfCode\2019\Day03\obj\Debug\Day03.pdb
+D:\Desktop\CSharp_AdventOfCode\2019\Day03\bin\Debug\System.Drawing.dll
