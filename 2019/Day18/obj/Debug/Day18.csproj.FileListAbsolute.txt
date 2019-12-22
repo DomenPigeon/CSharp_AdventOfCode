@@ -1,0 +1,8 @@
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\bin\Debug\Day18.exe
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\bin\Debug\Day18.pdb
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\bin\Debug\Library.dll
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\bin\Debug\Library.pdb
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\obj\Debug\Day18.csprojAssemblyReference.cache
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\obj\Debug\Day18.csproj.CopyComplete
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\obj\Debug\Day18.exe
+D:\Desktop\CSharp_AdventOfCode\2019\Day18\obj\Debug\Day18.pdb

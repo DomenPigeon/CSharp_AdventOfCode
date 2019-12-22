@@ -24,7 +24,7 @@ namespace AdventLibrary {
             ClearCanvas(canvas);
 
             foreach (var point in _points) {
-                canvas[point.X, point.Y] = point.Mark;
+                canvas[point.x, point.y] = point.Mark;
             }
             
             return canvas;
@@ -39,31 +39,19 @@ namespace AdventLibrary {
         }
 
         private void UpdateSize(Point p) {
-            if (p.X > _size.right) {
-                _size.right = p.X;
+            if (p.x > _size.right) {
+                _size.right = p.x;
             }
-            else if (p.X < _size.left) {
-                _size.left = p.X * -1;
+            else if (p.x < _size.left) {
+                _size.left = p.x * -1;
             }
             
-            if (p.Y > _size.top) {
-                _size.top = p.Y;
+            if (p.y > _size.top) {
+                _size.top = p.y;
             }
-            else if (p.Y < _size.down) {
-                _size.down = p.Y * -1;
+            else if (p.y < _size.down) {
+                _size.down = p.y * -1;
             }
-        }
-    }
-
-    public struct Point {
-        public int X { get; }
-        public int Y { get; }
-        public char Mark { get; }
-
-        public Point(int x, int y, char mark = ' ') {
-            X = x;
-            Y = y;
-            Mark = mark;
         }
     }
 }

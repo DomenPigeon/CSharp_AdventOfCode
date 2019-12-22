@@ -1,0 +1,5 @@
+D:\Desktop\CSharp_AdventOfCode\2019\Library\bin\Debug\Library.dll
+D:\Desktop\CSharp_AdventOfCode\2019\Library\bin\Debug\Library.pdb
+D:\Desktop\CSharp_AdventOfCode\2019\Library\obj\Debug\Library.csprojAssemblyReference.cache
+D:\Desktop\CSharp_AdventOfCode\2019\Library\obj\Debug\Library.dll
+D:\Desktop\CSharp_AdventOfCode\2019\Library\obj\Debug\Library.pdb
