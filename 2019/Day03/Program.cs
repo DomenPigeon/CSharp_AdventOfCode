@@ -33,7 +33,7 @@ namespace Day03 {
 //            cs2.AddPoint(new Point(10, 10));
 //            cs2.AddPoint(new Point(30, 30));
 
-            var pic1 = Canvas.CreateImage(cs1.GetPoints2D(), "red", new []{0,0});
+            /*var pic1 = Canvas.CreateImage(cs1.GetPoints2D(), "red", new []{0,0});
             var a = cs1.Center - cs2.Center;
             var pic2 = Canvas.CreateImage(cs2.GetPoints2D(), "green", new []{a.x,a.y});
             File.Write2D("pic1.txt", cs1.GetPoints2D(), 2);
@@ -56,7 +56,7 @@ namespace Day03 {
             
             Console.WriteLine(closest);
             Console.WriteLine(cs1.Center);
-            Console.WriteLine(cs2.Center);
+            Console.WriteLine(cs2.Center);*/
         }
 
         private static DiscreteCoordinateSystem LayWire(string[] wireInstructions) {
@@ -85,7 +85,9 @@ namespace Day03 {
                 mapIndex.x += distance.x;
                 mapIndex.y += distance.y;
                 var endPoint = new Point(mapIndex.x, mapIndex.y, '¤');
+                /*
                 map.AddLineOfPoints(startPoint, endPoint);
+            */
             }
             
             map.RemovePoint(new Point(0,0,'¤'));
