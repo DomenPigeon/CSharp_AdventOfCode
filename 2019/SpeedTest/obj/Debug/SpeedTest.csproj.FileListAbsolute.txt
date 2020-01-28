@@ -1,0 +1,5 @@
+D:\Desktop\CSharp_AdventOfCode\2019\SpeedTest\bin\Debug\SpeedTest.exe
+D:\Desktop\CSharp_AdventOfCode\2019\SpeedTest\bin\Debug\SpeedTest.pdb
+D:\Desktop\CSharp_AdventOfCode\2019\SpeedTest\obj\Debug\SpeedTest.csprojAssemblyReference.cache
+D:\Desktop\CSharp_AdventOfCode\2019\SpeedTest\obj\Debug\SpeedTest.exe
+D:\Desktop\CSharp_AdventOfCode\2019\SpeedTest\obj\Debug\SpeedTest.pdb

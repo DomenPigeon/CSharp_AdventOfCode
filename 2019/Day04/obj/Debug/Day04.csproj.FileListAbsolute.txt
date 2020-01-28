@@ -1,0 +1,5 @@
+D:\Desktop\CSharp_AdventOfCode\2019\Day04\obj\Debug\Day04.csprojAssemblyReference.cache
+D:\Desktop\CSharp_AdventOfCode\2019\Day04\bin\Debug\Day04.exe
+D:\Desktop\CSharp_AdventOfCode\2019\Day04\bin\Debug\Day04.pdb
+D:\Desktop\CSharp_AdventOfCode\2019\Day04\obj\Debug\Day04.exe
+D:\Desktop\CSharp_AdventOfCode\2019\Day04\obj\Debug\Day04.pdb
